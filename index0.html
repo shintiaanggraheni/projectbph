@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+  <meta name="viewport" content="width=device-width"/>
+  <title>Cadangan BBM(BPH-LEMIGAS)</title>
+<style>
+#header {
+    /*background-image: url(img/hed-img.png);*/
+    background-size: 100%;
+    color:white;
+    text-align:center;
+    padding:1px;
+}
+#nav {
+    line-height:45px;
+    background-color:grey;
+    height:400px;
+    width:150px;
+    float:left;
+    padding:15px;
+}
+#section {
+    width:98%;
+    float:left;
+    padding:25px;
+}
+#footer {
+    background-size: 100%;
+    color:white;
+    clear:both;
+    text-align:center;
+    background-color: #5F9EA0;
+}
+</style>
+
+</head>
+<body oncontextmenu="return false;" style="width: 100%">
+
+<div id="header">
+<table width="100%">
+  <td style="position: left;width: 2%"><img src="kesdm.png" width="70px"></td>
+  <td style="width: 96%"></td>
+  <td style="position: right;width: 2%"><img src="logoBPHMigas.png" width="150px"></td>                  
+</table>
+</div>
+
+<center> 
+<h3>FORM SURVEY BADAN USAHA </h3>
+<h4>KEGIATAN MONITORING DAN VERIFIKASI LAPORAN PENYEDIAAN CADANGAN OPERASIONAL BBM
+</h4>
+<button onclick="getLocation()" style="width: 175px;height: 50px;font-size: 20px;cursor: pointer;color: blue;"> Mulai </button> <br> <br>
+<a style="color: red">Pilih " Allow / Izinkan " jika muncul pesan meminta aksen lokasi<a> <br>
+or <a href="getposisi.php?param1=0&param2=0">(Mulai tanpa detect GPS)</a>
+</center>
+
+
+<p id="posisi"></p>
+
+<script>
+var x = document.getElementById("posisi");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else { 
+    x.innerHTML = "Failed, Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  // x.innerHTML = "Latitude: " + position.coords.latitude + 
+  // "<br>Longitude: " + position.coords.longitude;
+
+  window.location.href = "getposisi.php?param1=" + position.coords.latitude + "&param2=" + position.coords.longitude;
+
+}
+
+
+
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      x.innerHTML = "Failed, User denied the request for Geolocation."
+      break;
+    case error.POSITION_UNAVAILABLE:
+      x.innerHTML = "Failed, Location information is unavailable."
+      break;
+    case error.TIMEOUT:
+      x.innerHTML = "Failed, The request to get user location timed out."
+      break;
+    case error.UNKNOWN_ERROR:
+      x.innerHTML = "Failed, An unknown error occurred."
+      break;
+  }
+}
+</script>
+
+<div id="footer">
+<label>copyright@2021,PPPTMGB LEMIGAS - BPH MIGAS</label> 
+</div>
+
+</body>
+</html>

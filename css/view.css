@@ -1,0 +1,30 @@
+#header {
+    background-image: url('../img/hed-img.png');
+    background-size: 100%;
+    color:white;
+    text-align:center;
+    padding:1px;
+}
+
+#nav {
+    line-height:45px;
+    background-color:grey;
+    height:400px;
+    width:150px;
+    float:left;
+    padding:15px;
+}
+#section {
+    top: 1px;
+    width:98%;
+    float:left;
+    padding:25px;
+}
+#footer {
+    background-image: url(../img/foot-img.png);
+    background-size: 100%;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:10px;
+}

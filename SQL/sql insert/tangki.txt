@@ -1,0 +1,2 @@
+INSERT INTO `tanki` (`idk`, `namat`, `jenist`, `kapt`, `kapp`, `kalibt`, `cdpump`, `bentukt`, `jnstank`, `altukut`, `kalibu`, `jamstok`, `oku`, `stat`, `smbpas`)
+VALUES ('$idk', '$namat', '$jenist', '$kapt', '$kapp', '$kalibt', '$cdpump', '$bentukt', '$jnstank	', '$altukut', '$kalibu', '$jamstok', '$oku', '$stat', '$smbpas');

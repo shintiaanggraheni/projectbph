@@ -1,0 +1,333 @@
+-- Adminer 4.2.5 MySQL dump
+
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+DROP TABLE IF EXISTS `badanusaha`;
+CREATE TABLE `badanusaha` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `wilayah` varchar(20) NOT NULL,
+  `bu` varchar(100) NOT NULL,
+  `noizin` varchar(100) NOT NULL,
+  `tglterbit` varchar(100) NOT NULL,
+  `masaizin` varchar(100) NOT NULL,
+  `alamat` varchar(500) NOT NULL,
+  `telp` varchar(50) NOT NULL,
+  `nosk` varchar(500) NOT NULL,
+  `namap` varchar(100) NOT NULL,
+  `alamatf` varchar(500) NOT NULL,
+  `kec` varchar(100) NOT NULL,
+  `kab` varchar(100) NOT NULL,
+  `prov` varchar(100) NOT NULL,
+  `long` varchar(20) NOT NULL,
+  `lat` varchar(20) NOT NULL,
+  `namac` varchar(50) NOT NULL,
+  `status` varchar(100) NOT NULL,
+  `telpc` varchar(50) NOT NULL,
+  `emailc` varchar(500) NOT NULL,
+  `sumtanki` varchar(10) NOT NULL,
+  `tankiplant` varchar(100) NOT NULL,
+  `visitstok` varchar(100) NOT NULL,
+  `bhsapk` varchar(100) NOT NULL,
+  `dbapk` varchar(100) NOT NULL,
+  `itsdm1` varchar(20) NOT NULL,
+  `itsdm2` varchar(20) NOT NULL,
+  `server1` varchar(20) NOT NULL,
+  `server2` varchar(100) NOT NULL,
+  `ket1` varchar(500) NOT NULL,
+  `ket2` varchar(500) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `charian`;
+CREATE TABLE `charian` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `tgl` varchar(20) NOT NULL,
+  `jnsbbm` varchar(50) NOT NULL,
+  `salur` varchar(50) NOT NULL,
+  `cdtl` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `depo`;
+CREATE TABLE `depo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `lokasi` varchar(100) NOT NULL,
+  `kap` varchar(20) NOT NULL,
+  `alamatc` varchar(500) NOT NULL,
+  `kab` varchar(100) NOT NULL,
+  `prov` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `download`;
+CREATE TABLE `download` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tanggal_upload` date NOT NULL,
+  `nama_file` varchar(100) NOT NULL,
+  `tipe_file` varchar(10) NOT NULL,
+  `ukuran_file` varchar(20) NOT NULL,
+  `file` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `dtjual`;
+CREATE TABLE `dtjual` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `bln` varchar(20) NOT NULL,
+  `vol` varchar(50) NOT NULL,
+  `ket` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `kuisioner`;
+CREATE TABLE `kuisioner` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(20) NOT NULL,
+  `mor` varchar(5) NOT NULL,
+  `bu` varchar(100) NOT NULL,
+  `lokasi` varchar(500) NOT NULL,
+  `tanki` varchar(50) NOT NULL,
+  `long` varchar(20) NOT NULL,
+  `lat` varchar(20) NOT NULL,
+  `jum-tanki` varchar(20) NOT NULL,
+  `jum-tanki-avgas` varchar(20) NOT NULL,
+  `ket-jum-tanki-avgas` varchar(50) NOT NULL,
+  `jum-tanki-avtur` varchar(20) NOT NULL,
+  `ket-jum-tanki-avtur` varchar(50) NOT NULL,
+  `jum-tanki-88` varchar(20) NOT NULL,
+  `ket-jum-tanki-88` varchar(50) NOT NULL,
+  `jum-tanki-90` varchar(20) NOT NULL,
+  `ket-jum-tanki-90` varchar(50) NOT NULL,
+  `jum-tanki-92` varchar(20) NOT NULL,
+  `ket-jum-tanki-92` varchar(50) NOT NULL,
+  `jum-tanki-95` varchar(20) NOT NULL,
+  `ket-jum-tanki-95` varchar(50) NOT NULL,
+  `jum-tanki-98` varchar(20) NOT NULL,
+  `ket-jum-tanki-98` varchar(50) NOT NULL,
+  `jum-tanki-98up` varchar(20) NOT NULL,
+  `ket-jum-tanki-98up` varchar(50) NOT NULL,
+  `jum-tanki-48` varchar(20) NOT NULL,
+  `ket-jum-tanki-48` varchar(50) NOT NULL,
+  `jum-tanki-51` varchar(20) NOT NULL,
+  `ket-jum-tanki-51` varchar(50) NOT NULL,
+  `jum-tanki-53` varchar(20) NOT NULL,
+  `ket-jum-tanki-53` varchar(50) NOT NULL,
+  `jum-tanki-diesel` varchar(20) NOT NULL,
+  `ket-jum-tanki-diesel` varchar(50) NOT NULL,
+  `jum-tanki-bakar` varchar(20) NOT NULL,
+  `ket-jum-tanki-bakar` varchar(50) NOT NULL,
+  `kap-tanki` varchar(50) NOT NULL,
+  `kap-tanki-avtur` varchar(20) NOT NULL,
+  `ket-kap-tanki-avtur` varchar(50) NOT NULL,
+  `kap-tanki-avgas` varchar(20) NOT NULL,
+  `ket-kap-tanki-avgas` varchar(50) NOT NULL,
+  `kap-tanki-88` varchar(20) NOT NULL,
+  `ket-kap-tanki-88` varchar(50) NOT NULL,
+  `kap-tanki-90` varchar(20) NOT NULL,
+  `ket-kap-tanki-90` varchar(50) NOT NULL,
+  `kap-tanki-92` varchar(20) NOT NULL,
+  `ket-kap-tanki-92` varchar(50) NOT NULL,
+  `kap-tanki-95` varchar(20) NOT NULL,
+  `ket-kap-tanki-95` varchar(50) NOT NULL,
+  `kap-tanki-98` varchar(20) NOT NULL,
+  `ket-kap-tanki-98` varchar(50) NOT NULL,
+  `kap-tanki-98up` varchar(20) NOT NULL,
+  `ket-kap-tanki-98up` varchar(50) NOT NULL,
+  `kap-tanki-48` varchar(20) NOT NULL,
+  `ket-kap-tanki-48` varchar(50) NOT NULL,
+  `kap-tanki-51` varchar(20) NOT NULL,
+  `ket-kap-tanki-51` varchar(50) NOT NULL,
+  `kap-tanki-53` varchar(20) NOT NULL,
+  `ket-kap-tanki-53` varchar(50) NOT NULL,
+  `kap-tanki-diesel` varchar(20) NOT NULL,
+  `ket-kap-tanki-diesel` varchar(50) NOT NULL,
+  `kap-tanki-bakar` varchar(20) NOT NULL,
+  `ket-kap-tanki-bakar` varchar(50) NOT NULL,
+  `oku` varchar(20) NOT NULL,
+  `stat-tanki` varchar(30) NOT NULL,
+  `plan-tanki` varchar(30) NOT NULL,
+  `jns-tanki` varchar(30) NOT NULL,
+  `kalibrasi` varchar(20) NOT NULL,
+  `tgl-kalibrasi1` varchar(30) NOT NULL,
+  `tgl-kalibrasi2` varchar(30) NOT NULL,
+  `alt-salur` varchar(30) NOT NULL,
+  `kalib-alat-salur1` varchar(30) NOT NULL,
+  `kalib-alat-salur2` varchar(30) NOT NULL,
+  `smb-bbm` varchar(50) NOT NULL,
+  `bukti-smb-bbm` varchar(300) NOT NULL,
+  `jns-bbm` varchar(300) NOT NULL,
+  `vol-terima1` varchar(50) NOT NULL,
+  `vol-terima2` varchar(50) NOT NULL,
+  `vol-kirim1` varchar(50) NOT NULL,
+  `vol-kirim2` varchar(50) NOT NULL,
+  `jam-catat` varchar(50) NOT NULL,
+  `vol-stokk2` varchar(50) NOT NULL,
+  `vol-stokk1` varchar(50) NOT NULL,
+  `moda-terima` varchar(30) NOT NULL,
+  `moda-kirim` varchar(30) NOT NULL,
+  `jns-apk` varchar(100) NOT NULL,
+  `bhs-apk` varchar(20) NOT NULL,
+  `dtbse` varchar(20) NOT NULL,
+  `it-sdm1` varchar(20) NOT NULL,
+  `it-sdm2` varchar(20) NOT NULL,
+  `server1` varchar(20) NOT NULL,
+  `server2` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `lap3bln`;
+CREATE TABLE `lap3bln` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `tahun` varchar(20) NOT NULL,
+  `jnsbbm` varchar(20) NOT NULL,
+  `chari` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `laporan`;
+CREATE TABLE `laporan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `thn` varchar(10) NOT NULL,
+  `priod` varchar(10) NOT NULL,
+  `jnsbbm` varchar(30) NOT NULL,
+  `fasilitas` varchar(50) NOT NULL,
+  `dtstok` varchar(50) NOT NULL,
+  `dtsalur` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `moda`;
+CREATE TABLE `moda` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `jnsmoda` varchar(20) NOT NULL,
+  `kapmoda` varchar(50) NOT NULL,
+  `jumunit` varchar(50) NOT NULL,
+  `transportir` varchar(100) NOT NULL,
+  `keterangan` varchar(500) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `pasokan`;
+CREATE TABLE `pasokan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `bulanp` varchar(20) NOT NULL,
+  `tahunp` varchar(20) NOT NULL,
+  `pemasok` varchar(100) NOT NULL,
+  `jenis1` varchar(20) NOT NULL,
+  `jenis2` varchar(20) NOT NULL,
+  `volp` varchar(50) NOT NULL,
+  `modap` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `penyaluran`;
+CREATE TABLE `penyaluran` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `lokasi` varchar(50) NOT NULL,
+  `jnsbbm` varchar(50) NOT NULL,
+  `thn` varchar(10) NOT NULL,
+  `voljanuari` varchar(20) NOT NULL,
+  `volpebruari` varchar(20) NOT NULL,
+  `volmaret` varchar(20) NOT NULL,
+  `volapril` varchar(20) NOT NULL,
+  `volmei` varchar(20) NOT NULL,
+  `voljuni` varchar(20) NOT NULL,
+  `voljuli` varchar(20) NOT NULL,
+  `volagustus` varchar(20) NOT NULL,
+  `volseptember` varchar(20) NOT NULL,
+  `voloktober` varchar(20) NOT NULL,
+  `volnopember` varchar(20) NOT NULL,
+  `voldesember` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `penyaluran1`;
+CREATE TABLE `penyaluran1` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `idp` int(11) NOT NULL,
+  `bln` varchar(20) NOT NULL,
+  `vol` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `tanki`;
+CREATE TABLE `tanki` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `namat` varchar(50) NOT NULL,
+  `jenist` varchar(50) NOT NULL,
+  `kapt` varchar(50) NOT NULL,
+  `kapp` varchar(50) NOT NULL,
+  `kalibt` varchar(50) NOT NULL,
+  `cdpump` varchar(50) NOT NULL,
+  `bentukt` varchar(50) NOT NULL,
+  `jnstank` varchar(50) NOT NULL,
+  `altukut` varchar(50) NOT NULL,
+  `kalibu` varchar(50) NOT NULL,
+  `jamstok` varchar(50) NOT NULL,
+  `oku` varchar(50) NOT NULL,
+  `stat` varchar(50) NOT NULL,
+  `smbpas` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `tims`;
+CREATE TABLE `tims` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `stugas` varchar(100) NOT NULL,
+  `tglstugas` varchar(100) NOT NULL,
+  `hari` varchar(20) NOT NULL,
+  `tanggal` varchar(20) NOT NULL,
+  `bulan` varchar(20) NOT NULL,
+  `tahun` varchar(20) NOT NULL,
+  `tw` varchar(20) NOT NULL,
+  `nama1` varchar(50) NOT NULL,
+  `jabatan1` varchar(100) NOT NULL,
+  `nama2` varchar(50) NOT NULL,
+  `jabatan2` varchar(100) NOT NULL,
+  `nama3` varchar(50) NOT NULL,
+  `jabatan3` varchar(100) NOT NULL,
+  `nama4` varchar(50) NOT NULL,
+  `jabatan4` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(50) NOT NULL,
+  `pwd` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+INSERT INTO `user` (`id`, `nama`, `pwd`) VALUES
+(1,	'monev',	'admin');
+
+-- 2021-07-28 19:52:26
