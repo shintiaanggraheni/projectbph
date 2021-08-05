@@ -2,7 +2,7 @@
 //konek ke database
 date_default_timezone_set('UTC');
 
-$konek = mysqli_connect("localhost","root","","test");
+$konek = mysqli_connect("localhost","root","","lemigas");
 
 // $konek = mysqli_connect("sql108.epizy.com","epiz_25947893","TwERywUYVwjHVsP","epiz_25947893_proses");
 

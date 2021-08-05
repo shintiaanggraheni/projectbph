@@ -46,6 +46,7 @@ $telpc    =htmlspecialchars($_POST["telpc"]);
 $emailc   =htmlspecialchars($_POST["emailc"]);
 $sumtanki =htmlspecialchars($_POST["sumtanki"]);
 $tankiplant=htmlspecialchars($_POST["tankiplant"]);
+$tahuntankiplant=htmlspecialchars($_POST["tahuntankiplant"]);
 $visitstok=htmlspecialchars($_POST["visitstok"]);
 $bhsapk   =htmlspecialchars($_POST["bhsapk"]);
 $dbapk    =htmlspecialchars($_POST["dbapk"]);
@@ -59,9 +60,9 @@ $tgliu      =htmlspecialchars($_POST["tgliu"]);
 $msiu      =htmlspecialchars($_POST["msiu"]);
 $stiu      =htmlspecialchars($_POST["stiu"]);
 
-$sql = "INSERT INTO `badanusaha` (`wilayah`, `bu`,`npwp`, `noizin`, `tglterbit`, `masaizin`, `alamat`, `telp`,`fax`, `jnsush`, `namap`,`jabatan`,`nohpjab`, `alamatf`, `kec`, `kab`, `prov`, `long`, `lat`, `namac`, `status`, `telpc`, `emailc`, `sumtanki`, `tankiplant`, `visitstok`, `bhsapk`, `dbapk`, `itsdm1`, `itsdm2`, `server1`, `server2`,`noiz`, `tgliu`, `msiu`,`stiu`)
+$sql = "INSERT INTO `badanusaha` (`wilayah`, `bu`,`npwp`, `noizin`, `tglterbit`, `masaizin`, `alamat`, `telp`,`fax`, `jnsush`, `namap`,`jabatan`,`nohpjab`, `alamatf`, `kec`, `kab`, `prov`, `long`, `lat`, `namac`, `status`, `telpc`, `emailc`, `sumtanki`, `tankiplant`, `tahuntankiplant`, `visitstok`, `bhsapk`, `dbapk`, `itsdm1`, `itsdm2`, `server1`, `server2`,`noiz`, `tgliu`, `msiu`,`stiu`)
 
-VALUES ('$wilayah', '$bu','$npwp', '$noizin', '$tglterbit', '$masaizin', '$alamat', '$telp','$fax', '$jnsush', '$namap', '$jabatan', '$nohpjab', '$alamatf', '$kec', '$kab', '$prov', '$long', '$lat', '$namac', '$status', '$telpc', '$emailc', '$sumtanki', '$tankiplant', '$visitstok', '$bhsapk', '$dbapk', '$itsdm1', '$itsdm2', '$server1', '$server2', '$noiz','$tgliu', '$msiu','$stiu')";
+VALUES ('$wilayah', '$bu','$npwp', '$noizin', '$tglterbit', '$masaizin', '$alamat', '$telp','$fax', '$jnsush', '$namap', '$jabatan', '$nohpjab', '$alamatf', '$kec', '$kab', '$prov', '$long', '$lat', '$namac', '$status', '$telpc', '$emailc', '$sumtanki', '$tankiplant', '$tahuntankiplant', '$visitstok', '$bhsapk', '$dbapk', '$itsdm1', '$itsdm2', '$server1', '$server2', '$noiz','$tgliu', '$msiu','$stiu')";
 
 mysqli_query($konek,$sql);
 
@@ -229,7 +230,14 @@ KEGIATAN MONITORING DAN VERIFIKASI LAPORAN PENYEDIAAN CADANGAN OPERASIONAL BBM
     <tr>
     <td><label>Status Izin Usaha</label></td>
     <td>:</td>
-    <td><input type="text" name="stiu" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="Masih Berlaku/EXPIRED/Belum ada..." ></td>
+    <td>
+    <select name="stiu" style="height:25px;width:310px;font-size: 14px;cursor:pointer;">
+            <option value="">...</option>
+            <option value="Belum Ada">Belum Ada</option>
+            <option value="Masih Berlaku">Masih Berlaku</option>
+            <option value="Expired">Expired</option>
+        </select>
+    </td> 
   </tr>
 
   <tr>
@@ -265,7 +273,7 @@ KEGIATAN MONITORING DAN VERIFIKASI LAPORAN PENYEDIAAN CADANGAN OPERASIONAL BBM
   <tr>
     <td><label>No. Telp</label></td>
     <td>:</td>
-    <td><input type="text" name="telp" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="No. Telp" ></td>
+    <td><input type="text" name="telp" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="No. Telp" ></td>
   </tr>
 
   <tr>
@@ -298,7 +306,7 @@ KEGIATAN MONITORING DAN VERIFIKASI LAPORAN PENYEDIAAN CADANGAN OPERASIONAL BBM
   <tr>
     <td><label>No.HandPhone</label></td>
     <td>:</td>
-    <td><input type="text" name="nohpjab" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="No.telp" ></td>
+    <td><input type="text" name="nohpjab"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="No.telp" ></td>
   </tr>
 
 
@@ -331,7 +339,7 @@ KEGIATAN MONITORING DAN VERIFIKASI LAPORAN PENYEDIAAN CADANGAN OPERASIONAL BBM
   <tr>
     <td><label>No. HP Contact Person</label></td>
     <td>:</td>
-    <td><input type="text" name="telpc" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="No telpon cp" ></td>
+    <td><input type="text" name="telpc" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="No telpon cp" ></td>
   </tr>
 
   <tr>
@@ -349,7 +357,13 @@ KEGIATAN MONITORING DAN VERIFIKASI LAPORAN PENYEDIAAN CADANGAN OPERASIONAL BBM
   <tr>
     <td><label>Rencana pembangunan tangki</label></td>
     <td>:</td>
-    <td><input type="text" name="tankiplant" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="berapa unit dan tahun" ></td>
+    <td><input type="text" name="tankiplant" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="Jumlah Unit" ></td>
+  </tr>
+
+  <tr>
+    <td><label>Tahun pembangunan tangki</label></td>
+    <td>:</td>
+    <td><input type="text" name="tahuntankiplant" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="Tahun Unit" ></td>
   </tr>
 
   <tr>
@@ -385,7 +399,7 @@ KEGIATAN MONITORING DAN VERIFIKASI LAPORAN PENYEDIAAN CADANGAN OPERASIONAL BBM
   <tr>
     <td><label>SDM IT yang dimiliki</label></td>
     <td>:</td>
-    <td><select name="itsdm1" style="height:25px;font-size: 14px;cursor:pointer;">
+    <td><select name="itsdm1" style="height:25px;width:310px;font-size: 14px;cursor:pointer;">
             <option value="">...</option>
             <option value="Ada">Ada</option>
             <option value="Tidak ada">Tidak ada</option>
@@ -402,7 +416,7 @@ KEGIATAN MONITORING DAN VERIFIKASI LAPORAN PENYEDIAAN CADANGAN OPERASIONAL BBM
   <tr>
     <td><label>Infrastruktur Server yang dimiliki</label></td>
     <td>:</td>
-    <td><select name="server1" style="height:25px;font-size: 14px;cursor:pointer;">
+    <td><select name="server1" style="height:25px;width:310px;font-size: 14px;cursor:pointer;">
             <option value="">...</option>
             <option value="Ada">Ada</option>
             <option value="Tidak ada">Tidak ada</option>
@@ -443,6 +457,7 @@ KEGIATAN MONITORING DAN VERIFIKASI LAPORAN PENYEDIAAN CADANGAN OPERASIONAL BBM
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script type="text/javascript">
+
     $('#inputAngka').on('keyup',function(){
       var angka = $(this).val();
 
@@ -451,6 +466,8 @@ KEGIATAN MONITORING DAN VERIFIKASI LAPORAN PENYEDIAAN CADANGAN OPERASIONAL BBM
       /*$(this).val(hasilAngka);*/
       $('#showTextRibuan').text(hasilAngka);
     });
+
+
 
     function formatRibuan(angka){
       var number_string = angka.replace(/[^,\d]/g, '').toString(),
