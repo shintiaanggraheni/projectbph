@@ -1,0 +1,8 @@
+LOAD DATA INFILE 'E:/import/mahasiswa.csv' 
+INTO TABLE mahasiswa 
+FIELDS TERMINATED BY ';' 
+ENCLOSED BY ''
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(nim,nama,jk,@tanggal_lhr,jurusan,umur)
+SET tanggal_lhr = STR_TO_DATE(@tanggal_lhr, '%Y/%m/%d');

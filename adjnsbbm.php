@@ -1,31 +1,24 @@
 <?php 
 
-// session_start();
+session_start();
 
-// if (!isset($_SESSION["login"])) 
-// { header("location: login.php");
-//  exit;
-// }
+if (!isset($_SESSION["login"])) 
+{ header("location: login.php");
+ exit;
+}
 
 require 'functions.php';
-require 'trw.php';
 
-$id  	= $_GET["id"];
-$tahun  = date('Y');
-// $twl 	= $tws-1;
 
 if (isset($_POST["submitk"]))
 {
+$jnsbbm		=htmlspecialchars($_POST["jnsbbm"]);
+$ket		=htmlspecialchars($_POST["ket"]);
 
-$idk	= htmlspecialchars($_POST["idk"]);
-$tahun	= htmlspecialchars($_POST["tahun"]);
-$tws 	= htmlspecialchars($_POST["tws"]);
-$jnsbbm = htmlspecialchars($_POST["jnsbbm"]);
-$chari 	= htmlspecialchars($_POST["chari"]);
+$sql = "INSERT INTO `jbbm` (`jnsbbm`,`ket`)
+VALUES ('$jnsbbm','$ket')";
 
 
-	$sql = "INSERT INTO `lap3bln` (`idk`, `tahun`, `tw`, `jnsbbm`, `chari`)
-VALUES ('$idk', '$tahun','$tws', '$jnsbbm', '$chari')";
 
 	mysqli_query($konek,$sql);
 
@@ -36,7 +29,7 @@ if (mysqli_affected_rows($konek) > 0) {
 
 	// if ( tambah($_POST) > 0 ) {
 			echo "<script>
-					document.location.href = 'dsalur2.php?id=$id';		 	
+					document.location.href = 'djnsbbm.php';		 	
 				</script>";
 				// alert('sukses nambah');
 
@@ -44,7 +37,6 @@ if (mysqli_affected_rows($konek) > 0) {
 	else 
 		 {echo "<script>
 					alert('gagal nambah');
-					
 				</script>";
 	  	 }
 
@@ -53,16 +45,18 @@ if (mysqli_affected_rows($konek) > 0) {
 
 if (isset($_POST["submitb"])){
 		echo "<script>
-		 	document.location.href = 'dsalur2.php?id=$id';
+		 	document.location.href = 'djnsbbm.php';
 		      </script>";
 }
+
+
 
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tambah Data Penyaluran Harian</title>
+	<title>Data Jenis BBM </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -74,7 +68,7 @@ if (isset($_POST["submitb"])){
 <style type="text/css">
 
 body {
-background: url(catat.jpg) no-repeat fixed;
+background: url(backpic2.png) no-repeat fixed;
    -webkit-background-size: 100% 100%;
    -moz-background-size: 100% 100%;
    -o-background-size: 100% 100%;
@@ -175,51 +169,28 @@ background: url(catat.jpg) no-repeat fixed;
 	font-weight:normal;}
 
 </style>
-	<!-- <link rel="shortcut icon" href="img/proses"/> -->
+
 </head>
+
 <body oncontextmenu="return false;">
+	
 	<div class="form-style-3">
+	<!-- <h1>Tambah Pengujian Order No. <?=$id  ?></h1> -->
+
 	<form action="" method="post">
-
-		<fieldset><legend>Tambah Data Penyaluran</legend>
+		<fieldset><legend>Data Jenis BBM </legend>
 		<ul>			
-			<!-- <label for = "id" > No. ID BU : </label>  -->
-			<input type="text" class="input-field" name="idk" id="idk" value="<?=$id?>" readonly hidden> <br>
-
-			<label for = "tahun" > Tahun  : </label>
-			<input type="text" class="input-field" name="tahun" id="tahun" 
-			value="<?=$tahun ?>" >
-			<br>
-			<label for = "tws" > Triwulan  : </label>
-			<input type="text" class="input-field" name="tws" id="tws" 
-			value="<?=$tws?>">
-			<br>
-
-			<label for = "jnsbbm" > Jenis BBM :	</label>
-   			<select name="jnsbbm" style="cursor:pointer;" >
-            <option value="">...</option>
-            <option value="Avgas">Avgas</option>
-            <option value="Avtur">Avtur</option>
-            <option value="Bensin RON 88">Bensin RON 88</option>
-            <option value="Bensin RON 90">Bensin RON 90</option>
-            <option value="Bensin RON 92">Bensin RON 92</option>
-            <option value="Bensin RON 95">Bensin RON 95</option>
-            <option value="Bensin RON 98">Bensin RON 98</option>
-            <option value="Bensin RON>98">Bensin RON>98</option>
-            <option value="Solar CN 48">Solar CN 48</option>
-            <option value="Solar CN 51">Solar CN 51</option>
-            <option value="Solar CN 53">Solar CN 53</option>
-            <option value="Minyak Diesel">Minyak Diesel</option>
-            <option value="Minyak Bakar">Minyak Bakar</option>
-        </select>
-
-		<label for = "chari" >  Vrata" Harian(L/hari): </label>
-		<input type="text" class="input-field" name="chari" id="chari" > <br>
+		<label for = "jnsbbm" >Jenis BBM :</label>
+		<input type="text" class="input-field" name="jnsbbm" id="jnsbbm"> 
 		
-			
-			<br>
-			<button type ="submit" name="submitk">Tambah</button>
-			<button type ="submitb" name="submitb">Kembali</button> 
+		<label for = "ket" >Keterangan :</label>
+		<input type="text" class="input-field" name="ket" id="ket"> 
+
+
+		<br><br>
+		<button type ="submit" name="submitk">Tambah</button>
+		<button type ="submitb" name="submitb">Kembali</button> 
+				<!-- <button type ="button" onclick="javascript : history.back()">Kembali</button>  -->
 
 		</ul>
 

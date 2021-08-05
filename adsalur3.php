@@ -8,22 +8,29 @@ if (!isset($_SESSION["login"]))
 }
 
 require 'functions.php';
+require 'trw.php';
+
 $id  = $_GET["id"];
-$tahun = (date('Y')-1);
+$tahun = date('Y');
+$ketemu = "";
+$tgl = "";
+$jns = "";
 
 if (isset($_POST["submitk"]))
 {
 
 $idk	= htmlspecialchars($_POST["idk"]);
+$idf	= htmlspecialchars($_POST["idf"]);
 $tgl	= htmlspecialchars($_POST["tgl"]);
 $jnsbbm = htmlspecialchars($_POST["jnsbbm"]);
 $salur  = htmlspecialchars($_POST["salur"]);
 $cdtl 	= htmlspecialchars($_POST["cdtl"]);
+$cdh 	= round($salur/$cdtl);
 
 
 	$sql = "INSERT INTO `charian` 
-(`idk`, `tgl`, `jnsbbm`, `salur`, `cdtl`) VALUES 
-('$idk', '$tgl', '$jnsbbm', '$salur', '$cdtl')";
+(`idk`,`idf`, `tgl`, `jnsbbm`, `salur`, `cdtl`, `cdh`) VALUES 
+('$idk','$idf', '$tgl', '$jnsbbm', '$salur', '$cdtl', '$cdh')";
 
 
 	mysqli_query($konek,$sql);
@@ -58,6 +65,48 @@ if (isset($_POST["submitb"])){
 
 	$lap3bln  = query("SELECT chari FROM lap3bln WHERE idk = $id AND tahun=$tahun AND jnsbbm='Bensin 90' ");
 	// $user=mysqli_query($konek,$qr);
+
+// if (isset($_POST["submitcdh"]))
+//   {
+//   $salur  = $_POST["salur"];
+//   $cdthll = $_POST["cdtl"];
+//   $cdh 	  = $salur/$cdthll;
+//   }
+
+if (isset($_POST["submitcdthl"]))
+  {
+  $jnsbbm  = $_POST["jnsbbm"];
+
+  if ($tws == 1) 
+  	{
+  	$sql = query("SELECT chari FROM lap3bln WHERE idk='$id' AND tahun='$tahun2' 
+  	AND tw = '4' AND jnsbbm='$jnsbbm' ");
+  	} 
+  else 
+  	{
+  	$sql = query("SELECT chari FROM lap3bln WHERE idk='$id' AND tahun='$tahun' 
+  	AND tw = '$twl' AND jnsbbm='$jnsbbm' ");
+	}
+    // $query = mysqli_query($konek,$sql); 
+  {
+  
+  $i = 1 ;
+  foreach ($sql as $rowc) :
+  $ketemu = $rowc["chari"];
+  $jns 	  = $jnsbbm;
+  		//  {echo "<script>
+				// 	alert('$ketemu');
+				// </script>";
+	  	//  }
+    $i++ ; 
+    endforeach;
+    }
+
+
+
+  }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -183,16 +232,12 @@ background: url(catat.jpg) no-repeat fixed;
 
 		<fieldset><legend>Tambah Data Penyaluran Harian</legend>
 		<ul>			
-			<!-- <label for = "id" > No. ID BU : </label>  -->
-			<input type="text" class="input-field" name="idk" id="idk" value="<?=$id?>" readonly hidden> <br>
+		<input type="text" class="input-field" name="idk" id="idk" value="<?=$id?>" readonly hidden>
+		<input type="text" class="input-field" name="idf" id="idf" placeholder="isi kd fasilitas">
 
-			<label for = "tgl" > Tanggal : </label>
-			<input type="date" class="input-field" name="tgl" id="tgl" >
-			<br>
-
-			<label for = "jnsbbm" > Jenis BBM :	</label>
+		<label for = "jnsbbm" > Jenis BBM :	</label>
    		<select name="jnsbbm" style="cursor:pointer;" >
-            <option value="">...</option>
+            <option value="<?=$jns?>"><?=$jns?></option>
             <option value="Avgas">Avgas</option>
             <option value="Avtur">Avtur</option>
             <option value="Bensin RON 88">Bensin RON 88</option>
@@ -207,12 +252,22 @@ background: url(catat.jpg) no-repeat fixed;
             <option value="Minyak Diesel">Minyak Diesel</option>
             <option value="Minyak Bakar">Minyak Bakar</option>
         </select>
+		<label for = "cdtl" >  Data Vol Penyaluran Rata" Tahun Lalu(KL/hari): </label>
+		<input type="text" class="input-field" name="cdtl" id="cdtl" 
+		value="<?=$ketemu?>"> 
+		<button type ="submit" name="submitcdthl">cek Penyaluran Rata"</button>
 
-		<label for = "salur" > Vol Penyaluran (L):</label>
-		<input type="text" class="input-field" name="salur" id="salur"> 
+		<label for = "tgl" > Tanggal : </label>
+		<input type="date" class="input-field" name="tgl" id="tgl" >
+		
+		<label for = "salur" >Volume Cadangan (KL):</label>
+		<input type="text" class="input-field" name="salur" id="salur"> 	 
+<!-- 
+		<label for = "cdh" >  Penyaluran Harian Rata2 (KL/Hari): </label>
+		<input type="text" class="input-field" name="cdh" id="cdh" value="<?=$cdh?>;"> 
+		<button type ="submit" name="submitcdh">Hitung cdh</button> -->
 
-		<label for = "cdtl" >  Data Vol Penyaluran Rata" Tahun Lalu(L/hari): </label>
-		<input type="text" class="input-field" name="cdtl" id="cdtl"> 
+
 <!-- 		<?php foreach ($lap3bln as $rowh) : ?> 		
 		<input type="text" class="input-field" name="cdtl" id="cdtl" 
 		value="<?=$rowh["chari"]; ?>"  >
@@ -222,7 +277,7 @@ background: url(catat.jpg) no-repeat fixed;
 			
 			<br>
 			<button type ="submit" name="submitk">Tambah</button>
-			<button type ="submitb" name="submitb">Kembali</button> 
+			<button type ="submit" name="submitb">Kembali</button> 
 
 		</ul>
 

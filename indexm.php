@@ -8,8 +8,16 @@ if (!isset($_SESSION["login"]))
 
 require 'functions.php';
 
+$sql = query("SELECT * FROM badanusaha ORDER BY id ASC"); 
 
-$sql = query("SELECT * FROM badanusaha ORDER BY wilayah ASC"); 
+if (isset($_POST["tampil"]))
+  {
+      $buc = $_POST["buc"];
+      $sql = query("SELECT * FROM badanusaha WHERE bu LIKE '%$buc%' ");
+      // $sql = mysqli_query($konek,$sq);   
+  }
+ 
+
 
 ?>
 
@@ -167,10 +175,20 @@ Pantai Melayu<br>
     <a href="javascript:void(0)" class="dropbtn"><strong><u>Option</u></strong></a>
     <div class="dropdown-content">
   		<a href="index0.html">Tambah Data Survey</a>
+  		<a href="djnsbbm.php">Data Jenis BBM </a>
   		<a href="logout.php">Logout</a>
     </div>
   </li>
 </ul>
+
+<form action="" method="post" style="width: 100%">
+<hr />
+<label style="color: blue; ">Nama Badan Usaha :</label>
+<input style="text-transform: uppercase;" type="text" name="buc" placeholder="cari badan usaha">
+<button type ="submit" name="tampil" style="width: 100px;height: 25px;font-size: 12px;cursor: pointer; " >Cari</button> 
+<hr />
+
+
 
 <table id="custom" >
 
@@ -207,9 +225,19 @@ Pantai Melayu<br>
     <a class="link" href= "getposisiv.php?id=<?= $row["id"]; ?>" ><?= $row["bu"]; ?> </a> 
     </td>
     <td> <?= $row["alamat"]; ?>  </td>
-    <td> <?= $row["noizin"]; ?>  </td>
-    <td> <?= $row["masaizin"]; ?>  </td>
-    <td> <?= $row["status"]; ?>  </td>
+    <td>
+    <?php 
+    $idskbu = $row["id"]; 
+    $noizin= query("SELECT nos FROM nosk WHERE idk = '$idskbu' ");    
+    $sk = 1 ;
+	foreach ($noizin as $rowsk) :
+	echo "$sk)".$rowsk["nos"];	echo("<br>");
+    $sk++ ;
+    endforeach;
+    ?>
+ 	</td>
+    <td> <?= $row["msiu"]; ?>  </td>
+    <td> <?= $row["stiu"]; ?>  </td>
  
 </tr>
     <?php $i++ ; ?>

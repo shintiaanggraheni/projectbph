@@ -14,17 +14,17 @@ require 'gettgl.php';
 
 $id = $_GET["id"];
 
-$user = query("SELECT * FROM badanusaha WHERE id = $id ")[0];
-$timsr = query("SELECT * FROM moda WHERE idk = $id ");
+$user  = query("SELECT * FROM badanusaha WHERE id = $id ")[0];
+$dcp   = query("SELECT * FROM cp WHERE idk = $id ");
 
   if (isset($_POST["balik"]))
   { echo "<script> 
   document.location.href = 'getposisiv.php?id=$id';
   </script>"; }
 
-  if (isset($_POST["moda"]))
+  if (isset($_POST["dcp"])) 
   { echo "<script> 
-  document.location.href = 'admoda.php?id=$id';
+  document.location.href = 'adcp.php?idbu=$id';
   </script>"; }
 
 ?>
@@ -34,7 +34,7 @@ $timsr = query("SELECT * FROM moda WHERE idk = $id ");
 <head>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
   <meta name="viewport" content="width=device-width"/>
-  <title>Sarana & Fasilitas Pengangkutan</title>
+  <title>Data Kontak Person </title>
 <style>
 #header {
 /*    background-image: url(hed.png);
@@ -115,56 +115,50 @@ border: none;
     <?= $user["alamat"]; ?><br>
     Titik koordinat: <?= $user["long"];  ?>-<?= $user["lat"];  ?><br>
     No. Izin :<?= $user["noizin"]; ?><br>
-    Berlaku sampai dengan :<?=tanggalindo($user["masaizin"]);?>
-
+    Berlaku sampai dengan :<?=tanggalindo($user["masaizin"]);?><br><br>
 </h4>
-</center>
+
 <hr />
 
-<center>
 <table id="custom" style="font-size: 12px;text-align: center;width: 96%">
 <tr>
-    <th>No.</th> 
-    <th>Jenis Moda<br>Pengangkutan</th>
-   <th>Kapasitas<br>(KL)</th>    
-    <th>Jumlah<br>Unit</th>
-    <th>Nama<br>Transportir</th>  
-    <th>Keterangan</th>
- </tr>
+    <th>No.</th>  
+    <th>Nama Kontak<br>Person</th>
+    <th>Jabatan Kontak<br>Person</th>
+    <th>No. Telp. <br>Kontak Person</th>
+    <th>Email Kontak<br>Person</th>
+</tr>
 
 <?php $i = 1 ?>
-<?php foreach ($timsr as $row) : ?>
+<?php foreach ($dcp as $row) : ?>
 
 <tr>
-    <td style="text-align: center;"><?= $i; ?> </td>
-    <td> <?= $row["jnsmoda"]; ?></td>
-	<td style="text-align: center;" > <?= $row["kapmoda"]; ?></td>   
-    <td style="text-align: center;" > <?= $row["jumunit"]; ?> </td>
-    <td> <?= $row["transportir"]; ?> </td>
-    <td> <?= $row["keterangan"]; ?> </td>
-
+    <td style="text-align: center;"><?= $i; ?> </td>   
+  	<td style="text-align: center;" > <?=$row["namacp"]; ?></td>  
+    <td style="text-align: center;" > <?=$row["jabatancp"]; ?></td>
+    <td style="text-align: center;" > <?=$row["notelpcp"]; ?></td>
+    <td style="text-align: center;" > <?=$row["emailcp"]; ?></td>
 </tr>
     <?php $i++ ; ?>
     <?php endforeach; ?>
    
 </center>
-</table>
+</table> 
 
 <hr />
-<br>
+
 <table>
 	<td style="position: right">
-        <button type ="submit" name="moda" style="width: 170px;height: 50px;font-size: 12px;cursor: pointer; " >Tambah Data Sarana<br> dan Fasilitas Pengangkutan </button>		
+        <button type ="submit" name="dcp" style="width: 170px;height: 50px;font-size: 12px;cursor: pointer; " >Tambah Data Kontak Person</button>		
 	</td>
 
   <td style="position: right">
      <button type ="submit" name="balik" style="width: 170px;height: 50px;font-size: 12px;cursor: pointer; " >Kembali</button>   
   </td>
-</table>
-
-
+</table><br>
 </div>
-
+<br>
+</center>
 <div id="footer">
 <label>copyright@2021,PPPTMGB LEMIGAS - BPH MIGAS</label> 
 </div>

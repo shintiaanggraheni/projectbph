@@ -1,31 +1,26 @@
 <?php 
 
-// session_start();
+session_start();
 
-// if (!isset($_SESSION["login"])) 
-// { header("location: login.php");
-//  exit;
-// }
+if (!isset($_SESSION["login"])) 
+{ header("location: login.php");
+ exit;
+}
 
 require 'functions.php';
-require 'trw.php';
 
-$id  	= $_GET["id"];
-$tahun  = date('Y');
-// $twl 	= $tws-1;
+$id  = $_GET["idbu"];
 
 if (isset($_POST["submitk"]))
 {
+$idk		=htmlspecialchars($_POST["idk"]);
+$jenis 		=htmlspecialchars($_POST["jenis"]);
+$tahun  	=htmlspecialchars($_POST["tahun"]);
 
-$idk	= htmlspecialchars($_POST["idk"]);
-$tahun	= htmlspecialchars($_POST["tahun"]);
-$tws 	= htmlspecialchars($_POST["tws"]);
-$jnsbbm = htmlspecialchars($_POST["jnsbbm"]);
-$chari 	= htmlspecialchars($_POST["chari"]);
+$sql = "INSERT INTO `dtjual1` (`idk`, `jenis`, `tahun`)
+VALUES ('$idk', '$jenis', '$tahun')";
 
 
-	$sql = "INSERT INTO `lap3bln` (`idk`, `tahun`, `tw`, `jnsbbm`, `chari`)
-VALUES ('$idk', '$tahun','$tws', '$jnsbbm', '$chari')";
 
 	mysqli_query($konek,$sql);
 
@@ -36,7 +31,7 @@ if (mysqli_affected_rows($konek) > 0) {
 
 	// if ( tambah($_POST) > 0 ) {
 			echo "<script>
-					document.location.href = 'dsalur2.php?id=$id';		 	
+					document.location.href = 'djual.php?id=$id';		 	
 				</script>";
 				// alert('sukses nambah');
 
@@ -44,7 +39,6 @@ if (mysqli_affected_rows($konek) > 0) {
 	else 
 		 {echo "<script>
 					alert('gagal nambah');
-					
 				</script>";
 	  	 }
 
@@ -53,16 +47,41 @@ if (mysqli_affected_rows($konek) > 0) {
 
 if (isset($_POST["submitb"])){
 		echo "<script>
-		 	document.location.href = 'dsalur2.php?id=$id';
+		 	document.location.href = 'djual.php?id=$id';
 		      </script>";
 }
+
+
+// if (isset($_POST["submitq"]))
+// {
+// $id  = $_GET["id"];
+// $sqladd = $_POST["sqladd"];
+// // var_dump($sqladd);
+// mysqli_query($konek,$sqladd);
+
+// if (mysqli_affected_rows($konek) > 0) {
+// 			echo "<script>
+// 				 	alert('sukses nambah');	
+// 				 	document.location.href = 'editform1.php?id=$id';			 	
+// 				</script>";
+// // 
+// 		} 
+// 	else 
+// 		 {echo "<script>
+// 					alert('gagal nambah');
+// 				</script>"; 
+// 			}
+
+
+// }
+
 
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tambah Data Penyaluran Harian</title>
+	<title>Tambah Sarana & Fasilitas Pengangkutan</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -74,7 +93,7 @@ if (isset($_POST["submitb"])){
 <style type="text/css">
 
 body {
-background: url(catat.jpg) no-repeat fixed;
+background: url(backpic2.png) no-repeat fixed;
    -webkit-background-size: 100% 100%;
    -moz-background-size: 100% 100%;
    -o-background-size: 100% 100%;
@@ -175,28 +194,21 @@ background: url(catat.jpg) no-repeat fixed;
 	font-weight:normal;}
 
 </style>
-	<!-- <link rel="shortcut icon" href="img/proses"/> -->
+
 </head>
+
 <body oncontextmenu="return false;">
+	
 	<div class="form-style-3">
+	<!-- <h1>Tambah Pengujian Order No. <?=$id  ?></h1> -->
+
 	<form action="" method="post">
-
-		<fieldset><legend>Tambah Data Penyaluran</legend>
+		<fieldset><legend>Data Jenis Produk Jual</legend>
 		<ul>			
-			<!-- <label for = "id" > No. ID BU : </label>  -->
-			<input type="text" class="input-field" name="idk" id="idk" value="<?=$id?>" readonly hidden> <br>
+		<input type="text" class="input-field" name="idk" id="idk" value="<?=$id?>" readonly hidden>
 
-			<label for = "tahun" > Tahun  : </label>
-			<input type="text" class="input-field" name="tahun" id="tahun" 
-			value="<?=$tahun ?>" >
-			<br>
-			<label for = "tws" > Triwulan  : </label>
-			<input type="text" class="input-field" name="tws" id="tws" 
-			value="<?=$tws?>">
-			<br>
-
-			<label for = "jnsbbm" > Jenis BBM :	</label>
-   			<select name="jnsbbm" style="cursor:pointer;" >
+        <label for = "jenis" >Jenis Produk Jual:</label>
+   		<select name="jenis" style="cursor:pointer;" >
             <option value="">...</option>
             <option value="Avgas">Avgas</option>
             <option value="Avtur">Avtur</option>
@@ -213,13 +225,15 @@ background: url(catat.jpg) no-repeat fixed;
             <option value="Minyak Bakar">Minyak Bakar</option>
         </select>
 
-		<label for = "chari" >  Vrata" Harian(L/hari): </label>
-		<input type="text" class="input-field" name="chari" id="chari" > <br>
-		
-			
-			<br>
-			<button type ="submit" name="submitk">Tambah</button>
-			<button type ="submitb" name="submitb">Kembali</button> 
+		<label for = "tahun" >Tahun Penjualan:</label>
+		<input type="text" class="input-field" name="tahun" id="tahun"> 
+
+
+
+		<br><br>
+		<button type ="submit" name="submitk">Tambah</button>
+		<button type ="submitb" name="submitb">Kembali</button> 
+				<!-- <button type ="button" onclick="javascript : history.back()">Kembali</button>  -->
 
 		</ul>
 

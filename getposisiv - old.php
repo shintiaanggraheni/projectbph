@@ -304,90 +304,90 @@ li.dropdown {
   <tr>
     <td><label>Nama Badan Usaha</label></td>
     <td>:</td>
-    <td><label><?= $user["bu"];?></label></td>
+    <td><input type="text" name="bu" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["bu"];?> "  ></td>
   </tr>
   <tr>
     <td><label>NPWP</label></td>
     <td>:</td>
-    <td><label><?= $user["npwp"];?></label></td>
+    <td><input type="text" name="npwp" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["npwp"];?> "></td>
   </tr>
 
   <tr>
     <td><label>Jenis Izin Usaha</label></td>
     <td>:</td>
-    <td><label><?= $user["jnsush"];?></label></td>
+    <td><input type="text" name="jnsush" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="Niaga Terbatas/Niaga Umum/Pengolahan Hasil Olahan/dll" value="<?= $user["jnsush"];?> "></td>
   </tr>
 
   <tr>
     <td><label>No. Izin Usaha Niaga Migas</label></td>
     <td>:</td>
-    <td><label><?= $user["noiz"];?></label></td>
+    <td><input type="text" name="noiz" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["noiz"];?> "  ></td>
   </tr>
 
   <tr>
     <td><label>Tgl. Izin Usaha Niaga Migas</label></td>
     <td>:</td>
-    <td><label><?=tanggalindo($user["tgliu"]);?></label></td>
+    <td><input type="text" name="tgliu" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["tgliu"];?> " ></td>
   </tr>
 
   <tr>
     <td><label>Masa Berlaku Izin Usaha</label></td>
     <td>:</td>
-    <td><label><?=tanggalindo($user["msiu"]);?></label></td>
+    <td><input type="text" name="msiu" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["msiu"];?> " ></td>
   </tr>
 
     <tr>
     <td><label>Status Izin Usaha</label></td>
     <td>:</td>
-    <td><label><?= $user["stiu"];?></label></td>
+    <td><input type="text" name="stiu" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["stiu"];?> " ></td>
   </tr>
 
   <tr>
     <td><label>No. Sertifikat NRU</label></td>
     <td>:</td>
-    <td><label><?= $user["noizin"];?></label></td>
+    <td><input type="text" name="noizin" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["noizin"];?> " ></td>
   </tr>
   
   <tr>
     <td><label>Tgl. Terbit NRU</label></td>
     <td>:</td>
-    <td><label><?=tanggalindo($user["tglterbit"]);?></label></td>
+    <td><input type="text" name="tglterbit" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["tglterbit"];?> " ></td>
   </tr>
 
   <tr>
     <td><label>Masa Berlaku NRU</label></td>
     <td>:</td>
-    <td><label><?=tanggalindo($user["masaizin"]);?></label></td>
+    <td><input type="text" name="masaizin" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["masaizin"];?> " ></td>
   </tr>
 
     <tr>
     <td><label>Status NRU</label></td>
     <td>:</td>
-    <td><label><?= $user["status"];?></label></td>
+    <td><input type="text" name="status" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["status"];?> " ></td>
   </tr>
 
   <tr>
     <td><label>Alamat Badan Usaha</label></td>
     <td>:</td>
-    <td><label><?= $user["alamat"];?></label></td>
+    <td><input type="text" name="alamat" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["alamat"];?> " ></td>
   </tr>
 
   <tr>
     <td><label>No. Telp</label></td>
     <td>:</td>
-    <td><label><?= $user["telp"];?></label></td>
+    <td><input type="text" name="telp" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["telp"];?> " ></td>
   </tr>
 
   <tr>
     <td><label>No. Fax</label></td>
     <td>:</td>
-    <td><label><?= $user["fax"];?></label></td>
+    <td><input type="text" name="fax" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["fax"];?> " ></td>
   </tr>
 
   <tr>
     <td><label>Nama Penanggung Jawab</label></td>
     <td>:</td>
-    <td><label><?= $user["namap"];?> </label></td>
+    <td><input type="text" name="namap" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["namap"];?> " ></td>
   </tr>
 
  </table>  
@@ -400,102 +400,121 @@ li.dropdown {
   <tr>
     <td><label>Jabatan</label></td>
     <td>:</td>
-    <td><label><?= $user["jabatan"];?></label></td>
+    <td><input type="text" name="jabatan" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["jabatan"];?> " ></td>
   </tr>
 
   <tr>
     <td><label>No.HandPhone</label></td>
     <td>:</td>
-    <td><label><?= $user["nohpjab"];?></label></td>
+    <td><input type="text" name="nohpjab" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["nohpjab"];?> " ></td>
   </tr>
 
   <tr>
     <td><label>Alamat Fasilitas Penyimpanan</label></td>
     <td>:</td>
-    <td><label><?= $user["alamatf"];?></label></td>
+    <td><input type="text" name="alamatf" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["alamatf"];?> " ></td>
   </tr>
 
   <tr>
-    <td><label>Titik Koordinat <br>Fas. Penyimpanan </label></td>
+    <td><label>Titik Koordinat <br>Fas. Penyimpanan (long/lat)</label></td>
     <td>:</td>
-    <td><label>Long : <?= $user["long"];?></label><br>
-        <label>Lat  : <?= $user["lat"];?></label>
-    </td>
-  <!-- </tr><tr><td></td><td>:</td>
-    <td><label>Lat  : <?= $user["lat"];?></label></td> -->
+    <td><input type="text" name="long" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="longitude" value="<?= $user["long"];?> "></td>
+  </tr><tr><td></td><td>:</td>
+    <td><input type="text" name="lat" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="latitude" value="<?= $user["lat"];?> " ></td>
   </tr>
 
   <tr>
     <td><label>Nama Contact Person</a></label></td>
     <td>:</td>
-    <td><label><?= $user["namac"];?></label></td>
+    <td><input type="text" name="namac" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["namac"];?> " ></td>
   </tr>
 
   <tr>
     <td><label>No. HP Contact Person</label></td>
     <td>:</td>
-    <td><label><?= $user["telpc"];?></label></td>
+    <td><input type="text" name="telpc" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["telpc"];?> " ></td>
   </tr>
 
   <tr>
     <td><label>Email Contact Person</label></td>
     <td>:</td>
-    <td><label><?= $user["emailc"];?></label></td>
+    <td><input type="text" name="emailc" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["emailc"];?> " ></td>
   </tr>
   
   <tr>
     <td><label>Total Jumlah Tanki Penyimpanan </label></td>
     <td>:</td>
-    <td><label><?= $user["sumtanki"];?></label></td>
+    <td><input type="text" name="sumtanki" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["sumtanki"];?> " ></td>
   </tr>
 
   <tr>
     <td><label>Rencana pembangunan tangki</label></td>
     <td>:</td>
-    <td><label><?= $user["tankiplant"];?></label></td>
+    <td><input type="text" name="tankiplant" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["tankiplant"];?> " ></td>
   </tr>
 
   <tr>
     <td><label>Volume stok BBM saat kunjungan(L)</label></td>
-    <td>:</td> 
-    <td><label><?= $user["visitstok"];?></label></td>
+    <td>:</td>
+<!--     <td><input type="text" name="visitstok" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="L" id="inputAngka"><br>
+      <label id="showTextRibuan"></label> -->
+    
+  <td>  
+  <div class="box">
+    <input type="text" name="visitstok" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["visitstok"];?> " id="inputAngka"><br>
+    <center><label id="showTextRibuan" ></label></center>
+    </div>
+  </div>
+</td>
+
   </tr>
-  
+  <tr></tr>
+
   <tr>
     <td><label>Sistem Aplikasi Laporan yang digunakan</label><br>
     <label>Bahasa Pemograman</label></td>
     <td>:</td>
-    <td><label><?= $user["bhsapk"];?></label></td>
+    <td><input type="text" name="bhsapk" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["bhsapk"];?> " ></td>
   </tr>
 
   <tr>
     <td><label>Type Database</label></td>
     <td>:</td>
-    <td><label><?= $user["dbapk"];?></label></td>
+    <td><input type="text" name="dbapk" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["dbapk"];?> " ></td>
   </tr>
 
   <tr>
     <td><label>SDM IT yang dimiliki</label></td>
     <td>:</td>
-    <td><label><?= $user["itsdm1"];?></label></td>
+    <td><select name="itsdm1" style="height:25px;font-size: 14px;cursor:pointer;">
+            <option value="<?= $user["itsdm1"];?> "><?= $user["itsdm1"];?></option>
+            <option value="Ada">Ada</option>
+            <option value="Tidak ada">Tidak ada</option>
+        </select>
+    </td>
   </tr>
 
   <tr>
     <td><label>Jumlahnya SDM IT, jika ada</label></td>
     <td>:</td>
-    <td><label><?= $user["itsdm2"];?> </label></td>
+    <td><input type="text" name="itsdm2" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["itsdm2"];?> " ></td>
   </tr>
 
   <tr>
     <td><label>Infrastruktur Server yang dimiliki</label></td>
     <td>:</td>
-    <td><label><?= $user["server1"];?></label></td>
+    <td><select name="server1" style="height:25px;font-size: 14px;cursor:pointer;">
+            <option value="<?= $user["server1"];?> "><?= $user["server1"];?></option>
+            <option value="Ada">Ada</option>
+            <option value="Tidak ada">Tidak ada</option>
+        </select>
+    </td>
   </tr>
 
   <tr>
     <td><label>Jika ada, sebutkan</label></td>
     <td>:</td>
-    <td><label><?= $user["server2"];?></label></td>
+    <td><input type="text" name="server2" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["server2"];?> "></td>
   </tr>
 
 </td>

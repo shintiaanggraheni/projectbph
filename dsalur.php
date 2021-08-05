@@ -10,11 +10,12 @@ if (!isset($_SESSION["login"]))
 date_default_timezone_set('Asia/Jakarta');
 
 require 'functions.php';
+require 'gettgl.php';
 
 $id = $_GET["id"];
 
-$user = query("SELECT * FROM badanusaha WHERE id = $id ")[0];
-$tankisql = query("SELECT * FROM tanki WHERE idk = $id");
+$user     = query("SELECT * FROM badanusaha WHERE id = $id ")[0];
+// $tankisql = query("SELECT * FROM tanki WHERE idk = $id");
 $laporsql = query("SELECT * FROM laporan WHERE idk = $id");
 $laphari  = query("SELECT * FROM charian WHERE idk = $id ORDER BY jnsbbm");
 $lap3bln  = query("SELECT * FROM lap3bln WHERE idk = $id ORDER BY jnsbbm");
@@ -197,8 +198,7 @@ echo($tahun) ?> -->
     <?= $user["alamat"]; ?><br>
     Titik koordinat: <?= $user["long"];  ?>-<?= $user["lat"];  ?><br>
     No. Izin :<?= $user["noizin"]; ?><br>
-    Berlaku sampai dengan :<?=$user["masaizin"]; ?><br>
-
+    Berlaku sampai dengan :<?=tanggalindo($user["masaizin"]);?>
 </h4>
 
 <hr />
@@ -210,7 +210,7 @@ echo($tahun) ?> -->
     <a href="javascript:void(0)" class="dropbtn">Tabel</a>
     <div class="dropdown-content">
       <a href="dsalur1.php?id=<?=$id?>">Tabel Evaluasi</a>
-      <a href="dsalur2.php?id=<?=$id?>">Tabel CD Rata"</a>
+      <a href="dsalur2.php?id=<?=$id?>">Tabel Penyaluran Rata"</a>
       <a href="dsalur3.php?id=<?=$id?>">Tabel CD Harian</a>
     </div>
   </li>

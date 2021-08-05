@@ -14,10 +14,10 @@ require 'gettgl.php';
 
 $id = $_GET["id"];
 $user = query("SELECT * FROM badanusaha WHERE id = $id ")[0];
-$tankisql = query("SELECT * FROM tanki WHERE idk = $id");
+// $tankisql = query("SELECT * FROM tanki WHERE idk = $id");
 $laporsql = query("SELECT * FROM laporan WHERE idk = $id");
 $laphari  = query("SELECT * FROM charian WHERE idk = $id ORDER BY jnsbbm");
-$lap3bln  = query("SELECT * FROM lap3bln WHERE idk = $id ORDER BY jnsbbm");
+// $lap3bln  = query("SELECT * FROM lap3bln WHERE idk = $id ORDER BY jnsbbm");
 
 if (isset($_POST["aevaluasi"]))
 {

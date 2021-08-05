@@ -32,7 +32,7 @@ $volnopember	=htmlspecialchars($_POST["volnopember"]);
 $voldesember	=htmlspecialchars($_POST["voldesember"]);
 
 
-$sql = "INSERT INTO `penyaluran` (`idk`, `lokasi`, `jnsbbm`, `thn`, `voljanuari`, `volpebruari`, `volmaret`, `volapril`, `volmei`, `voljuni`, `voljuli`, `volagustus`, `volseptember`, `voloktober`, `volnopember`, `voldesember`)
+$sql = "INSERT INTO `penyaluran` (`idk`, `lokasi`, `jnsbbm`, `thn`, `volJanuari`, `volPebruari`, `volMaret`, `volApril`, `volMei`, `volJuni`, `volJuli`, `volAgustus`, `volSeptember`, `volOktober`, `volNopember`, `volDesember`)
 VALUES ('$idk', '$lokasi', '$jnsbbm', '$thn', '$voljanuari', '$volpebruari', '$volmaret', '$volapril', '$volmei', '$voljuni', '$voljuli', '$volagustus', '$volseptember', '$voloktober', '$volnopember', '$voldesember')";
 
 	mysqli_query($konek,$sql);
@@ -217,16 +217,15 @@ background: url(backpic2.png) no-repeat fixed;
 
 	<form action="" method="post">
 		<fieldset><legend>Tambah Data Penyaluran</legend>
-		<ul>			
-			<!-- <label for = "id" > No. ID BU : </label>  -->
-			<input type="text" class="input-field" name="idk" id="idk" value="<?=$id?>" readonly hidden> <br>
+		<input type="text" class="input-field" name="idk" id="idk" value="<?=$id?>" readonly hidden> 
 
 		<label for = "lokasi" >Lokasi Konsumen :</label>
-		<input type="text" class="input-field" name="lokasi" id="lokasi"> <br>
+		<input type="text" class="input-field" name="lokasi" id="lokasi" width="20px"> <br>
 
         <label for = "thn" >Tahun:</label>
         <select name="thn" style="cursor:pointer;">
             <option value="">...</option>
+            <option value="2020">2020</option>
             <option value="2021">2021</option> 
             <option value="2022">2022</option>
             <option value="2023">2023</option> 
@@ -249,26 +248,43 @@ background: url(backpic2.png) no-repeat fixed;
             <option value="Minyak Diesel">Minyak Diesel</option>
             <option value="Minyak Bakar">Minyak Bakar</option>
         </select>
-
-        <input type="text" class="input-field" name="voljanuari" id="voljanuari" hidden>
-        <input type="text" class="input-field" name="volpebruari" id="volpebruari" hidden>
-        <input type="text" class="input-field" name="volmaret" id="volmaret" hidden>
-        <input type="text" class="input-field" name="volapril" id="volapril" hidden>
-        <input type="text" class="input-field" name="volmei" id="volmei" hidden>
-        <input type="text" class="input-field" name="voljuni" id="voljuni" hidden>
-        <input type="text" class="input-field" name="voljuli" id="voljuli" hidden>
-        <input type="text" class="input-field" name="volagustus" id="volagustus" hidden>
-        <input type="text" class="input-field" name="volseptember" id="volseptember" hidden>
-        <input type="text" class="input-field" name="voloktober" id="voloktober" hidden>
-        <input type="text" class="input-field" name="volnopember" id="volnopember" hidden>
-        <input type="text" class="input-field" name="voldesember" id="voldesember" hidden>
-
-		<br><br>
+<table><td><ul>
+      <label>Volume Penyaluran (L)</label>	
+      <label>Bulan Januari : </label>
+      <input type="text" class="input-field" name="voljanuari" id="voljanuari" >
+      <label>Bulan Pebruari : </label>
+      <input type="text" class="input-field" name="volpebruari" id="volpebruari" >
+      <label>Bulan Maret : </label>
+      <input type="text" class="input-field" name="volmaret" id="volmaret" >
+      <label>Bulan April  : </label>
+        <input type="text" class="input-field" name="volapril" id="volapril" >
+        <label>Bulan Mei : </label>
+        <input type="text" class="input-field" name="volmei" id="volmei" >
+        <label>Bulan Juni : </label>
+        <input type="text" class="input-field" name="voljuni" id="voljuni" >
+        </td>
+        <td>
+        <label>Bulan Juli : </label>
+        <input type="text" class="input-field" name="voljuli" id="voljuli" >
+        <label>Bulan Agustus : </label>
+        <input type="text" class="input-field" name="volagustus" id="volagustus" >
+     <label>Bulan September : </label>   
+     <input type="text" class="input-field" name="volseptember" id="volseptember" >
+     <label>Bulan Oktober : </label>
+        <input type="text" class="input-field" name="voloktober" id="voloktober" >
+     <label>Bulan Nopember : </label>
+     <input type="text" class="input-field" name="volnopember" id="volnopember" >
+     <label>Bulan Desember : </label>
+     <input type="text" class="input-field" name="voldesember" id="voldesember" >
+        </td></ul>
+</table>
+<center><table>
+		<br>
 		<button type ="submit" name="submitk">Tambah</button>
 		<button type ="submitb" name="submitb">Kembali</button> 
 				<!-- <button type ="button" onclick="javascript : history.back()">Kembali</button>  -->
-
-		</ul>
+</table></center>
+		
 
 </body>
 

@@ -10,6 +10,7 @@ if (!isset($_SESSION["login"]))
 date_default_timezone_set('Asia/Jakarta');
 
 require 'functions.php';
+require 'gettgl.php';
 
 $id = $_GET["id"];
 $bulan1 = "Januari";
@@ -118,7 +119,7 @@ border: none;
     <?= $user["alamat"]; ?><br>
     Titik koordinat: <?= $user["long"];  ?>-<?= $user["lat"];  ?><br>
     No. Izin :<?= $user["noizin"]; ?><br>
-    Berlaku sampai dengan :<?=$user["masaizin"]; ?><br>
+    Berlaku sampai dengan :<?=tanggalindo($user["masaizin"]);?>
 
 </h4>
 </center>
@@ -158,18 +159,18 @@ border: none;
     <td> <?= $row["thn"]; ?></td>
     <td> <?= $row["lokasi"]; ?></td>
 	  <td> <?= $row["jnsbbm"]; ?></td>   
-    <td><?= $row["voljanuari"];?></td>
-    <td><?= $row["volpebruari"];?></td>
-    <td><?= $row["volmaret"];?></td>
-    <td><?= $row["volapril"];?></td>
-    <td><?= $row["volmei"];?></td>
-    <td><?= $row["voljuni"];?></td>
-    <td><?= $row["voljuli"];?></td>
-    <td><?= $row["volagustus"];?></td>
-    <td><?= $row["volseptember"];?></td>
-    <td><?= $row["voloktober"];?></td>
-    <td><?= $row["volnopember"];?></td>
-    <td><?= $row["voldesember"];?></td>
+    <td><?= $row["volJanuari"];?></td>
+    <td><?= $row["volPebruari"];?></td>
+    <td><?= $row["volMaret"];?></td>
+    <td><?= $row["volApril"];?></td>
+    <td><?= $row["volMei"];?></td>
+    <td><?= $row["volJuni"];?></td>
+    <td><?= $row["volJuli"];?></td>
+    <td><?= $row["volAgustus"];?></td>
+    <td><?= $row["volSeptember"];?></td>
+    <td><?= $row["volOktober"];?></td>
+    <td><?= $row["volNopember"];?></td>
+    <td><?= $row["volDesember"];?></td>
 
 </tr>
     <?php $i++ ; ?>
@@ -179,6 +180,70 @@ border: none;
 </table>
 
 <hr />
+
+
+<center>
+<table id="custom" style="font-size: 12px;text-align: center;width: 100%">
+<tr>
+    <th rowspan="2">No.</th> 
+    <th rowspan="2">Opsi</th>
+    <th rowspan="2">Tahun</th>
+    <th rowspan="2">Lokasi Konsumen</th>
+    <th rowspan="2">Jenis BBM</th>
+    <th colspan="12">Volume Penyaluran (KL)</th>
+</tr>
+<tr colspan="6">
+    <th><?=$bulan1;?> </th> 
+    <th><?=$bulan2;?> </th>
+    <th><?=$bulan3;?> </th>
+
+</tr>
+
+<?php $i = 1 ?>
+<?php foreach ($timsr as $row) : ?>
+
+<tr style="text-align: center;font-size: 11px">
+    <td><?= $i; ?> </td>
+    <td> <a href="adpenyalure.php?id=<?=$row["id"];?>" >Edit</a></td>
+    <td> <?= $row["thn"]; ?></td>
+    <td> <?= $row["lokasi"]; ?></td>
+    <td> <?= $row["jnsbbm"]; ?></td> 
+    <?php
+    $bln1t = "vol"."$bulan1";
+    $bln2t = "vol"."$bulan2";
+    $bln3t = "vol"."$bulan3";?>  
+    <td><?= $row["$bln1t"];?></td>
+    <td><?= $row["$bln2t"];?></td>
+    <td><?= $row["$bln3t"];?></td>
+
+
+</tr>
+    <?php $i++ ; ?>
+    <?php endforeach; ?>
+   
+</center>
+</table>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br>
 <table>
 	<td style="position: right">

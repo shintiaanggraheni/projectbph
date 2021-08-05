@@ -10,6 +10,7 @@ if (!isset($_SESSION["login"]))
 date_default_timezone_set('Asia/Jakarta');
 
 require 'functions.php';
+require 'gettgl.php';
 
 $id = $_GET["id"];
 
@@ -117,7 +118,7 @@ border: none;
     <?= $user["alamat"]; ?><br>
     Titik koordinat: <?= $user["long"];  ?>-<?= $user["lat"];  ?><br>
     No. Izin :<?= $user["noizin"]; ?><br>
-    Berlaku sampai dengan :<?=$user["masaizin"]; ?><br>
+    Berlaku sampai dengan :<?=tanggalindo($user["masaizin"]);?>
 
 </h4>
 </center>
@@ -130,7 +131,7 @@ border: none;
     <th rowspan="2">No. Tangki</th>       
     <th rowspan="2">Jenis BBM</th>
     <th colspan="2">Kapasitas Tangki<br>(KL)</th>
-    <th rowspan="2">Coverage Day Pumpable</th>
+    <th rowspan="2">CD Pumpable</th>
     <th colspan="3">Data Tangki<br></th>
 
 <!--     <th rowspan="2">Kalibrasi</th>
@@ -142,6 +143,7 @@ border: none;
     <th rowspan="2">Jam Catat<br>Stok</th>
     <th rowspan="2">OKU-<br>PANSI,%</th>
     <th rowspan="2">Kepemilikan</th>
+    <th rowspan="2">Berkas</th>
 </tr>
   <tr> 
     <td style="background-color: #6495ED;color: white;">Kapasitas Pumpable</td> 
@@ -156,8 +158,8 @@ border: none;
 
 <tr>
     <td style="text-align: center;"><?= $i; ?> </td>
-    <td> <?= $row["jenist"]; ?> </td>
-    <td style="text-align: center;" > <?= $row["namat"]; ?>  </td>
+    <td> <?= $row["namat"]; ?> </td>
+    <td style="text-align: center;" > <?= $row["jenist"]; ?>  </td>
     <td> <?= $row["kapp"]; ?> </td>
     <td> <?= $row["kapt"]; ?> </td>
     <td> <?= $row["cdpump"]; ?> </td>
@@ -168,16 +170,17 @@ border: none;
     <td> <?= $row["kalibu"]; ?> </td>
     <td> <?= $row["jamstok"]; ?> </td>
     <td> <?= $row["oku"]; ?> </td>
-    <td> <?= $row["stat"]; ?> </td>
-<!--     <td> <?= $row["smbpas"]; ?> </td> -->
+    <td> <a href="poto.php?id=<?=$row["id"];?>&idk=<?=$row["idk"];?> "><?= $row["stat"]; ?></a> </td>
+    <td> 
+      <a href="bview.php?id=<?=$row["id"]; ?>&idk=<?=$row["idk"];?>"><?= $row["smbpas"]; ?></a></td>
 </tr>
     <?php $i++ ; ?>
     <?php endforeach; ?>
    
    <tr>
       <?php foreach ($sumkap as $rowt) : ?>
-      <td>Total Kapasitas</td>
-      <td colspan="7" style="text-align: center;"><?=$rowt["kaptotal"];?></td>
+      <td>Total Kapasitas</td><td></td><td></td><td></td>
+      <td ><?=$rowt["kaptotal"];?></td>
     </tr>
     <?php endforeach; ?>
 </center>

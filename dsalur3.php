@@ -13,10 +13,11 @@ require 'functions.php';
 require 'gettgl.php';
 
 $id = $_GET["id"];
+
 $user = query("SELECT * FROM badanusaha WHERE id = $id ")[0];
 $laporsql = query("SELECT * FROM laporan WHERE idk = $id");
-$laphari  = query("SELECT * FROM charian WHERE idk = $id ORDER BY tgl");
-$lap3bln  = query("SELECT * FROM lap3bln WHERE idk = $id ORDER BY jnsbbm");
+$laphari  = query("SELECT * FROM charian WHERE idk = $id ORDER BY jnsbbm");
+// $lap3bln  = query("SELECT * FROM lap3bln WHERE idk = $id ORDER BY jnsbbm");
 
 if (isset($_POST["hevaluasi"]))
 {
@@ -25,6 +26,28 @@ if (isset($_POST["hevaluasi"]))
         </script>";
 
 }
+
+
+if (isset($_POST["caritgl"]))
+  {
+  $awal  = $_POST["awal"];
+  $akhir = $_POST["akhir"];
+  $jnsbbm  = $_POST["jnsbbm"];
+  $laphari  = query("SELECT * FROM charian
+  WHERE idk='$id' AND  jnsbbm='$jnsbbm' AND tgl BETWEEN '$awal' AND '$akhir' ORDER BY jnsbbm ASC");     
+       
+  }
+
+// if (isset($_POST["carijenis"]))
+//   {
+//   $jnsbbm  = $_POST["jnsbbm"];
+//   $laphari  = query("SELECT * FROM charian
+// WHERE idk='$id'AND jnsbbm='$jnsbbm' ORDER BY tgl ASC");
+   
+//   }
+
+
+
 
 ?>
 
@@ -182,11 +205,13 @@ li.dropdown {
 <form action="" method="post" style="width: 100%">
 <label style="color: blue;" >DATA PENYEDIAAN CADANGAN OPERASIONAL BBM<br>(Harian)</label> <br>
 <hr />
-        <label for = "jnsbbm" >Pilih Jenis BBM :  </label>
+        <label for = "jnsbbm" style="cursor: pointer;">Pilih Jenis BBM :  </label>
           <select name="jnsbbm">
            <?php 
            
-           $cari=mysqli_query($konek,"SELECT jnsbbm FROM charian WHERE idk LIKE '$id' GROUP BY jnsbbm "); 
+           $cari=mysqli_query($konek,"SELECT jnsbbm FROM charian WHERE idk LIKE '$id' GROUP BY jnsbbm "); ?>
+           <option value="">...</option>
+           <?php
             while ($data=mysqli_fetch_array($cari)) {
            ?>
              
@@ -196,23 +221,27 @@ li.dropdown {
             }
            ?>
           </select>
-      <button type ="submit" name="carijenis" style="cursor: pointer;height: 40px;width: 100px">Cari by Jenis BBM</button>
-       <!--  <label for = "jnsbbm" > Jenis BBM :  </label> -->
-<br><hr />
+<!--       <button type ="submit" name="carijenis" style="cursor: pointer;height: 40px;width: 100px">Cari by Jenis BBM</button> -->
+<br>
       <label>Pencarian dari</label>  
-      <input type="date" name="awal"  autofocus placeholder="Masukan tgl awal" autocomplete="off">  
+      <input type="date" name="awal"  autofocus placeholder="Masukan tgl awal" autocomplete="off" style="cursor: pointer;">  
       <label>sampai</label>
-      <input type="date" name="akhir" autofocus placeholder="Masukan tgl akhir" autocomplete="off">  
-      <button type ="submit" name="caritgl" style="cursor: pointer;height: 40px;width: 100px">Cari by Tanggal</button>
+      <input type="date" name="akhir" autofocus placeholder="Masukan tgl akhir" autocomplete="off" style="cursor: pointer;">  
+      <button type ="submit" name="caritgl" style="cursor: pointer;height: 40px;width: 100px">Cari</button><br>
+<hr />
+       <button type ="submit" name="hevaluasi" style="width: 200px;height: 40px;font-size: 12px;cursor: pointer; " >Tambah Vol Cadangan Harian (Liter)</button> 
 
 <hr />
 <table id="custom" style="font-size: 12px;text-align: center;">
+
 <tr>
     <th >No.</th>
     <th >Tanggal</th>
     <th >Jenis BBM</th>
     <th >Volume Cadangan (L)</th>
-    <th >CD Cadangan BBM (Hari)</th>
+    <th >Vol Penyaluran<br> Rata-rata</th>
+    <th >Volume Cadangan<br> BBM (Hari)</th>
+    <!-- <th >CD Cadangan BBM (Hari) calcu</th> -->
 
 </tr>
 <?php $j = 1 ?>
@@ -223,17 +252,43 @@ li.dropdown {
     <td style="text-align: center;" > <?= tanggalindo($rowh["tgl"]); ?>     </td>
     <td> <?=$rowh["jnsbbm"]; ?> </td>
     <td> <?=$rowh["salur"]; ?> </td>
-    <td> <?= round((($rowh["salur"])/($rowh["cdtl"]))) ?> </td>
+    <td> <?=$rowh["cdtl"]; ?> </td>
+    <td> <?=$rowh["cdh"]; ?> </td>
+    <!-- <td> <?= round((($rowh["salur"])/($rowh["cdtl"]))) ?> </td> -->
 </tr>
     <?php $j++ ; ?>
     <?php endforeach; ?>
+<tr>
+  <?php 
+  $idbu = $rowh["idk"];
+  $jnsbbm = $rowh["jnsbbm"]; 
+
+  $sum = query("SELECT 
+  SUM(IF(idk = '$idbu' AND jnsbbm = '$jnsbbm' , salur, 0)) AS totalsalur ,
+  SUM(IF(idk = '$idbu' AND jnsbbm = '$jnsbbm' , cdtl, 0)) AS totalcdtl
+  FROM charian ");
+
+  ?>
+
+  <td>Evaluasi(Total)</td>
+  <td></td>
+  <td></td>
+<?php $s = 1 ?>
+<?php foreach ($sum as $rowx) : ?>
+  <td><?=$rowx["totalsalur"]?></td>
+  <td><?=$rowx["totalcdtl"]?></td>
+  <td><?=round($rowx["totalsalur"]/$rowx["totalcdtl"])?></td>
+    <?php $s++ ; ?>
+    <?php endforeach; ?>
+</tr>
+
 </table>
 <hr />
 <table>
-	<td style="position: right">
+<!-- 	<td style="position: right">
         <button type ="submit" name="hevaluasi" style="width: 150px;height: 60px;font-size: 12px;cursor: pointer; " >Tambah Vol Cadangan Harian (Liter)</button>		
 	</td>
-</table>
+</table> -->
 
 <br>
 

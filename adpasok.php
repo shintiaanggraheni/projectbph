@@ -233,6 +233,7 @@ background: url(backpic2.png) no-repeat fixed;
         <label for = "thnpasok" >Tahun:</label>
         <select name="tahunp" style="cursor:pointer;">
             <option value="">...</option>
+            <option value="2020">2020</option> 
             <option value="2021">2021</option> 
             <option value="2022">2022</option>
             <option value="2023">2023</option> 

@@ -1,2 +1,0 @@
-INSERT INTO `moda` (`idk`, `jnsmoda`, `kapmoda`, `jumunit`, `transportir`, `ket`)
-VALUES ('$idk', '$jnsmoda', '$kapmoda', '$jumunit', '$transportir', '$ket');

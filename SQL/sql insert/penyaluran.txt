@@ -1,2 +1,0 @@
-INSERT INTO `penyaluran` (`idk`, `lokasi`, `jnsbbm`, `thn`, `voljanuari`, `volpebruari`, `volmaret`, `volapril`, `volmei`, `voljuni`, `voljuli`, `volagustus`, `volseptember`, `voloktober`, `volnopember`, `voldesember`)
-VALUES ('6', '$lokasi', '$jnsbbm', '$thn', '$voljanuari', '$volpebruari', '$volmaret', '$volapril', '$volmei', '$voljuni', '$voljuli', '$volagustus', '$volseptember', '$voloktober', '$volnopember', '$voldesember');

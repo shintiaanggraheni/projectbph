@@ -8,19 +8,64 @@ if (!isset($_SESSION["login"]))
 }
 
 require 'functions.php';
+require 'terbilang.php';
+require 'gettgl.php';
+
 
 $id  = $_GET["id"];
 $thn = (date('Y'));
 
+$hariba 	='';
+$tanggalbaa ='';
+$tglterba 	='';
+$bulanba	='';
+$tahunba	='';
+$twba		='';
+
 if (isset($_POST["submitk"]))
 {
+
+	$datee = $_POST["tanggalBAc"];
+	$thun  = substr($datee, 0, 4);
+	$blan  = substr($datee, 5, 2);
+	$tgl   = substr($datee, 8, 2);
+
+ 
+    $namahari = date('l',strtotime($datee));
+
+    $hariindo = array('Monday'=>'Senin','Tuesday'=>'Selasa','Wednesday'=>'Rabu','Thursday'=>'Kamis','Friday'=>'Jumat','Saturday'=>'Sabtu','Sunday'=>'Minggu');
+
+    // echo($hariindo[$namahari]); echo "<br>";
+ 
+
+    $bulanindo = array('01'=>'Januari','02'=>'Pebruari','03'=>'Maret','04'=>'April','05'=>'Mei','06'=>'Juni','07'=>'Juli','08'=>'Agustus','09'=>'September','10'=>'Oktober','11'=>'Nopember','12'=>'Desember');
+    
+    // echo($bulanindo['08']); echo "<br>";
+
+	$hariba 	= $hariindo[$namahari];
+	$tanggalbaa = $tgl;
+	$tglterba 	= terbilang($tgl);
+	$bulanba	= $bulanindo["$blan"];
+	$tahunba	= $thun;
+
+
+
+
 $idk		=htmlspecialchars($_POST["idk"]);
 $stugas		=htmlspecialchars($_POST["stugas"]);
 $tglstugas	=htmlspecialchars($_POST["tglstugas"]);
-$hari 		=htmlspecialchars($_POST["hari"]);
-$tanggal 	=htmlspecialchars($_POST["tanggal"]);
-$bulan 		=htmlspecialchars($_POST["bulan"]);
-$tahun 		=htmlspecialchars($_POST["tahun"]);
+
+$hari 		= $hariindo[$namahari];		
+// htmlspecialchars($_POST["hari"]);
+$tglter 	= terbilang($tgl);		
+// htmlspecialchars($_POST["tglter"]);
+$tanggal 	= $tgl;		
+// htmlspecialchars($_POST["tanggal"]);
+$bulan 		= $bulanindo["$blan"];	
+// htmlspecialchars($_POST["bulan"]);
+$tahun 		= $thun;		
+// htmlspecialchars($_POST["tahun"]);
+
 $tw 		=htmlspecialchars($_POST["tw"]);
 $nama1		=htmlspecialchars($_POST["nama1"]);
 $jabatan1	=htmlspecialchars($_POST["jabatan1"]);
@@ -32,10 +77,10 @@ $nama4		=htmlspecialchars($_POST["nama4"]);
 $jabatan4	=htmlspecialchars($_POST["jabatan4"]);
 
 $sql = "INSERT INTO `tims` 
-(`idk`,`stugas`,`tglstugas`, `hari`, `tanggal`,`bulan`,`tahun`,`tw`, `nama1`, 
+(`idk`,`stugas`,`tglstugas`, `hari`, `tanggal`,`tglter`,`bulan`,`tahun`,`tw`, `nama1`, 
 	`jabatan1`, `nama2`, `jabatan2`, `nama3`, `jabatan3`, `nama4`, `jabatan4`)
 VALUES 
-('$idk','$stugas','$tglstugas','$hari', '$tanggal','$bulan','$tahun','$tw','$nama1', '$jabatan1', '$nama2', '$jabatan2', '$nama3', '$jabatan3', '$nama4', '$jabatan4')";
+('$idk','$stugas','$tglstugas','$hari', '$tanggal','$tglter','$bulan','$tahun','$tw','$nama1', '$jabatan1', '$nama2', '$jabatan2', '$nama3', '$jabatan3', '$nama4', '$jabatan4')";
 
 
 	mysqli_query($konek,$sql);
@@ -66,6 +111,14 @@ if (isset($_POST["submitb"])){
 		 	document.location.href = 'dtims.php?id=$id';
 		      </script>";
 }
+
+
+if (isset($_POST["pecah"])){
+		
+	
+	// $twba		='6';
+}
+
 
 
 // if (isset($_POST["submitq"]))
@@ -214,14 +267,10 @@ background: url(backpic2.png) no-repeat fixed;
 </head>
 
 <body oncontextmenu="return false;">
-	
 	<div class="form-style-3">
-	<!-- <h1>Tambah Pengujian Order No. <?=$id  ?></h1> -->
-
 	<form action="" method="post">
 		<fieldset><legend>Tambah Data Tim Survey</legend>
 		<ul>			
-			<!-- <label for = "id" > No. ID BU : </label>  -->
 			<input type="text" class="input-field" name="idk" id="idk" value="<?=$id?>" readonly hidden> <br>
 		<label for = "stugas" >No. Surat Tugas:</label>
 		<input type="text" class="input-field" name="stugas" id="stugas"> <br>
@@ -230,6 +279,17 @@ background: url(backpic2.png) no-repeat fixed;
 		<input type="date" class="input-field" name="tglstugas" id="tglstugas"> <br>
 
 		<label for = "tanggalBA" >Hari & Tanggal Berita Acara:</label>
+
+		<input type="date" name="tanggalBAc">
+        <input type="text" name="hari" value="<?=$hariba?>" hidden>
+        <input type="text" name="tanggal" value="<?=$tanggalbaa?>" hidden>
+        <input type="text" name="tglter" value="<?=$tglterba?>" hidden>
+        <input type="text" name="bulan" value="<?=$bulanba?>" hidden>
+        <input type="text" name="tahun" value="<?=$tahunba?>" hidden>
+        <input type="text" name="tw" value="<?=$twba?>" hidden>
+
+<!--    <button type ="submit" name="pecah">pecah date</button>
+ 
 		<label for = "hari" >Hari:</label>
 		<select name="hari" style="cursor:pointer;">
             <option value="">...</option>
@@ -240,8 +300,8 @@ background: url(backpic2.png) no-repeat fixed;
             <option value="Jum at">Jum at</option> 
             <option value="Sabtu">Sabtu</option>
             <option value="Minggu">Minggu</option>
-        </select>
-        <label for = "tanggalBA" >Tanggal:</label>
+        </select> -->
+<!--         <label for = "tanggalBA" >Tanggal:</label>
 		<select name="tanggal" style="cursor:pointer;">
 			Tanggal
             <option value="">...</option>
@@ -261,7 +321,7 @@ background: url(backpic2.png) no-repeat fixed;
             <option value="27">27</option>
             <option value="28">28</option> <option value="29">29</option>
             <option value="30">30</option> <option value="31">31</option>
-        </select>
+        </select> 
         <label for = "tanggalBA" >Bulan:</label>
         <select name="bulan" style="cursor:pointer;">
             <option value="">...</option>
@@ -279,15 +339,15 @@ background: url(backpic2.png) no-repeat fixed;
             <option value="Desember">Desember</option>
         </select>
         <label for = "thnBA" >Tahun:</label>
-        <input type="text" class="input-field" name="tahun" id="tahun" value="<?=$thn ?>">
+        <input type="text" class="input-field" name="tahun" id="tahun" value="<?=$thn ?>">-->
 		<br>
 		<label for = "tw" >Laporan TW :</label>
 		<select name="tw" style="cursor:pointer;">
             <option value="">...</option>
-            <option value="TW I">Triwulan I</option> 
-            <option value="TW II">Triwulan II</option>
-            <option value="TW III">Triwulan III</option> 
-            <option value="TW IV">Triwulan IV</option>
+            <option value="I">Triwulan I</option> 
+            <option value="II">Triwulan II</option>
+            <option value="III">Triwulan III</option> 
+            <option value="IV">Triwulan IV</option>
         </select>
 
 

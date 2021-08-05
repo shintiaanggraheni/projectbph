@@ -12,20 +12,39 @@ date_default_timezone_set('Asia/Jakarta');
 require 'functions.php';
 require 'gettgl.php';
 
+
 $id = $_GET["id"];
 $user = query("SELECT * FROM badanusaha WHERE id = $id ")[0];
-// $tankisql = query("SELECT * FROM tanki WHERE idk = $id");
-// $laporsql = query("SELECT * FROM laporan WHERE idk = $id");
-// $laphari  = query("SELECT * FROM charian WHERE idk = $id ORDER BY jnsbbm");
+$tankisql = query("SELECT * FROM tanki WHERE idk = $id");
+$laporsql = query("SELECT * FROM laporan WHERE idk = $id");
+$laphari  = query("SELECT * FROM charian WHERE idk = $id ORDER BY jnsbbm");
 $lap3bln  = query("SELECT * FROM lap3bln WHERE idk = $id ORDER BY jnsbbm");
 
-if (isset($_POST["vsharian"]))
+// $que = mysqli_query($konek,"SELECT masaizin FROM badanusaha WHERE id = $id "); 
+// $row = mysqli_fetch_assoc($que);
+
+if (isset($_POST["submitk"]))
 {
       echo "<script>
-          document.location.href = 'adsalur2.php?id=$id';        
+          document.location.href = 'getposisie.php?id=$id';        
         </script>";
 
 }
+
+  if (isset($_POST["cetak"]))
+  { echo "<script> 
+  document.location.href = 'getposisip.php?id=$id';
+  </script>"; }
+
+  if (isset($_POST["balik"]))
+  { echo "<script> 
+  document.location.href = 'indexm.php';
+  </script>"; }
+
+  if (isset($_POST["atanki"]))
+  { echo "<script> 
+  document.location.href = 'addtanki.php?id=$id';
+  </script>"; }
 
 ?>
 
@@ -145,9 +164,26 @@ li.dropdown {
   display: block;
 }
 </style>
-
+<!-- CSS FOR MAPS -->
+<style>
+.map-container{
+overflow:hidden;
+padding-bottom:1%;
+position:relative;
+height:0;
+}
+.map-container iframe{
+left:0;
+top:0;
+height:50%;
+width:50%;
+position:absolute;
+}
+  </style>
+<!-- END CSS FOR MAPS -->
 </head>
 <body oncontextmenu="return false;" style="width: 100%">
+
 <div id="header">
 <table width="100%">
   <td style="position: left;width: 2%"><img src="kesdm.png" width="70px"></td>
@@ -157,69 +193,45 @@ li.dropdown {
 </div>
 
 <div id="section">
-<center>
-<h4><?= $user["wilayah"];?> <br> 
-    <?= $user["bu"];?><br>
-    <?= $user["alamat"]; ?><br>
-    Titik koordinat: <?= $user["long"];  ?>-<?= $user["lat"];  ?><br>
-    No. Izin :<?= $user["noizin"]; ?><br>
-    Berlaku sampai dengan : <?=tanggalindo($user["masaizin"]); ?><br>
-
-</h4>
-<hr />
-
 <ul>
   <li><a href="indexm.php">Home</a></li>
-  <li><a href="getposisiv.php?id=<?=$id?>">Back</a></li>
+  <!-- <li><a href="getposisipv.php?id=$id">Back</a></li> -->
   <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Tabel</a>
+    <a href="javascript:void(0)" class="dropbtn">Input</a>
     <div class="dropdown-content">
-      <a href="dsalur1.php?id=<?=$id?>">Tabel Evaluasi</a>
-      <!-- <a href="dsalur2.php?id=<?=$id?>">Tabel Vol Penyaluran Rata"</a> -->
-      <a href="dsalur3.php?id=<?=$id?>">Tabel Vol Penyaluran Harian</a>
+      <a href="dtims.php?id=<?=$id?>">Nama Tim Survey</a>
+      <a href="dtangki.php?id=<?=$id?>">Data Tangki</a>
+      <a href="dpasok.php?id=<?=$id?>">Data Penyedia BBM</a>
+      <a href="dpenyalur.php?id=<?=$id?>">Data Penyaluran BBM</a>
+      <a href="dmoda.php?id=<?=$id?>">Data Sarana dan Fasilitas</a>
+      <a href="djual.php?id=<?=$id?>">Data Penjualan</a>
+      <a href="ddepo.php?id=<?=$id?>">Kantor Cabang & Depo</a>
+      <a href="dsalur.php?id=<?=$id?>">Data CD Harian </a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Print</a>
+    <div class="dropdown-content">
+      <a href="dtimsmp.php?id=<?=$id?>">Berita Acara</a>
+      <a href="$.php?id=<?=$id?>">Data Fasilitas Penyimpanan</a>
+      <a href="#.php?id=<?=$id?>">Data Penyedian BBM</a>
+      <a href="#.php?id=<?=$id?>">Data Penyaluran BBM</a>
+      <a href="#.php?id=<?=$id?>">Data Sarana dan Fasilitas</a>
+      <a href="#.php?id=<?=$id?>">Data Penjualan perbulan</a>  
+      <a href="#.php?id=<?=$id?>">Kantor Cabang & Depo</a>    
+      <a href="#.php?id=<?=$id?>">Data CD Harian(bulan)</a>
     </div>
   </li>
 </ul>
 
 <form action="" method="post" style="width: 100%">
-   
-<hr />
-
-<center> 
-<hr />
-<label style="color: blue;">TABEL VOLUME PENYALURAN HARIAN RATA"(L/HARI)</label>
-<table id="custom" style="font-size: 12px;text-align: center;">
-<tr>
-    <th >No.</th>
-    <th >Tahun</th>
-    <th >Triwulan</th>
-    <th >Jenis BBM</th>
-    <th >Vrata" Harian(L/hari)</th>
-</tr>
-<?php $j = 1 ?>
-<?php foreach ($lap3bln as $roww) : ?>
-
-<tr>
-    <td style="text-align: center;"><?= $j; ?> </td>
-    <td style="text-align: center;" > <?= $roww["tahun"]; ?>     </td>
-    <td> <?= $roww["tw"]; ?> </td>
-    <td> <?= $roww["jnsbbm"]; ?> </td>
-    <td> <?= $roww["chari"]; ?> </td>
-</tr>
-    <?php $j++ ; ?>
-    <?php endforeach; ?>
-</table>
-<table>
-  <td style="position: right">
-        <button type ="submitw" name="vsharian" style="width: 250px;height: 35px;font-size: 12px;cursor: pointer; " >+ Penyaluran Harian Rata2 (Liter/Hari)</button>   
-  </td>
-</table>
-
-<hr />
+<!-- CSS FOR MAPS -->
+<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+  <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+    style="border:0" allowfullscreen></iframe>
+</div>
+<!-- END CSS FOR MAPS -->
 <br><br>
-<hr />
-
-</center>
 </div>
 
 <div id="footer">
@@ -227,5 +239,4 @@ li.dropdown {
 </div>
 
 </body>
-
 </html>

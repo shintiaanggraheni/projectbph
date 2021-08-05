@@ -1,2 +1,0 @@
-INSERT INTO `tims` (`idk`, `tanggal`, `nama1`, `jabatan1`, `nama2`, `jabatan2`, `nama3`, `jabatan3`, `nama4`, `jabatan4`)
-VALUES ('$idk', '$tanggal', '$nama1', '$jabatan1', '$nama2', '$jabatan2', '$nama3', '$jabatan3', '$nama4', '$jabatan4');

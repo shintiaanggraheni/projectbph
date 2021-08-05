@@ -1,68 +1,71 @@
 <?php 
 
-// session_start();
-
-// if (!isset($_SESSION["login"])) 
-// { header("location: login.php");
-//  exit;
-// }
-
 require 'functions.php';
-require 'trw.php';
 
-$id  	= $_GET["id"];
-$tahun  = date('Y');
-// $twl 	= $tws-1;
+$id = $_GET["id"];
+$idk = $_GET["idk"];
+
+$queryk = query("SELECT * FROM tanki WHERE id = $id")[0]; 
+//var_dump($queryk["nama"]);  //buat liat data yg terkirim berdasarkan id 
+	if ($queryk["smbpas"]) {
+		echo "<script> 
+				 alert('photo sudah diuplod ');
+				 document.location.href = 'dtangki.php?id=$idk';
+		      </script>"; }
 
 if (isset($_POST["submitk"]))
 {
 
-$idk	= htmlspecialchars($_POST["idk"]);
-$tahun	= htmlspecialchars($_POST["tahun"]);
-$tws 	= htmlspecialchars($_POST["tws"]);
-$jnsbbm = htmlspecialchars($_POST["jnsbbm"]);
-$chari 	= htmlspecialchars($_POST["chari"]);
+	if (!$queryk["smbpas"]) 
+ {
+
+	$id    	= $_POST["id"];
+	// $nama  	= htmlspecialchars($_POST["namat"]); 
+
+	$gambar	=  upload();
+	if (!$gambar){
+		return false;	
+	}
+
+		// `namat` = '$nama',
+		
+		$queryme ="	UPDATE `tanki` SET
+		
+		`smbpas` = '$gambar'
+
+		WHERE `id` = '$id' ";
+
+	mysqli_query($konek,$queryme);
 
 
-	$sql = "INSERT INTO `lap3bln` (`idk`, `tahun`, `tw`, `jnsbbm`, `chari`)
-VALUES ('$idk', '$tahun','$tws', '$jnsbbm', '$chari')";
-
-	mysqli_query($konek,$sql);
-
-	// CEK SUKSES
-	// var_dump($_POST);
-
-if (mysqli_affected_rows($konek) > 0) {
-
-	// if ( tambah($_POST) > 0 ) {
-			echo "<script>
-					document.location.href = 'dsalur2.php?id=$id';		 	
-				</script>";
-				// alert('sukses nambah');
-
-		} 
+	if (mysqli_affected_rows($konek) > 0 )
+		 { 
+		 	echo "<script>				 
+				 document.location.href = 'dtangki.php?id=$idk';
+			</script>";
+			// alert('sukses ubah');
+		}    
+		// alert('sukses ubah');
 	else 
 		 {echo "<script>
-					alert('gagal nambah');
-					
-				</script>";
-	  	 }
+				 alert('gagal ubah');			
+			    </script>";
+		} 
+	}
 
-}
+ 	else {echo "<script> 
+				 alert('sudah diuplod');
+				 document.location.href = 'dtangki.php?id=$idk';
+			</script>"; }
+
+  }
 
 
-if (isset($_POST["submitb"])){
-		echo "<script>
-		 	document.location.href = 'dsalur2.php?id=$id';
-		      </script>";
-}
 
 ?>
 
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Tambah Data Penyaluran Harian</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -70,11 +73,11 @@ if (isset($_POST["submitb"])){
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="style/style.css">
+<title>Uplod Berkas</title>
 <style type="text/css">
 
 body {
-background: url(catat.jpg) no-repeat fixed;
+background: url(backpic2.png) no-repeat fixed;
    -webkit-background-size: 100% 100%;
    -moz-background-size: 100% 100%;
    -o-background-size: 100% 100%;
@@ -174,55 +177,32 @@ background: url(catat.jpg) no-repeat fixed;
 	color:red;
 	font-weight:normal;}
 
+
 </style>
-	<!-- <link rel="shortcut icon" href="img/proses"/> -->
+	<link rel="shortcut icon" href="img/proses.png"/>
 </head>
 <body oncontextmenu="return false;">
-	<div class="form-style-3">
-	<form action="" method="post">
+<div class="form-style-3">
 
-		<fieldset><legend>Tambah Data Penyaluran</legend>
-		<ul>			
-			<!-- <label for = "id" > No. ID BU : </label>  -->
-			<input type="text" class="input-field" name="idk" id="idk" value="<?=$id?>" readonly hidden> <br>
+	<form action="" method="post" enctype="multipart/form-data">
+		<fieldset><legend>Uplod Photo : </legend>
 
-			<label for = "tahun" > Tahun  : </label>
-			<input type="text" class="input-field" name="tahun" id="tahun" 
-			value="<?=$tahun ?>" >
-			<br>
-			<label for = "tws" > Triwulan  : </label>
-			<input type="text" class="input-field" name="tws" id="tws" 
-			value="<?=$tws?>">
-			<br>
+		<ul>	
+			<input type ="hidden" name ="id" value="<?php echo $queryk["id"];?>">
+				<!-- <label for = "noorder" > No. Order : </label> -->
+				<label for = "nama" > Nama Tanki/Jenis BBM : </label> 
+				<input type="text" class="input-field" name="nama" id="nama" 
+				 value="<?= $queryk["namat"];?>/<?= $queryk["jenist"];  ?>" readonly> 
 
-			<label for = "jnsbbm" > Jenis BBM :	</label>
-   			<select name="jnsbbm" style="cursor:pointer;" >
-            <option value="">...</option>
-            <option value="Avgas">Avgas</option>
-            <option value="Avtur">Avtur</option>
-            <option value="Bensin RON 88">Bensin RON 88</option>
-            <option value="Bensin RON 90">Bensin RON 90</option>
-            <option value="Bensin RON 92">Bensin RON 92</option>
-            <option value="Bensin RON 95">Bensin RON 95</option>
-            <option value="Bensin RON 98">Bensin RON 98</option>
-            <option value="Bensin RON>98">Bensin RON>98</option>
-            <option value="Solar CN 48">Solar CN 48</option>
-            <option value="Solar CN 51">Solar CN 51</option>
-            <option value="Solar CN 53">Solar CN 53</option>
-            <option value="Minyak Diesel">Minyak Diesel</option>
-            <option value="Minyak Bakar">Minyak Bakar</option>
-        </select>
+				<label for = "gambar" >  Select File *jpg,*pdf : </label> 
+				<!-- <img src="img/<?= $queryk["poto"];  ?>  "> -->
+				<input type="file" class="input-field" name="gambar" id="gambar"> 
 
-		<label for = "chari" >  Vrata" Harian(L/hari): </label>
-		<input type="text" class="input-field" name="chari" id="chari" > <br>
-		
-			
-			<br>
-			<button type ="submit" name="submitk">Tambah</button>
-			<button type ="submitb" name="submitb">Kembali</button> 
+			<br><br>
+				<button type ="submitk" name="submitk">Save</button> 
+				<button type ="button" onclick="javascript : history.back()">Cancel</button> 
 
 		</ul>
 
 </body>
-
 </html>

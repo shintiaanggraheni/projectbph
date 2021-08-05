@@ -10,6 +10,7 @@ if (!isset($_SESSION["login"]))
 date_default_timezone_set('Asia/Jakarta');
 
 require 'functions.php';
+require 'gettgl.php';
 
 $id = $_GET["id"];
 
@@ -114,7 +115,7 @@ border: none;
     <?= $user["alamat"]; ?><br>
     Titik koordinat: <?= $user["long"];  ?>-<?= $user["lat"];  ?><br>
     No. Izin :<?= $user["noizin"]; ?><br>
-    Berlaku sampai dengan :<?=$user["masaizin"]; ?><br>
+    Berlaku sampai dengan :<?=tanggalindo($user["masaizin"]);?>
 
 </h4>
 </center>

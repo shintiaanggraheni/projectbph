@@ -1,2 +1,0 @@
-INSERT INTO `pasokan` (`idk`, `bulan`, `pemasok`, `jenis1`, `jenis2`, `vol`, `moda`)
-VALUES ('6', '$bulan', '$pemasok', '$jenis1', '$jenis2', '$vol', '$moda');

@@ -1,0 +1,589 @@
+-- Adminer 4.2.5 MySQL dump
+
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+DROP TABLE IF EXISTS `badanusaha`;
+CREATE TABLE `badanusaha` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `wilayah` varchar(20) NOT NULL,
+  `bu` varchar(100) NOT NULL,
+  `npwp` varchar(100) NOT NULL,
+  `noizin` varchar(100) NOT NULL,
+  `tglterbit` varchar(20) NOT NULL,
+  `masaizin` varchar(20) NOT NULL,
+  `alamat` varchar(1000) NOT NULL,
+  `telp` varchar(50) NOT NULL,
+  `fax` varchar(50) NOT NULL,
+  `jnsush` varchar(50) NOT NULL,
+  `namap` varchar(100) NOT NULL,
+  `jabatan` varchar(500) NOT NULL,
+  `nohpjab` varchar(50) NOT NULL,
+  `alamatf` varchar(1000) NOT NULL,
+  `kec` varchar(100) NOT NULL,
+  `kab` varchar(100) NOT NULL,
+  `prov` varchar(100) NOT NULL,
+  `long` varchar(20) NOT NULL,
+  `lat` varchar(20) NOT NULL,
+  `namac` varchar(1000) NOT NULL,
+  `status` varchar(100) NOT NULL,
+  `telpc` varchar(50) NOT NULL,
+  `emailc` varchar(1000) NOT NULL,
+  `sumtanki` varchar(10) NOT NULL,
+  `tankiplant` varchar(100) NOT NULL,
+  `visitstok` varchar(100) NOT NULL,
+  `bhsapk` varchar(100) NOT NULL,
+  `dbapk` varchar(100) NOT NULL,
+  `itsdm1` varchar(20) NOT NULL,
+  `itsdm2` varchar(20) NOT NULL,
+  `server1` varchar(20) NOT NULL,
+  `server2` varchar(100) NOT NULL,
+  `noiz` varchar(100) NOT NULL,
+  `tgliu` varchar(20) NOT NULL,
+  `msiu` varchar(20) NOT NULL,
+  `stiu` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+TRUNCATE `badanusaha`;
+INSERT INTO `badanusaha` (`id`, `wilayah`, `bu`, `npwp`, `noizin`, `tglterbit`, `masaizin`, `alamat`, `telp`, `fax`, `jnsush`, `namap`, `jabatan`, `nohpjab`, `alamatf`, `kec`, `kab`, `prov`, `long`, `lat`, `namac`, `status`, `telpc`, `emailc`, `sumtanki`, `tankiplant`, `visitstok`, `bhsapk`, `dbapk`, `itsdm1`, `itsdm2`, `server1`, `server2`, `noiz`, `tgliu`, `msiu`, `stiu`) VALUES
+(1,	'  ',	'PT AGUNG PERSADA MANDIRI    ',	'    ',	'301/NU-BBM-IU/BPHMIGAS/2017    ',	'2020-06-20',	'2025-02-26',	'Komplek Karang Anyar Permai, Jl. Karanganyar Raya 55 Blok A/46, Jakarta Pusat    ',	'    ',	'    ',	'Niaga Umum   ',	'Raymond Chambeglain    ',	'    ',	'    ',	'    ',	'',	'',	'',	'    ',	'    ',	'Hepy muyassaroh 087789208456 Raymond 0811886263    ',	'MASIH BERLAKU',	' Hepy muyassaroh 087789208456 Raymond 0811886263  ',	'hepi@apmtrade.co.id; raymond@apmtrade.co.id; info@apmtrade.co.id;    ',	'    ',	'    ',	' 90000   ',	'    ',	'    ',	'    ',	'    ',	'    ',	'    ',	'99/1/IU/ESDM/PMDN/2020',	'2020-02-27',	'2025-02-26',	'MASIH BERLAKU    '),
+(2,	'',	'PT AKR CORPORINDO TBK ',	' ',	'002/NU-BBM-IU/BPH Migas/2006 ',	'2020-06-30',	'2025-06-26',	'Wisma AKR Lantai  8, JL Panjang No. 5 Kebon Jeruk, Jakarta Barat  11530 ',	' ',	' ',	'Niaga Umum  ',	'Haryanto Adikoesoemo (Presdir) ',	' ',	' ',	' ',	'',	'',	'',	' ',	' ',	'0 ',	'MASIH BERLAKU ',	' ',	'rizky.febrian@akr.co.id; iwan.ma@akr.co.id; ',	' ',	' ',	' ',	' ',	' ',	' ',	' ',	' ',	' ',	' ',	'2020-02-27',	'2025-02-26',	'MASIH BERLAKU '),
+(3,	'',	'PT ANEKA PETROINDO RAYA',	'',	'373/NU-BBM-IU/BPH MIGAS/2018',	'2018-10-03',	'2028-10-28',	'AKR TOWER LT 25 JL. PANJANG NO 5, RT. 11 RW.010 KEL. KEBON JERUK, KEC. KEBON JERUK JAKARTA BARAT',	'',	'',	'Niaga Umum',	'Peter Molloy (Dirut)',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Nunny (08111958380)',	'MASIH BERLAKU',	'',	'nunny.ariani@bpakr.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2018-10-29',	'2028-10-28',	'MASIH BERLAKU'),
+(4,	'',	'PT ANUGRAH ALDHI PERSADA',	'',	'324/NU-BBM-IU/BPH MIGAS/2017',	'2019-01-31',	'2029-01-03',	'Jl. Jend. Gatot Subroto Kav. 23 Semanggi Jakarta Selatan',	'',	'',	'Niaga Umum',	'Antony Surianto (Dirut)',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Deka 081316622340; vickers 08129915007; endar 0852',	'MASIH BERLAKU',	'',	'endar@ttm.co.id, endarsyarifudin@yahoo.com; vickers@aapenergy.com; deka@ttm.co.id',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-01-04',	'2029-01-03',	'MASIH BERLAKU'),
+(5,	'',	'PT APEX INDOPACIFIC',	'',	'104/NU-BBM-IU/BPH MIGAS/2012',	'2019-01-16',	'2019-12-31',	'Rukan Crown Plaza Blok C.08 Jl Prof Dr Soepomo SH No 23 Menteng Dalam Tebet Jakarta  Selatan',	'',	'',	'Niaga Umum',	'Jimmy Dharmadi (Dirut)',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Jenni (0858-1436-8299)\r\nEndah Widi Hapsari - Staff',	'EXPIRED',	'',	'endahwidi@apexindopasificcom; jennisusanti@apexindopasifixcom;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-11-26',	'2029-11-25',	'MASIH BERLAKU'),
+(6,	'',	'PT ASTIKU SAKTI',	'',	'115/NU-BBM-IU/BPH MIGAS/2012',	'2020-03-23',	'2030-03-03',	'Jl Jend Sudirman Komp Perkantoran Bandar Balikpapan Blok H/10 Balikpapan, Kalimantan Timur',	'',	'',	'Niaga Umum',	'Antony Surianto (Dirut)',	'',	'',	'',	'',	'',	'KALIMANTAN TIMUR',	'',	'',	'Deka 081316622340\r\nENDAR - COMDEV - (085237053104)',	'MASIH BERLAKU',	'',	'endar@ttm.co.id; csc@astikusakti.com; vickers@aapenergy.com; deka@ttm.co.id; ronald.marulitua@ttm.co.id',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-03-04',	'2030-03-03',	'MASIH BERLAKU'),
+(7,	'',	'PT BAHARI BERKAH MADANI',	'',	'114/NU-BBM-IU/BPH MIGAS/2012',	'2012-12-20',	'2022-03-14',	'Perum Jodoh Permai G10 Sei Jodoh - Batam',	'',	'',	'Niaga Umum',	'di SK Tidak tercantum Nama Penanggung Jawab',	'',	'',	'',	'',	'',	'KEPULAUAN RIAU',	'',	'',	'Zain Alkaf (0819-0604-6428, 0811-7771-436, 0811770',	'MASIH BERLAKU',	'',	'widiarachman1985@yahoo.com;\r\n fin.ptbbm@gmail.com;\r\n alkafzainismail@gmail.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2012-03-15',	'2022-03-14',	'MASIH BERLAKU'),
+(8,	'',	'PT BARIA BULK TERMINAL',	'',	'148/NU-BBM-IU/BPH MIGAS/2014',	'2014-01-22',	'2022-02-16',	'Jl Yos Sudarso Link Pulorida Rt 01 Rw 01 Kel Lebak Gede Kec Pulo Merak Cilegon Banten ',	'',	'',	'Niaga Umum',	'Peter Toto Harjanto',	'',	'',	'',	'',	'',	'BANTEN',	'',	'',	'henny (081808162299) Mega Mutiara (083877599918)',	'MASIH BERLAKU',	'',	'henny@baria.co.id; mega@baria.co.id;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2018-08-01',	'2022-02-17',	'MASIH BERLAKU'),
+(9,	'',	'PT BAROKAH BERSAUDARA PERKASA',	'',	'167/NU-BBM-IU/BPH MIGAS/2014',	'2021-04-19',	'2025-02-16',	'Jl. Gatot Subroto No. 31, Kel. Bandara, Kec. Sungai Pinang, Kota Samarinda',	'',	'',	'Niaga Umum',	'Sayid Fiter Assegaf',	'',	'',	'',	'',	'',	'KALIMANTAN TIMUR',	'',	'',	'Yunia - Marketing Fin - 085281988733\r\nMarcel Indra',	'MASIH BERLAKU',	'',	'yuniahasani@ymail.com; marcel@barokahperkasagroup.com; rhienda_sznn@yahoo.com; collectdept.barokahgroup@gmail.com; bbp.barokahgroup@gmail.com; ',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-02-17',	'2025-02-16',	'MASIH BERLAKU'),
+(10,	'',	'PT BAYU SINERGI',	'',	'236/NU-BBM-IU/BPH MIGAS/2016',	'2021-04-19',	'2030-01-22',	'Komp. Surapati core J12, Jl Phh Mustafa No. 39 RT. 04, Bandung',	'',	'',	'Niaga Umum',	'M. Bayu Affandi',	'',	'',	'',	'',	'',	'JAWA BARAT',	'',	'',	'Maizir - Gen Manajer - 08112249494',	'MASIH BERLAKU',	'',	'maizir@bayusinergi.com; info@bayusinergi.co.id; sales@bayusinergi.co.id;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-01-23',	'2030-01-22',	'MASIH BERLAKU'),
+(11,	'',	'PT CAHAYA UJUNG BELINGKAR',	'',	'291/NU-BBM-IU/BPH MIGAS/2016',	'2016-12-27',	'2021-10-16',	'Jl Veteran No 185, Desa Dirgahayu, Kecamatan Pulau Laut Utara, Pulau Laut Utara, Kabupaten Kotabaru, Kalimantan Selatan',	'',	'',	'Niaga Umum',	'H. Abidin (Dirut)',	'',	'',	'',	'',	'',	'KALIMANTAN SELATAN',	'',	'',	'Pak Hery (082112628343)',	'MASIH BERLAKU',	'',	'heryapriansyar.ha@gmail.com; hajihabibi23@yahoo.co.id; cahayaujung_group@yahoo.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2016-10-17',	'2021-10-16',	'MASIH BERLAKU'),
+(12,	'',	'PT CITRA MAS MANDIRI',	'',	'369/NU-BBM-IU/BPH MIGAS/2018',	'2018-11-02',	'2022-07-05',	'Jl Raya Boja - Kaliwungu Km 2 Desa Meteseh, Kec Boja Kendal, Jateng P 0294 571927\r\n F 0294 571927\r\n',	'',	'',	'Niaga Umum',	'Imam Sujati',	'',	'',	'',	'',	'',	'JAWA TENGAH',	'',	'',	'Imam (0811297378)',	'MASIH BERLAKU',	'',	'isuj_1706@yahoo.com;\r\npurwohandoko@evercoss.co.id',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2012-07-05',	'2022-07-05',	'MASIH BERLAKU'),
+(13,	'',	'PT COSMIC INDONESIA',	'',	'018/NU-BBM-IU/BPH MIGAS/2007\r\n',	'2017-04-04',	'2022-03-06',	'Komplek Batan Central Park Blok A Nomor 8Q-8R, Kel. Tanjung Lima, Kec. Lubuk Baja, Batam',	'',	'',	'Niaga Umum',	'Suryanto',	'',	'',	'',	'',	'',	'KEPULAUAN RIAU',	'',	'',	'DWI Handayani (08117705989), erlina (08127042682) ',	'MASIH BERLAKU',	'',	'donny@cosmicoil.co.id; erlina@cosmicoil.co.id; nurfianti@cosmicoil.co.id; dwi-handayani@cosmicoil.co.id;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2016-11-16',	'2022-03-06',	'MASIH BERLAKU'),
+(14,	'',	'PT ELNUSA PETROFIN',	'',	'013/NU-BBM-IU/BPH Migas/2007',	'2020-10-31',	'2025-10-01',	'Graha Elnusa Lantai 14 Jl. TB. Simatupang Kav 1B RT 009, RW 003 Kel. Cilandak Timur, Kec. Pasar Minggu, Jakarta Selatan ',	'',	'',	'Niaga Umum',	'Haris Syahrudin (Dirut)',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Dea(081232231041) (resign)\r\n\r\nANITA 081285904830\r\n',	'MASIH BERLAKU',	'',	'dea.riska@elnusa.co.id; anita.febriani@elnusa.co.id; yoga.wibisono@gmail.com; dicky.antaresta@elnusa.co.id; yoga.wibisono@elnusa.co.id; anita.febriani@elnusa.co.id; sitta.yustisia@elnusa.co.id; anggita.cynthia@elnusa.co.id; abd.karim@elnusa.co.id; ',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-10-02',	'2025-10-01',	'MASIH BERLAKU'),
+(15,	'',	'PT EXXONMOBIL LUBRICANTS INDONESIA',	'',	'265/NU-BBM-IU/BPH MIGAS/2016',	'2019-04-09',	'2020-12-10',	'Wisma GKBI Lantai 30 Jln. Jend. Sudirman No. 28 Bendungan Hilir, Tanah Abang, Jakarta Pusat',	'',	'',	'Niaga Umum',	'Osman Durrani (Presdir)',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Adi J Tamara (08118713415) \r\nAgustina Hanum-regula',	'EXPIRED',	'',	'adijaya.tamara@exxonmobil.com; agustina.hanum@exxonmobil.com; rizka.t.laksmi@exxonmobil.com; mahessy.a.irsan@exxonmobil.com ; dinar.i.khoiriah@exxonmobil.com; michael.simanjuntak@exxonmobil.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2018-12-11',	'2038-12-10',	'MASIH BERLAKU'),
+(16,	'',	'PT FAJAR LESTARI PERKASA',	'',	'415/NU-BBM-IU/BPH MIGAS/2020',	'2020-08-07',	'2021-09-15',	'Jl Tualang No2/B, Medan, Provinsi Sumatera Utara',	'',	'',	'Niaga Umum',	'Almira Wijaya',	'',	'',	'',	'',	'',	'SUMATERA UTARA',	'',	'',	'Ermansyah Tahir (081381240757), Almira (0811643028',	'MASIH BERLAKU',	'',	'ptflpmedan@gmail.com; flp.fajarlestariperkasa@gmail.com; tahir.ermansyah@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2016-09-15',	'2021-09-15',	'MASIH BERLAKU'),
+(17,	'',	'PT GANANI INDONESIA PETROLEUM ENERGY',	'',	'135/NU-BBM-IU/BPH MIGAS/2013',	'2021-03-08',	'2029-06-13',	'Puri Beta No. 25 A Kel. Larangan Utara, Kec. Larangan, Kota Tangerang 15154',	'',	'',	'Niaga Umum',	'Ahmad Haidar (Dirut)',	'',	'',	'',	'',	'',	'BANTEN',	'',	'',	'septian (081219180727), achmad (085920014436)\r\n\r\na',	'MASIH BERLAKU',	'',	'ganani_indonesia@yahoo.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-06-14',	'2029-06-13',	'MASIH BERLAKU'),
+(18,	'',	'PT GASEMAS',	'',	'134/NU-BBM-IU/BPH MIGAS/2013',	'2019-05-27',	'2019-12-31',	'\r\nWisma 46 Kota BNI Lt 50, Suite 5006, Jl Jend Sudirman Kav 1 Jakarta Pusat\r\n',	'',	'',	'Niaga Umum',	'Feng Yu Jia',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'021 52891993 ; Feng yu Jia (081617162880); Irfan (',	'EXPIRED',	'',	'enquiry@ptgasemas.com; irfan@ptgasemas.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-12-13',	'2029-12-12',	'MASIH BERLAKU'),
+(19,	'',	'PT GETRA MITRA ENERGI',	'',	'331/NU-BBM-IU/BPH MIGAS/2017',	'2017-10-05',	'2018-12-31',	'Indorama/Graha Irama Blok X-1/9A Jl HR Rasuna Said Blok X-1 Kav 1&2 Jakarta Selatan',	'',	'',	'Niaga Umum',	'tidak ada sk yg terupdate',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Theresia (081289411788)\r\nJesicca (087889628641)',	'EXPIRED',	'',	'nissa.puspitasari@gmail.com;\r\n getramitra@yahoo.com;\r\n jesicca_fv@yahoo.com;\r\n\r\nfinance@getra-group.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-04-23',	'2029-04-22',	'MASIH BERLAKU'),
+(20,	'',	'PT GLOBAL ARTA BORNEO',	'',	'320/NU-BBM-IU/BPH MIGAS/2017',	'2017-07-31',	'2027-03-26',	'Jl. Hasan Basri Komp. Ruko Kayu Tangi Blok C No. 5, Kel. Sungai Miai, Banjarmasin',	'',	'',	'Niaga Umum',	'H. Muhammad Zain (Dirut)',	'',	'',	'',	'',	'',	'KALIMANTAN SELATAN',	'',	'',	'Supriyadi(081212716626) Ardiansah(081284310922)\r\nF',	'MASIH BERLAKU',	'',	'febriardi.gab92@yahoo.com; supriyadi_gab@yahoo.com;\r\nfajar.nugroho_gab@yahoo.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2017-03-27',	'2027-03-26',	'MASIH BERLAKU'),
+(21,	'',	'PT GLOBAL BORNEO ENERGI',	'',	'322/NU-BBM-IU/BPH MIGAS/2017',	'2017-07-31',	'2020-02-19',	'Jl Brigjen H Hasan Basri No39 Kel Pangeran, Banjarmasin Utara, Banjarmasin, Kalimantan Selatan',	'',	'',	'Niaga Umum',	'H. Muhammad Zain',	'',	'',	'',	'',	'',	'KALIMANTAN SELATAN',	'',	'',	'Supriyadi(0812212716626)',	'EXPIRED',	'',	'supriyadi.gbe@gmail.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-03-04',	'2025-03-04',	'MASIH BERLAKU'),
+(22,	'',	'PT GOA ENERGI MANDIRI',	'',	'315/NU-BBM-IU/BPH MIGAS/2017',	'2017-07-06',	'2022-02-06',	'Jl Somber Baru No 112 A RT 040 Kel Margo Mulyo, Balikpapan Kalimantan Timur ',	'',	'',	'Niaga Umum',	'Aditya Rachmat Dwipa Topani',	'',	'',	'',	'',	'',	'KALIMANTAN TIMUR',	'',	'',	'Aida (08115430950)\r\nOky Utomo (08115931616)',	'MASIH BERLAKU',	'',	'aida@goaenergi.com\r\noky@goaenergi.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2017-02-07',	'2022-02-06',	'MASIH BERLAKU'),
+(23,	'',	'PT HANA LINES',	'',	'131/NU-BBM-IU/BPH MIGAS/2013',	'2013-09-17',	'2021-07-27',	'Perum Kota Hijau (Daksa) Blok AR3, No 1 RT 69  Balikpapan 76115',	'',	'',	'Niaga Umum',	'di SK Tidak tercantum Nama Penanggung Jawab',	'',	'',	'',	'',	'',	'KALIMANTAN TIMUR',	'',	'',	'Nadiyah Salsabila (08115990118)--> Administrasi da',	'MASIH BERLAKU',	'',	'nad.salsabila@yahoo.com; contact@hanalines.com; rini@hanalines.com; rani.jwt@gmail.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2011-07-28',	'2021-07-27',	'MASIH BERLAKU'),
+(24,	'',	'PT HARAPAN MAT 77',	'',	'310/NU-BBM-IU/BPH MIGAS/2017',	'2020-06-30',	'2023-01-26',	'Jl. Wiratamas Gang 27 Juni Desa Rampa, Kotabaru, Kalimantan Selatan',	'',	'',	'Niaga Umum',	'Nining Qasim (Dirut)',	'',	'',	'',	'',	'',	'KALIMANTAN SELATAN',	'',	'',	'081251126100 (Direktur) 081351773977 ;  0852426786',	'MASIH BERLAKU',	'',	'harapan_mat77@yahoo.com; muhammadsalby44@gmail.com; raymondl_rich@yahoo.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-01-27',	'2023-01-26',	'MASIH BERLAKU'),
+(25,	'',	'PT HJ NURFADIAH JAYA ANGKASA',	'',	'226/NU-BBM-IU/BPH MIGAS/2015',	'2015-09-25',	'2023-07-25',	' Jl Pulau Samosir no 27 B  Karang Mumus Samarinda Ilir Kalimantan Timur 75113',	'',	'',	'Niaga Umum',	'Fadly (Dirut)',	'',	'',	'',	'',	'',	'KALIMANTAN TIMUR',	'',	'',	'',	'MASIH BERLAKU',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2013-07-26',	'2023-07-25',	'MASIH BERLAKU'),
+(26,	'',	'PT HOKARI LINEX PRATAMA',	'',	'077/NU-BBM-IU/BPH MIGAS/2010',	'2018-10-22',	'2027-07-03',	'Jalan Raya Pahlawan Seribu Ruko Golde Boulevard 2 Blok 0 No. 5-6 BSD City, Kel. Lengkong Wetan, Kec. Serpong, Tangerang Selatan',	'',	'',	'Niaga Umum',	'Arifuddin Noor (Dirut)',	'',	'',	'',	'',	'',	'BANTEN',	'',	'',	'\r\nFerry A - Acc Staff - (085695422311/ 08131984912',	'MASIH BERLAKU',	'',	'\r\nferryhokari@yahoo.com; friskahokari@yahoo.co.id; marintanlestarisimorangkir@gmail.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2015-11-17',	'2027-07-03',	'MASIH BERLAKU'),
+(27,	'',	'PT HUMPUSS TRADING',	'',	'053/NU-BBM-IU/BPH Migas/2008',	'2017-07-06',	'2027-06-13',	'Gedung Granadi Lantai 3  Jl HR Rasuna Said Blok X-1 No             8-9 Jakarta Selatan 12950',	'',	'',	'Niaga Umum',	'Lila Andi Suherman ',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'\r\nRian Hendrata - (085868181815/085286980954)',	'MASIH BERLAKU',	'',	'rianhendrata@yahoo.co.id; yung@humpuss-trading.co.id; dede7176@gmail.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2017-06-14',	'2027-06-13',	'MASIH BERLAKU'),
+(28,	'',	'PT INDO LAUTAN ENERGI',	'',	'285/NU-BBM-IU/BPH MIGAS/2016',	'2019-10-23',	'2022-09-18',	'Fatmawati Mas Kav. 110, Jl. Fatmawati Raya No. 20, RT.005 RW.010, Cilandak Barat, Cilandak, Jakarta Selatan',	'',	'',	'Niaga Umum',	'Irawan Sigit Subekti',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Riau Setyaning Putri (021-29333203 / 081210999876)',	'MASIH BERLAKU',	'',	'riau.putri@indolautanenergi.co.id\r\nyafet_mrzk@yahoo.com; yuda@ile.co.id; yuda.t6sw@yahoo.co.id; yudaprasetya@bainpt.co.in ; yafet@wiraenergi.co.id; wira@ile.co.id; yuliantiwidjaja@aserracapital.com; erlyn.sulistio@aserracapital.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-09-19',	'2022-09-18',	'MASIH BERLAKU'),
+(29,	'',	'PT INTI LINGGA SEJAHTERA',	'',	'186/NU-BBM-IU/BPH MIGAS/2014',	'2021-05-21',	'2029-06-18',	'Komplek Mega Grosir Cempaka Mas   Blok A. 20 Jl Let Jend Soeprapto Jakarta',	'',	'',	'Niaga Umum',	'DRH. Julius Stiawan Jo',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'elfrida(08111188774) \r\nIntan (081289898294)',	'MASIH BERLAKU',	'',	'elfrida.torus@gmail.com; \r\nelrida@intilinggasejahtera.com;\r\nintanarmitaday@gmail.com;\r\nintan.armita@intilinggasejahtera.com\r\nlingga@cbn.net.id',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-06-19',	'2029-06-18',	'MASIH BERLAKU'),
+(30,	'',	'PT INTIM PUTRA PERKASA',	'',	'239/NU-BBM-IU/BPH MIGAS/2016',	'2020-12-18',	'2025-11-25',	'Wisma MM Lt.3 Suite 358, Jl. Arjuna Selatan Kav. 75, RT.002/RW.012, Kel. Kebon Jeruk, Jakarta Barat',	'',	'',	'Niaga Umum',	'Guna Jaya Malik',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Lie Yun (081382878911); mario (081372220828); Mahm',	'MASIH BERLAKU',	'',	'admin@ipp.team;  budiman@intimputraperkasa.com; intimputraperkasa.ipp@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-11-26',	'2025-11-25',	'MASIH BERLAKU'),
+(31,	'',	'PT JAGAD ENERGY',	'',	'045/NU-BBM-IU/BPH Migas/2008',	'2018-06-04',	'2027-11-06',	'Ruko Permata Niaga Blok C No. 18 Sukajadi Batam Kota, Kota Batam, Kepulauan Riau',	'',	'',	'Niaga Umum',	'R.M. Sulaiman (Dirut)',	'',	'',	'',	'',	'',	'KEPULAUAN RIAU',	'',	'',	'Michael (081330361522) Fina Oktorafian - Manager A',	'MASIH BERLAKU',	'',	'michael.adrianto9@gmail.com; michael@jagadenergy.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2017-11-07',	'2027-11-06',	'MASIH BERLAKU'),
+(32,	'',	'PT JAGAD NUSANTARA ENERGI',	'',	'267/NU-BBM-IU/BPH MIGAS/2016',	'2021-05-19',	'2024-12-31',	'Ruko Bojong Salaman I-A No 1 Jl Puspanjolo Selatan, Semarang',	'',	'',	'Niaga Umum',	'Adie Setyawan (Dirut)',	'',	'',	'',	'',	'',	'JAWA TENGAH',	'',	'',	'teo(085218097123) adie(08112909838) adnan (0812378',	'MASIH BERLAKU',	'',	'jn_energy@jogedgroup.net; jn_energy@jagadgroup.net; adienergy@jagadgroup.net; mursid.jne@gmail.com; mursid.jne@jagadgroup.net; legal.jne@jagadgroup.net; toetoeko@gmail.com; toetoekohutomo@gmail.com; adienergy1205@gmail.com; supply_chain.jne@jagadgroup.net;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-10-14',	'2024-12-31',	'MASIH BERLAKU'),
+(33,	'',	'PT KALIMANTAN SUMBER ENERGI',	'',	'319/NU-BBM-IU/BPH MIGAS/2017',	'2017-07-31',	'2027-07-02',	' JL. Pemuda RT.20, Kel. Madurejo, Kec. Arut Selatan, Kabupaten Kotawaringin Barat , Kalimantan Tengah ',	'',	'',	'Niaga Umum',	'Alvian Rivai',	'',	'',	'',	'',	'',	'KALIMANTAN TENGAH',	'',	'',	'Pak Alfian Rivai (Direktur) 081352881204/181251843',	'MASIH BERLAKU',	'',	'ptkse_pbun@yahoo.co.id; alfian@ptkse.id',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2017-07-03',	'2027-07-02',	'MASIH BERLAKU'),
+(34,	'',	'PT KARIMUN ENERGINDO',	'',	'345/NU-BBM-IU/BPH MIGAS/2018',	'2020-06-30',	'2030-04-26',	'JL Letjen Suprapto RT 003/RW 001, Kel. Sungai Raya Kec. Meral Kab. Karimun Kepulauan Riau',	'',	'',	'Niaga Umum',	'Tonny Widiartono',	'',	'',	'',	'',	'',	'KEPULAUAN RIAU',	'',	'',	'Martin Christo Hersal Ginting (085272179365)',	'MASIH BERLAKU',	'',	'karimunenergindo@yahoo.com; karimun.energindo@gmail.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-04-27',	'2030-04-26',	'MASIH BERLAKU'),
+(35,	'',	'PT KARYA ENERGI MANDIRI',	'',	'296/NU-BBM-IU/BPH MIGAS/2017',	'2020-07-27',	'2023-01-26',	'Jl Ir. H Juanda, Ruko Plaza Juanda Blok B No33, Samarinda, Kalimantan Timur',	'',	'',	'Niaga Umum',	'Ngadini Ahmad (Dirut)',	'',	'',	'',	'',	'',	'KALIMANTAN TIMUR',	'',	'',	'Ngadini Achmad - Direktur (0811550899)\r\nRaditiya R',	'MASIH BERLAKU',	'',	'ngadini_a@yahoo.co.id, raditiyarr@yahoo.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-01-27',	'2023-01-26',	'MASIH BERLAKU'),
+(36,	'',	'PT SHELL INDONESIA',	'',	'052/NU-BBM-IU/BPH Migas/2008',	'2019-10-23',	'2028-11-27',	'Telavera Office Park 22nd ? 27th Floor  Jl TB Simatupang Kav 22 - 26 Jakarta 12430',	'',	'',	'Niaga Umum',	'Darwin Silalahi (Presdir)',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Lilian - 08118824371\r\nNiken - 08118400374\r\nAstri -',	'MASIH BERLAKU',	'',	'Lilian.Rosita@shell.com; niken.yustikasari@shell.com;\r\narintha.soegiarso@shell.com\r\n',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2018-11-28',	'2028-11-27',	'MASIH BERLAKU'),
+(37,	'',	'PT KUDA LAUT SEJAHTERA',	'',	'132/NU-BBM-IU/BPH MIGAS/2013',	'2013-09-18',	'2023-06-19',	'Jl. RE. Martadinata No. 14 Pagar Dewa Bengkulu 38214',	'',	'',	'Niaga Umum',	'Yanto SG (Dirut)',	'',	'',	'',	'',	'',	'BENGKULU',	'',	'',	'Wawan Kurniawan (085767016008)\r\nHendri 08538027578',	'MASIH BERLAKU',	'',	'kurniaone046@gmail.com;\r\nazkajavera@gmail.com(resign); \r\nsintayuliana89@gmail.com(resign);\r\n',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2013-06-20',	'2023-06-19',	'MASIH BERLAKU'),
+(38,	'',	'PT KUTILANG PAKSI MAS',	'',	'089/NU-BBM-IU/BPH MIGAS/2010',	'2019-12-05',	'2029-05-01',	'Gd. Yasmin Lt. 3 Jl. Mahakam 1 No. 11 B, Kel. Kramat Pela, Kec. Kebayoran Baru, Jakarta Selatan',	'',	'',	'Niaga Umum',	'Nevin Nugroho',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'wied adi pratomo\r\nSITI HALILAH (0813-140-16863) \r\n',	'MASIH BERLAKU',	'',	'wiedadip@kpm.co.id; siti@kpm.co.id; \r\ntheresia.tina@kpm.co.id;\r\nwahjoe.noegrohantoro@petroenergy-group.com\r\nandrew@petroenergy-group.com\r\nnugroho.cahyo@petroenergy-group.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-05-02',	'2029-05-01',	'MASIH BERLAKU'),
+(39,	'',	'PT LAROS PETROLEUM',	'',	'287/NU-BBM-IU/BPH MIGAS/2016',	'2020-07-27',	'2029-09-29',	'cbd blok b-9 jababeka industrial estate bekasi',	'',	'',	'Niaga Umum',	'Tri Handito (Dirut)',	'',	'',	'',	'',	'',	'JAWA BARAT',	'',	'',	'Rizky - 081290811939 januardi - 081238802500 noly (081349765333) Nama Direktur Utama : E. Tri Handito No HP : 081291428042',	'MASIH BERLAKU',	'',	'rizky.achmad8@gmail.com; thisislely@gmail.com; malisagopani269@gmail.com; trihandito@gmail.com; januardi_99@yahoo.com; dio.alif.ku@gmail.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-09-30',	'2029-09-29',	'MASIH BERLAKU'),
+(40,	'',	'PT LAUTAN DEWA ENERGY',	'',	'326/NU-BBM-IU/BPH MIGAS/2017',	'2017-09-11',	'2027-06-07',	'Kompleks Ruko Citra Grand City Blok B-8 No. 2, Jl. By Pass Alang-Alang Lebar, Kel. Talang Kelapa, Kec. Alang-Alang, Palembang',	'',	'',	'Niaga Umum',	'Imran Mustafa (Dirut)',	'',	'',	'',	'',	'',	'SUMATERA SELATAN',	'',	'',	'Kurniawan 08117101098, RAHMA 0895325271501 \r\n\r\n',	'MASIH BERLAKU',	'',	'pt.lautandewaenergy@gmail.com; kurniawanrmp76@gmail.com; meyshanismb23@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2017-06-08',	'2027-06-07',	'MASIH BERLAKU'),
+(41,	'',	'PT LINGGA PERDANA',	'',	'067/NU-BBM-IU/BPH Migas/2009',	'2019-07-18',	'2024-04-14',	'Jl Raya Suralaya Link Pulorida No 9 Kel. Lebak Gede Kec. Pulumerak, Kota Cilegon',	'',	'',	'Niaga Umum',	'Amin P. Napitupulu, SH.MH',	'',	'',	'',	'',	'',	'BANTEN',	'',	'',	'Mulyani Amir (081310800081), Pratiwi (0818406500)',	'MASIH BERLAKU',	'',	'irma.napita@yahoo.com; donnyoctavianto@yahoo.com; mulyani_amir@yahoo.com; christi_irma@yahoo.uk; pratiwipujir@yahoo.co.com; linggaperdanaindustri@yahoo.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-04-15',	'2024-04-14',	'MASIH BERLAKU'),
+(42,	'',	'PT MAHKOTA NIAGA ENERGI',	'',	'313/NU-BBM-IU/BPH MIGAS/2017',	'2021-03-24',	'2025-11-25',	'Mega Glodok Kemayoran Office Tower B, Blok C&D Lt8, Jl Angkasa Kav B-6, Kelurahan Gunung Sahari Selatan Kecamatan Kemayoran, Jakarta Pusat',	'',	'',	'Niaga Umum',	'Nova Ardiani Rahmah (Dirut)',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'',	'MASIH BERLAKU',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-11-26',	'2025-11-25',	'MASIH BERLAKU'),
+(43,	'',	'PT MANDIRI KITA SUKSES',	'',	'334/NU-BBM-IU/BPH MIGAS/2017',	'2020-03-23',	'2025-02-20',	'Komplek Rukan Fatmawati, Festival Blok D-18, Jl. RS. Fatmawati No. 50 Jakarta Selatan',	'',	'',	'Niaga Umum',	'Ir. Imelda Dhiany Andy P',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Tri widodo (082220610426) Rinda R (081280099942)',	'MASIH BERLAKU',	'',	'mandiri.ks@gmail.com, tri@mksukses.com; sales@mksukses.com; ceriwoll@gmail.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-02-21',	'2025-02-20',	'MASIH BERLAKU'),
+(44,	'',	'PT MASINTON ABADI SENTOSA',	'',	'127/NU-BBM-IU/BPH MIGAS/2013',	'2020-02-10',	'2030-01-22',	'Ruko The Beige Kav B3 No. 114, Jl Raya Cilangkap RT 008 RW02 Kelurahan Cilangkap Kecamatan Cipayung Jakarta Timur 13870',	'',	'',	'Niaga Umum',	'Halasan Sirait',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Rizki (087870000625) Newinda Sirait 08211(3858106)',	'MASIH BERLAKU',	'',	'rizki_ch@yahoo.co.id; masinton_jkt@yahoo.com; shabrina.safira@yahoo.co.id; admin@masintonpetro-group.com; manuhumsnaitaldo@yahoo.co.id; siraitnewinda@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-01-23',	'2030-01-22',	'MASIH BERLAKU'),
+(45,	'',	'PT MEGA GREEN TECHNOLOGY',	'',	'130/NU-BBM-IU/BPH MIGAS/2013',	'2013-06-24',	'2023-02-25',	'Kawasan Pengelolaan Limbah Industri B3 Jalan Pelabuhan Kabil Batam',	'',	'',	'Niaga Umum',	'di SK Tidak tercantum Nama Penanggung Jawab',	'',	'',	'',	'',	'',	'KEPULAUAN RIAU',	'',	'',	' Rocky Aldinomera (081268023382)',	'MASIH BERLAKU',	'',	'adm@megagreentech.net; rocky@gjgroups.com; hrd@megagreentech.net; rockyaldinomera@gmail.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2013-02-26',	'2023-02-25',	'MASIH BERLAKU'),
+(46,	'',	'PT MITRA ANDALAN BATAM',	'',	'216/NU-BBM-IU/BPH MIGAS/2015',	'2020-03-16',	'2030-01-05',	'Jl. Yos Sudarso, Sei Balo Batu Ampar, Batam 29432 (Kantor)\r\nJl Brigjen Katamso Tanjung Uncang Batam (Alamat Storage)',	'',	'',	'Niaga Umum',	'Nariman',	'',	'',	'',	'',	'',	'KEPULAUAN RIAU',	'',	'',	'Sutini (08216955388) Feby(082268003888); Telp 0778-422255; Fax 0778-424255 Shinta (085264696000)',	'MASIH BERLAKU',	'',	'sutini@majestygroup.co.id; mab_account@majestygroup.co.id; mab.account@majestygroup.co.id; mab@majestygroup.co.id',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-01-06',	'2030-01-05',	'MASIH BERLAKU'),
+(47,	'',	'PT MITRA UTAMA ENERGI',	'',	'290/NU-BBM-IU/BPHMIGAS/2017',	'2017-12-27',	'2026-11-23',	'Komplek Ruko Toho Blok A No12, Jl Raya Pantai Indah Kapuk No1, Jakarta 14450',	'',	'',	'Niaga Umum',	'Hasan (Dirut)',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Feby Chandra (081385727172) Marlev (082213051116)\r\n',	'MASIH BERLAKU',	'',	'marlevch@mue.co.id feby.chandra@yahoo.com; feby.chandra@mue.co.id; feby.chandra@yahoo.com; citra@mitrautamaenergi.com; zenobia@mitrautamaenergi.com;\r\n\r\n',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2016-11-24',	'2026-11-23',	'MASIH BERLAKU'),
+(48,	'',	'PT MOTO ENERGY INDONESIA',	'',	'307/NU-BBM-IU/BPH MIGAS/2017',	'2017-04-11',	'2027-02-20',	'Jl. Yos Sudarso (Hotel Tarakan Plaza) RT.11, Kota Tarakan, Kalimantan Utara Tel. 0551-21877, Fax 0551-51612',	'',	'',	'Niaga Umum',	'Edi Susanto',	'',	'',	'',	'',	'',	'KALIMANTAN UTARA',	'',	'',	'Nancy 08124492839 (Accounting) Fendy 08123139898 (Direktur Utama)\r\n',	'MASIH BERLAKU',	'',	'gietyie01@gmail.com; motoenergyindo@gmail.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2017-02-21',	'2027-02-20',	'MASIH BERLAKU'),
+(49,	'',	'PT MULTI TRADING PRATAMA',	'',	'213/NU-BBM-IU/BPH MIGAS/2015',	'2020-06-30',	'2030-04-28',	'Jl Lure No4/8 Makassar Sulawesi SelatanTelp (0411) 4664996 Fax (0411) 4664995',	'',	'',	'Niaga Umum',	'Yusu Tyos',	'',	'',	'',	'',	'',	'SULAWESI SELATAN',	'',	'',	'Chia (0819-4380-384) Irham (087727870384), Mautiu (081944150384)',	'MASIH BERLAKU',	'',	'irham_bakhri@multitradingpratama.com; martin@multitradingpratama.com0',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-04-29',	'2030-04-28',	'MASIH BERLAKU'),
+(50,	'',	'PT NUSANTARA SUMBER ENERGY',	'',	'137/NU-BBM-IU/BPH MIGAS/2013',	'2013-10-28',	'2021-11-22',	'Jl Boulevard Artha Gading Komplex Ruko Artha Gading Bukit Indah Q 18 Lt1 ? 2 Kelapa Gading , Jakarta Utara Telp : 021 - 45874209',	'',	'',	'Niaga Umum',	'di SK Tidak tercantum Nama Penanggung Jawab',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Oris Abdalla (08129445831), Jumiwan - Staff O (081380484727), R Gunawan - FXA (0818644281)',	'MASIH BERLAKU',	'',	'guna1one@yahoo.com; r.gunawan@nse.co.id; ',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2011-11-23',	'2021-11-22',	'MASIH BERLAKU'),
+(51,	'',	'PT OCEAN INDONESIA ENERGY',	'',	'306/NU-BBM-IU/BPH MIGAS/2017',	'2020-09-09',	'2024-09-11',	'Jl. Mampang Prapatan Raya No. 73A Lantai 3 RT/RW 010/002, Kel. Tegal Parang Kec. Mampang Prapatan, Jakarta selatan',	'',	'',	'Niaga Umum',	'Decky Zulkarnaen',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Sidiq (082154636576);yudhi (08121062713);Bu Titi Dewi Jayanti (081319760328); 021-7806767; 081862562507; \r\n',	'MASIH BERLAKU',	'',	'corporate@ocean-indo.com; rian@batrama.co.id; sidiq@batrama.co.id; andries@batrama.co.id; decky@batrama.co.id;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-09-12',	'2024-09-11',	'MASIH BERLAKU'),
+(52,	'',	'PT OCEAN PETRO ENERGY',	'',	'073/NU-BBM-IU/BPH MIGAS/2010',	'2019-03-25',	'2029-03-07',	'Komp Polri Ragunan Jl A  No43 Ampera Pasar Minggu Jakarta Selatan',	'',	'',	'Niaga Umum',	'Budi Utomo',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Iwan Sopian - Dirut (08130388964) Mulyadiana (Direktur Keuangan & admnistrasi)  08815823407 Cholik (Staff keuangan) 089628333122 Nico (staff administrasi) 081296103737 Thomas (staff operasional) 081318800911\r\n\r\n',	'MASIH BERLAKU',	'',	' info@oceanpetro.com; iwan.opetro@gmail.com; mulyarukmana20@gmail.com;  cholik.opetro@gmail.com;  nico13opetro@gmail.com;  thomas.opetro@gmail.com\r\n',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-03-08',	'2029-03-07',	'MASIH BERLAKU'),
+(53,	'',	'PT OIL SHIPPING TRANS INDONESIA',	'',	'317/NU-BBM-IU/BPH MIGAS/2017',	'2020-06-30',	'2029-11-14',	'Treasury Tower, Lantai 11 Unit A & B, District 8 SCBD Lot 28 Jl. Jend. Sudirman Kav. 52-53 Jakarta 12190',	'',	'',	'Niaga Umum',	'Loh Chee Choon (Dirut)',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Achmad rayndra Baskoro Soekarno (Ray) (081280894988)',	'MASIH BERLAKU',	'',	'rayndra.baskoro@mataramlaw.com;osti.wfs@gmail.com; CMLim@wsfcorp.com; Ctay@wfscorp.com; Gtan@wsfcorp.com; Rfloro@wsfcorp.com; leonard.saragi@mataramlaw.com; andi.zulfikar@mataramlaw.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-11-15',	'2029-11-14',	'MASIH BERLAKU'),
+(54,	'',	'PT ORION NUSANTARA ENERGI',	'',	'395/NU-BBM-IU/BPH MIGAS/2019',	'2019-11-26',	'2021-09-26',	'Ds Sumput RT 09 RW 02 Kec Driyorejo Kab Gresik Jawa Timur',	'',	'',	'Niaga Umum',	'Agus Wijaya',	'',	'',	'',	'',	'',	'Jawa Timur',	'',	'',	'rahmat susanto (081252755339) Yohanes Kusumo (082140029945)',	'MASIH BERLAKU',	'',	'rachmatsusanto78@gmail.com; orion.nusantara.energi@gmail.com; mathzportnoy87@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2016-09-27',	'2021-09-26',	'MASIH BERLAKU'),
+(55,	'',	'PT PALARAN INDAH LESTARI',	'',	'110/NU-BBM-IU/BPH MIGAS/2012',	'2012-07-09',	'2020-05-09',	'Jl Rapak Indah No168 Samarinda - Kalimantan Timur Kode pos 75125 gedung graha niaga',	'',	'',	'Niaga Umum',	'tidak ada sk yg terupdate',	'',	'',	'',	'',	'',	'KALIMANTAN TIMUR',	'',	'',	'GM Adi Sanjaya - Direktur (081318727766)',	'EXPIRED',	'',	'rio7981@gmail.com; palaranlestari@yahoo.co.id;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-02-20',	'2030-02-19',	'MASIH BERLAKU'),
+(56,	'',	'PT PANJI GEMILANG UTAMA',	'',	'299/NU-BBM-IU/BPHMIGAS/2017',	'2017-02-20',	'2019-12-15',	'Komplek Ruko Balikpapan Baru Blok D2 No 23, JL MT Haryono, Balikpapan, Kalimantan Timur',	'',	'',	'Niaga Umum',	'Rika Ekayanti ',	'',	'',	'',	'',	'',	'KALIMANTAN TIMUR',	'',	'',	'Rositta Uli Sormin (082149120771, 0896-0938-9381) Agus Biyantoro - Komisaris - 08115806577 Suntoro Suciatmaja - Direktur - 081520301888 Rika Ekayanti S - Dirut - 081257428588\r\n',	'EXPIRED',	'',	'tax.ptpgu@gmail.com; pgu_bpn@yahoo.co.id;sun_bpp@gmail.com; A_Biyantoro@yahoo.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-11-25',	'2029-11-24',	'MASIH BERLAKU'),
+(57,	'',	'PT PATRA BUANA PUTRA',	'',	'263/NU-BBM-IU/BPH MIGAS/2016',	'2016-03-30',	'2019-02-15',	'JL Cigugur Tengah No39 Rt 001 / Rw 010  Kel Cigugur Tengah, kec Cimahi Tengah Kota Cimahi 40532 Jawa Barat',	'',	'',	'Niaga Umum',	'Asep Soheh Nurjaman',	'',	'',	'',	'',	'',	'JAWA BARAT',	'',	'',	'Ryan Ansori 081312430622',	'EXPIRED',	'',	'ryanpatrabuana@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-05-13',	'2029-05-12',	'MASIH BERLAKU'),
+(58,	'',	'PT PERTAMINA (PERSERO)',	'',	'069/NU-BBM-IU/BPH Migas/2009',	'2009-06-29',	'2028-04-20',	'Jl Medan Merdeka Timur 1A Jakarta 10110',	'',	'',	'Niaga Umum',	'Nicke Widyawati (Dirut)',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Defferensia (081363700300)',	'MASIH BERLAKU',	'',	'defferensia.awepf@pertamina.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2008-04-21',	'2028-04-20',	'MASIH BERLAKU'),
+(60,	'',	'PT PERTAMINA PATRA NIAGA',	'',	'030/NU-BBM-IU/BPH Migas/2007',	'2020-11-12',	'2021-10-20',	'Gedung Wisma Tugu II  Lantai II Jl HR Said Kav C  7 ? 9 Kel. Karet, Kec. Setia Budi Jakarta Selatan',	'',	'',	'Niaga Umum',	'Mas ud Khamid (Dirut)',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Muhammad Aziz - Marketing (08561059963) Indra Ariatama - Marketing (081917000400) Susilowati - Supply Chain (08159110004) Bertha Diliana - Keu Tax (089627012150)',	'MASIH BERLAKU',	'',	'mohammad.aziz@patraniaga.com;  indra.ariatama@patraniaga.com;  ida.mariani@patraniaga.com;  bertha.diliana@patraniaga.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-10-14',	'2021-10-20',	'MASIH BERLAKU'),
+(61,	'',	'PT PETRO ANDALAN NUSANTARA',	'',	'014/NU-BBM-IU/BPH Migas/2007',	'2019-05-27',	'2026-10-10',	'Gedung B & G Tower Lantai 9 Jl Putri Hijau Nomor 10 Kesawan, Medan Barat, Medan Sumatera Utara ',	'',	'',	'Niaga Umum',	'Rowan Arifin',	'',	'',	'',	'',	'',	'SUMATERA UTARA',	'',	'',	'firman (087780817305) Firmansyah Lenvianto (0812 8453 1196) ',	'MASIH BERLAKU',	'',	'fenny.lim@wilmar.co.id; firmansyah.lenvianto@wilmar.co.id; jummy.gusmur@wilmar.co.id; lenvizitor.s3mini@gmail.com; irwan.huang@wilmar.co.id;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2016-10-11',	'2026-10-10',	'MASIH BERLAKU'),
+(62,	'',	'PT PETRO ENERGI NUSANTARA',	'',	'118/NU-BBM-IU/BPH MIGAS/2012',	'2020-02-24',	'2030-01-26',	'Gedung Plaza Asia/ABDA Lantai 20 Jl Jenderal Sudirman Kav 53 Jakarta 12190',	'',	'',	'Niaga Umum',	'Muhamad Kerry A. Riza',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Ana - Staff - 081285905313 Sigit Prasetyo - Staf - 021-5150585',	'MASIH BERLAKU',	'',	'ana.f@pt-pen.com; prasetyosigit@pt-pen.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-01-27',	'2030-01-26',	'MASIH BERLAKU'),
+(63,	'',	'PT PETRO ENERGI SAMUDRA',	'',	'215/NU-BBM-IU/BPH MIGAS/2015',	'2018-05-26',	'2023-04-08',	'RUKO GREENLAND BLOK C NO II BATAM CENTER - BATAM UP: SURYANI (ACCOUNTING)',	'',	'',	'Niaga Umum',	'David Tantri',	'',	'',	'',	'',	'',	'KEPULAUAN RIAU',	'',	'',	'Suryani - Adm (081275696130) Suryani (07784800880)',	'MASIH BERLAKU',	'',	'pt.petroes@gmail.com;  suryanimeiqi@yahoo.co.id; pt.petroes@ymail.com; suryanimelqi@yahoo.co.id; pt.petroes@gmail.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2018-04-09',	'2023-04-08',	'MASIH BERLAKU'),
+(64,	'',	'PT PETRO ENERGY',	'',	'143/NU-BBM-IU/BPHMIGAS/2013',	'2016-11-09',	'2018-08-12',	'GP Plaza Lantai 5 Unit 22-25, Jl. Gelora II No. 1, Gelora, Tanah Abang, Jakarta',	'',	'',	'Niaga Umum',	'Newin Nugroho (Presdir)',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Siti - Staff (081314016863) Steven - Staff - (08158137666)',	'EXPIRED',	'',	'siti.halilah@petroenergy-corp.com; steven.apriskova@petroenergy-corp.com; siti.halilah@petroenergy-group.com; steven.apriskova@petroenergy-group.com; nugroho.cahyo@petroenergy-group.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-10-14',	'2024-10-13',	'MASIH BERLAKU'),
+(65,	'',	'PT PETRO NIAGA MANDIRI',	'',	'311/NU-BBM-IU/BPH MIGAS/2017',	'2017-06-16',	'2019-12-22',	'Gedung Office 8 Lantai 6 Unit A-H, SCBD Lot 28, Jl Jendral Sudirman Kav 52 - 53, Senayan, Kebayoran Baru, Jakarta Selatan',	'',	'',	'Niaga Umum',	'Ir. Harijadi Suprapto',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'',	'EXPIRED',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-07-16',	'2025-07-15',	'MASIH BERLAKU'),
+(66,	'',	'PT PETRO OCEAN',	'',	'305/NU-BBM-IU/BPH MIGAS/2017',	'2017-03-29',	'2020-02-06',	'Jl Laksda M Nasir No29 Blok B 11 Kota Surabaya 60165',	'',	'',	'Niaga Umum',	'Ratno Tuhuteru (Dirut)',	'',	'',	'',	'',	'',	'JAWA TIMUR',	'',	'',	'Ifah Mashamah (08111098428) Hesty Sulistyowati ',	'EXPIRED',	'',	'ifahsby@gmail.com; marketing@petroocean.com; ifahsby02@gmail.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-02-17',	'2025-02-16',	'MASIH BERLAKU'),
+(67,	'',	'PT PETRO PERKASA INDONESIA',	'',	'283/NU-BBM-IU/BPH MIGAS/2016',	'2016-09-23',	'2023-04-25',	'alamat sesuai SK : Jl. A. Yani No.54 RT/RW 04 Balikpapan Tengah, Kalimantan Timur Jl Jendral Sudirman Ruko Bandar blok G 20-21',	'',	'',	'Niaga Umum',	'Abdul Gafur',	'',	'',	'',	'',	'',	'KALIMANTAN TIMUR',	'',	'',	'Rahman 085246699466',	'MASIH BERLAKU',	'',	'cs@pt-ppi.com; syarwaniAfdal@pt-ppi.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2013-04-26',	'2023-04-25',	'MASIH BERLAKU'),
+(68,	'',	'PT PETRO UTAMA ENERGI',	'',	'295/NU-BBM-IU/BPH MIGAS/2017',	'2017-02-14',	'2019-09-26',	'Jl Jelambar Utama 1 No 19 A Jakarta Barat',	'',	'',	'Niaga Umum',	'Lie Linardo',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Yuli (081282944404)',	'EXPIRED',	'',	'petro_utama99@yahoo.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-09-30',	'2029-09-29',	'MASIH BERLAKU'),
+(69,	'',	'PT PETROCON MITRA SEJAHTERA',	'',	'304/NU-BBM-IU/BPH MIGAS/2017',	'2017-03-07',	'2019-10-26',	'Jl Sultan Iskandar Muda No8 N, RT006/RW002, Kel Kebayoran Lama Selatan, Kec Kebayoran Lama, Jakarta Selatan (12240)',	'',	'',	'Niaga Umum',	'Febriane Connie',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'',	'EXPIRED',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2021-02-05',	'2024-02-01',	'MASIH BERLAKU'),
+(70,	'',	'PT PETRO GASINDO INTINIAGA',	'',	'346/NU-BBM-IU/BPH MIGAS/2018',	'2019-10-23',	'2024-07-10',	'Alamat SK: Perumahan Alam Asri No 8 Z    Jalan Jamin Ginting KM 14,    Medan Tuntungan, Medan Kantor Cab: Komplek Megapark B16 Jalan Kapten Muslim Seikambing Medan',	'',	'',	'Niaga Umum',	'Anderson',	'',	'',	'',	'',	'',	'SUMATERA UTARA',	'',	'',	'Musa Sembiring (08126000651), Anderson (08121362687); Vincent (081375556777)',	'MASIH BERLAKU',	'',	'anderson@ekawira.co.id;  email@pginpetrogasindo.co.id;  admin@petrogasindo.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-07-10',	'2024-07-10',	'MASIH BERLAKU'),
+(71,	'',	'PT PETROKAM HUGO OIL',	'',	'168/NU-BBM-IU/BPH MIGAS/2014',	'2020-03-03',	'2023-01-22',	'Jl Perak Timur 398 Surabaya jawa Timur 60165, Alamat surat menyurat District 8 Tower Treasury lantai 17 Jl Jend sudirman Kav 52-53, Jakarta Selatan 12190 021 2416 0677',	'',	'',	'Niaga Umum',	'John Eric Kamadjaja',	'',	'',	'',	'',	'',	'JAWA TIMUR',	'',	'',	'Yurianti 08988831110',	'MASIH BERLAKU',	'',	'yurianti.hidayat@gmail.com; financepho@pho.co.id ',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-01-23',	'2023-01-22',	'MASIH BERLAKU'),
+(72,	'',	'PT PETROLIN NIAGA ENERGI',	'',	'109/NU-BBM-IU/BPH MIGAS/2012',	'2017-06-14',	'2020-05-21',	'Jl Jend Sudirman Ruko Modern Land Blok AR No31 Tangerang - Banten 15117',	'',	'',	'Niaga Umum',	'tidak ada sk yg terupdate',	'',	'',	'',	'',	'',	'BANTEN',	'',	'',	'Shella (08161163163),  Emy Dwi - Staff (081808501939); MICHELE (08568988907)',	'EXPIRED',	'',	'pne@petrolin.co.id; emy.wulandari@petrolin.co.id; michelle.natalia@petrolin.co.id;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-04-30',	'2030-04-29',	'MASIH BERLAKU'),
+(73,	'',	'PT PETROMINE ENERGY TRADING',	'',	'116/NU-BBM-IU/BPH MIGAS/2012',	'2019-12-05',	'2029-10-23',	'Baktri Tower Lantai 17, Komp. Rasuna Epicentrum, Jl. HR. Rasuna Said, Karet Kuningan Setiabudi Jakarta Selatan ',	'',	'',	'Niaga Umum',	'Saptari Hoedaja',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Sakban Ritongi - Sr Manager Acc (08111972912) Neciwita Ronlania - A/P Manager (08118888115)',	'MASIH BERLAKU',	'',	'sakban.ritonga@petromine-energy.com; neciwita@petromine-energy.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-10-24',	'2029-10-23',	'MASIH BERLAKU'),
+(74,	'',	'PT PRAYASA INDOMITRA SARANA',	'',	'085/NU-BBM-IU/BPH MIGAS/2010',	'2019-05-27',	'2029-05-01',	'Komp Orchid Bisnis Centre Blok C-1 No. 7 Batam',	'',	'',	'Niaga Umum',	'Putri Larasati Ariandini',	'',	'',	'',	'',	'',	'KEPULAUAN RIAU',	'',	'',	'Ihya Ulumuddin - Legal (082221255558) Anita Riski Setiawan - SC (08117018569)',	'MASIH BERLAKU',	'',	'udin.pims@gmail.com;  raja_wani@pims.co.id;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-05-02',	'2029-05-01',	'MASIH BERLAKU'),
+(75,	'',	'PT PRIMA WIGUNA PARAMA',	'',	'321/NU-BBM-IU/BPH MIGAS/2017',	'2017-07-31',	'2020-03-08',	'Gedung TMT 1, Lantai 5 Suite 501 Jl Colandak KKO No 1 RT 001/Rw 005 Kel Cilandak Timur, Pasar Minggu, Jakarta Selatan',	'',	'',	'Niaga Umum',	'Johan Timothy Budisusetija',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Getty Krisanti Sari (08111464472) ',	'EXPIRED',	'',	'getty.k@pwp.co.id;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-11-19',	'2029-11-18',	'MASIH BERLAKU'),
+(76,	'',	'PT PRO ENERGI',	'',	'161/NU-BBM-IU/BPH MIGAS/2014',	'2019-04-09',	'2028-12-18',	'Graha Indorama Building 6 G Jl HR Rasuna Said Blok X ? 1 Kav 1 ? 2 Jakarta',	'',	'',	'Niaga Umum',	'Vika Krisdianatha & Keisuke Hirata',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Herdiansyah - Assmen (085880001369), Isyanto - Manager (081310158687), Andryan (085880001369)',	'MASIH BERLAKU',	'',	'isyanto@proenergi.com; andryan@proenergi.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2018-12-19',	'2028-12-18',	'MASIH BERLAKU'),
+(77,	'',	'PT PUNINAR MITRA ABADI',	'',	'145/NU-BBM-IU/BPH MIGAS/2014',	'2020-06-30',	'2022-08-12',	'Jalan Raya Cakung Cilincing Km 1,5 Jakarta 13910',	'',	'',	'Niaga Umum',	'Eddy Korompis',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'donny Widyatmoko - Commer Cial Depshero (081280536199) Dhea(081351402913)',	'MASIH BERLAKU',	'',	'donny.widyatmoko@puninarabadi.com; diana.christina@puninar.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-08-13',	'2022-08-12',	'MASIH BERLAKU'),
+(78,	'',	'PT RESHA RABBY LESTARI',	'',	'332/NU-BBM-IU/BPH MIGAS/2017',	'2019-04-15',	'2024-03-25',	'Jl Sekumpul Gg Lestari Ds Indrasari No 1 Martapura Kalsel Telp (0511) 4789338 Fax (0511) 4789215',	'',	'',	'Niaga Umum',	'Asdhie Franata',	'',	'',	'',	'',	'',	'KALIMANTAN SELATAN',	'',	'',	'Marika Edy No Hp. 081258837088, 081351334393',	'MASIH BERLAKU',	'',	'edyse25@gmail.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-03-26',	'2024-03-25',	'MASIH BERLAKU'),
+(79,	'',	'PT SAHBANA ENERGI PERSADA',	'',	'338/NU-BBM-IU/BPH MIGAS/2017',	'2017-12-31',	'2027-06-06',	'Jl Ahji Masnandai No 2 RT Timbau, Tenggarong Kutai Kartanegara Kalimantan Timur',	'',	'',	'Niaga Umum',	'H. Jainudin',	'',	'',	'',	'',	'',	'KALIMANTAN TIMUR',	'',	'',	'Jainudin (081254429354 / 085388880334) Taufan Selamat (085250000680/085391888878) \r\naruk 085288356417 ',	'MASIH BERLAKU',	'',	'sahbanaenergipersada@yahoo.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2017-06-07',	'2027-06-06',	'MASIH BERLAKU'),
+(80,	'',	'PT SANMARU INDO ENERGI',	'',	'228/NU-BBM-IU/BPH MIGAS/2015',	'2020-10-31',	'2023-03-08',	'Ruko Mardi Grass Blok KF2/11 Citra Raya - Tangerang',	'',	'',	'Niaga Umum',	'Surya Anam Saputra',	'',	'',	'',	'',	'',	'BANTEN',	'',	'',	'Aris Sri Lestari - 085213991767 / 081315974759 Surya Anam S - / 081310151578 rheza aya w / 081295459014\r\n',	'MASIH BERLAKU',	'',	'anam.sanmaru@gmail.com; pt.sanmaruindoenergi@gmail.com; aris.sanmaru@gmail.com rheza.agha@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-03-09',	'2023-03-08',	'MASIH BERLAKU'),
+(81,	'',	'PT SINARALAM DUTAPERDANA II',	'',	'190/NU-BBM-IU/BPH MIGAS/2014',	'2019-01-16',	'2023-11-22',	'1. Bakrie Tower Lantai 2 Komplek Rasuna Epicentrum HR Rasuna Said, Kuningan  Jakarta Selatan, KP Tendean No174 Banjarmasin 2. JL. KAPT TENDEAN NO 174 BANJARMASIN KALIMANTAN SELATAN',	'',	'',	'Niaga Umum',	'Dra. Hj. Siti Djamillah',	'',	'',	'',	'',	'',	'KALIMANTAN SELATAN',	'',	'',	'fidly (058221197590) Nova Elvera - Staff (085263094862)',	'MASIH BERLAKU',	'',	'fidly@sinaralam.com; nova_elvera@sinaralam.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2018-11-23',	'2023-11-22',	'MASIH BERLAKU'),
+(82,	'',	'PT SUMA ADI JAYA',	'',	'329/NU-BBM-IU/BPH MIGAS/2017',	'2017-09-11',	'2020-04-26',	'Kp Turi Jaya RT 010 RW007 Desa Segaramakmur, Kec Tarumajaya Kab Bekasi, Jawa Barat',	'',	'',	'Niaga Umum',	'Andi',	'',	'',	'',	'',	'',	'JAWA BARAT',	'',	'',	'',	'EXPIRED',	'',	'sumaadi@yahoo.com;  keket.sumaadi@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-08-14',	'2025-08-13',	'MASIH BERLAKU'),
+(83,	'',	'PT SUMATERA PETRO NIAGA',	'',	'222/NU-BBM-IU/BPH MIGAS/2015',	'2020-03-23',	'2030-02-16',	'Jl Asia No 123-c, Sei Rengas II Kec Medan Area 20214 Medan Sumatera Utara',	'',	'',	'Niaga Umum',	'Hengky',	'',	'',	'',	'',	'',	'SUMATERA UTARA',	'',	'',	'Vernando Sidhartalim - AR (087893748888/08557178888) Hengky - Dir (08126086958)',	'MASIH BERLAKU',	'',	'vernando@spniaga.com;  hengky@spniaga.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-02-17',	'2030-02-16',	'MASIH BERLAKU'),
+(84,	'',	'PT SUMBER ANUGRAH PRIMA',	'',	'297/NU-BBM-IU/BPHMIGAS/2017',	'2017-02-20',	'2019-12-20',	'Jl PM Noor No 09 RT 039 Samarinda 75115 Telepon: (0541) 6222509, Fax:(0541) 6222512',	'',	'',	'Niaga Umum',	'Ferdinand Bustani',	'',	'',	'',	'',	'',	'KALIMANTAN TIMUR',	'',	'',	'FERDINAND BUSATNI (081253338882) TOMMY MENWENGKANG - KOMISARS - (0811558818)',	'EXPIRED',	'',	'ferdinand@sumberanugrahprima.com; ferdinandbustani@gmail.com; Sumberanugrahprima@hotmail.com; sap@sumberanugrahprima.com; lordtomy@hotmail.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-10-09',	'2024-10-08',	'MASIH BERLAKU'),
+(85,	'',	'PT SUMBER FORTUNA JAYA',	'',	'421/NU-BBM-IU/BPH MIGAS/2021',	'2021-02-22',	'2030-07-22',	'Jalan Gajah Mada 27/77 A Kel. Pasar Pagi Samarinda Kota, Samarinda 75112',	'',	'',	'Niaga Umum',	'Yudianto Gunawan (Dirut)',	'',	'',	'',	'',	'',	'KALIMANTAN TIMUR',	'',	'',	'',	'MASIH BERLAKU',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-07-23',	'2030-07-22',	'MASIH BERLAKU'),
+(86,	'',	'PT SURYA PARNA NIAGA',	'',	'101/NU-BBM-IU/BPH MIGAS/2011',	'2020-02-24',	'2025-01-22',	'Menara Imperium 26th floor Jl HR Rasuna Said Kav1 Jakarta 12980',	'',	'',	'Niaga Umum',	'Charles Antonius Simbolon',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Ramadani - 08138108468 Willy Andreas - 085728400701  Ralis Sirap - 081258080705',	'MASIH BERLAKU',	'',	'eciddd@gmail.com; komang@parna-raya.co.id; andreas.willy@parna-raya.co.id;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-01-23',	'2025-01-22',	'MASIH BERLAKU'),
+(87,	'',	'PT SYURIA BAHTERA HARAPAN MANDIRI',	'',	'209/NU-BBM-IU/BPH MIGAS/2015',	'2021-04-19',	'2030-03-12',	'Jl Yos Sudarso RT 10 Kel Sijinjang Kec Jambi Timur, Jambi',	'',	'',	'Niaga Umum',	'Syaiful Bahri',	'',	'',	'',	'',	'',	'JAMBI',	'',	'',	'Amri Lubis - 081310187610 (0417)555865',	'MASIH BERLAKU',	'',	'fian_sbhm@yahoo.com; suryabahtera.harapanmandiri@gmail.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-03-13',	'2030-03-12',	'MASIH BERLAKU'),
+(88,	'',	'PT TELADAN MAKMUR JAYA',	'',	'124/NU-BBM-IU/BPH MIGAS/2013 ',	'2019-11-18',	'2029-09-30',	'JL. HKSN No. 27 RT.08, Alalak Utara - Banjarmasin Utara Jl. Casablanca Raya No. 88 Jakarta 12870',	'',	'',	'Niaga Umum',	'H Bahrul',	'',	'',	'',	'',	'',	'KALIMANTAN SELATAN',	'',	'',	'H Noor Atmaja Nst (08111022890)  Sarah (082210951037)',	'MASIH BERLAKU',	'',	'tmj.grup@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-10-01',	'2029-09-30',	'MASIH BERLAKU'),
+(89,	'',	'PT TELEINDO PRAKARSA',	'',	'273/NU-BBM-IU/BPH MIGAS/2016',	'2019-12-18',	'2029-11-18',	'EIGHTY EIGHT KASABLANKA TOWER A, 5TH FLOOR, UNIT E, JL CASABLANKA RAYA KAV88 JAKARTA SELATAN 12870',	'',	'',	'Niaga Umum',	'Harjady Halim',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'REHE JONATHAH - DIR (085311122333) FREDY SETIAWAN - OP MAN (081317722251) LINDA LAY - FIN MAN (08128081636)',	'MASIH BERLAKU',	'',	'rjm@teleindo.com; fredy@teleindo.com; linda@teleindo.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-11-19',	'2029-11-18',	'MASIH BERLAKU'),
+(90,	'',	'PT TOTAL OIL INDONESIA',	'',	'062/NU-BBM-IU/BPH Migas/2009',	'2019-01-30',	'2022-06-06',	'Menara FIF Lt 15 Jl TB Simatupang Kav 15 Jakarta 12440',	'',	'',	'Niaga Umum',	'Franck Harles Henri Giraud',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Muhammad Yazid - Procurement Manager (+62 812 8500 0851), Ricky Rifain - operations executive (+  62 815 9643 511), Muhammad Yazid - Procurement Manager, Sherly Ryadi - Logistic Mng, Tanernha Ramadhani - Procurement Executive, Sarah Pratinasari - CS Fuel ',	'MASIH BERLAKU',	'',	'muhammad.yazid@total.com; ricky.rifain@total.com; sherly.ryadi@total.com; tanernha.ramadhani@total.com; sarah.pratinasari@total.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-04-20',	'2025-04-19',	'MASIH BERLAKU'),
+(91,	'',	'PT TRAN INDAH KARYA',	'',	'181/NU-BBM-IU/BPH MIGAS/2014',	'2019-12-05',	'2029-10-02',	'JL KH Soleh Ali No 8 Sukasari Tangerang',	'',	'',	'Niaga Umum',	'Wellem Jes Henukh',	'',	'',	'',	'',	'',	'BANTEN',	'',	'',	'Wellem Jes Henuka - Direktur (081289259999) Yesi Liana (087870857069)  Lilik Ekowati (085289831193)\r\n',	'MASIH BERLAKU',	'',	'yesi.liana77@gmail.com; tik_trading@yahoo.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-10-03',	'2029-10-02',	'MASIH BERLAKU'),
+(92,	'',	'PT TRANS ENERGY NUSANTARA',	'',	'294/NU-BBM-IU/BPHMIGAS/2017',	'2020-06-30',	'2025-01-24',	'Jl Yos Sudarso Hotel Tarakan Plaza RT 11 Karang Balik, Tarakan Barat, Kota Tarakan, Kalimantan Utara',	'',	'',	'Niaga Umum',	'Gunawan Santoso',	'',	'',	'',	'',	'',	'KALIMANTAN UTARA',	'',	'',	'081221302000 (Najib Direktur)  08124492839 (Nancy Laukati Acct)  Tel Kantor 0551-21877, 22281',	'MASIH BERLAKU',	'',	'najib.wahab@tren10.com; nancy@tren10.com; gietyie01@gmail.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-01-29',	'2025-01-24',	'MASIH BERLAKU'),
+(93,	'',	'PT TRI WAHANA UNIVERSAL',	'',	'117/NU-BBM-IU/BPH MIGAS/2012',	'2012-12-28',	'2022-07-12',	'Menara Karya Lantai 17, Jl. HR Rasuna Said Blok X-5 Kavling 1-2  Jakarta 12950',	'',	'',	'Niaga Umum',	'SK tidak lengkap',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'budi setyono (082140883231); Fax.021-8316035 pratomo 08111633162; inet maramis 08118582086; dofil marantika 0818888465\r\n',	'MASIH BERLAKU',	'',	'rahmat@indahgroup.com; anto@twurefinery.com; tommy@twurefinery.com; edison.erzet@twurefinery.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2012-07-13',	'2022-07-12',	'MASIH BERLAKU'),
+(94,	'',	'PT TRIPATRA NUSANTARA',	'',	'207/NU-BBM-IU/BPH MIGAS/2015\r\n',	'2015-04-21',	'2019-12-30',	'Jl Gedong Panjang 2 no 14 L jakarta barat 11240',	'',	'',	'Niaga Umum',	'Rudi Madriansyah',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Henry (08128000498) Erlin(08111886709)',	'EXPIRED',	'',	'info@tripatranusantara.com; rudipatriansah@tripatranusantara.com; henrysutioso@tripatranusantara .com; tripatranusantara88@gmail.com;  rb.anti@yahoo.co.id;  prabubungaran2013@gmail.com; info@tripatranusantara.com; prabubungaran2013@gmail.com;  rudy.darmanto@gmail.com; andi.soegiarto@tripatranusantara.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-01-24',	'2030-01-23',	'MASIH BERLAKU'),
+(95,	'',	'PT TUNAS TITAN MAJU',	'',	'128/NU-BBM-IU/BPH MIGAS/2013',	'2019-05-27',	'2029-02-18',	'Graha BIP 5th Floor Jalan Jend Gatot Subroto Kav23 Jakarta 12930',	'',	'',	'Niaga Umum',	'Sumiaty',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'ENDAR - COMDEV 085237053104 Deka 081316622340 ',	'MASIH BERLAKU',	'',	'endar@globalfon-int.com; deka@ttm.co.id',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-02-20',	'2029-02-19',	'MASIH BERLAKU'),
+(96,	'',	'PT UTAMA ALAM ENERGI',	'',	'277/NU-BBM-IU/BPH MIGAS/2016',	'2019-10-23',	'2022-08-27',	' Jl Mangga Dua Dalam Blok J No 11 Jakarta Pusat',	'',	'',	'Niaga Umum',	'Betty Adhitama',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Betty Adhitama - Dirut (081399282456) Edwin Hendrawan - Acc Man (085691125860) Betty Adhitama - Dirut  (081399282456) Eri Sujatmiko Project Sales Executive (081315743415)',	'MASIH BERLAKU',	'',	'bettyau@uaenergi.com; account@uaenergi.com; eri.sujatmiko@uaenergi.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-08-28',	'2022-08-27',	'MASIH BERLAKU'),
+(97,	'',	'PT WISAN PETRO ENERGI',	'',	'281/NU-BBM-IU/BPH MIGAS/2016',	'2016-09-09',	'2019-08-12',	'Jl Gunung Latimojong Pelita Marga Mas Blok C No 19 RT 004/RW 003, Kel Gaddong, Bontoala, Makassar',	'',	'',	'Niaga Umum',	'Willian Tunggadi',	'',	'',	'',	'',	'',	'SULAWESI SELATAN',	'',	'',	'Yulie Yanti (085241183330) Ruddy Nasution (08118282101) Andi Noorgani Sommeng (081298334400)',	'EXPIRED',	'',	'ruddynasution@gmail.com; ptwisanpetroenergi.mks@gmail.com; 5367sommeng@gmail.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-11-26',	'2024-11-25',	'MASIH BERLAKU'),
+(98,	'',	'PT WORLD TRADE ENERGY',	'',	'323/NU-BBM-IU/BPH MIGAS/2017',	'2021-03-08',	'2026-02-09',	'Jalan Kebon Bawang No. 33 RT.002 RW.007 Kelurahan Kebon Bawang Kecamatan Tanjung Priok Jakarta Utara',	'',	'',	'Niaga Umum',	'Tarmen Tascha',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'',	'MASIH BERLAKU',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2021-02-10',	'2026-02-09',	'MASIH BERLAKU'),
+(99,	'',	'PT YAVINDO SUMBER PERSADA',	'',	'163/NU-BBM-IU/BPH MIGAS/2014',	'2021-01-31',	'2030-12-12',	'Komplek Pertokoan Airmas Blok B 2 No6-7 Green Land Batam Centre',	'',	'',	'Niaga Umum',	'Sudarno',	'',	'',	'',	'',	'',	'KEPULAUAN RIAU',	'',	'',	'',	'MASIH BERLAKU',	'',	'mario@yavindo.com; lieyun@yavindo.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-12-07',	'2030-12-12',	'MASIH BERLAKU'),
+(100,	'',	'PT YOSINDO JAYA RAYA',	'',	'261/NU-BBM-IU/BPH MIGAS/2016',	'2020-03-23',	'2025-01-27',	'Perum Puri Mayang, Cluster Casablanca Blok K 21 RT 026 Kelurahan Mayang Mengurai Kec. Alam Barjo Kota Jambi\r\nProvinsi Jambi ',	'',	'',	'Niaga Umum',	'Yos Meilano',	'',	'',	'',	'',	'',	'JAMBI',	'',	'',	'NANANG - DIR KEUANGAN (081368757888/081227555088) ALEX - DIR OPERASIONAL (081271182746/) Nugroho (081227555088)',	'MASIH BERLAKU',	'',	'pt8yjr@yahoo.co.id;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-01-28',	'2025-01-27',	'MASIH BERLAKU'),
+(101,	'',	'PERUM PERIKANAN INDONESIA',	'',	'343/NU-BBM-IU/BPH MIGAS/2018',	'2018-02-05',	'2023-01-03',	'Jl Muara Baru Ujung Jakarta Utara',	'',	'',	'Niaga Umum',	'Syahril Japarin',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Satria Indra Gunawan no hp 081246792216 ; INNO (085747935758) Sutrisno - 085747935758',	'MASIH BERLAKU',	'',	'inno.sutrisno91@gmail.com; satria_ig@yahoo.co.uk;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2018-01-04',	'2023-01-03',	'MASIH BERLAKU'),
+(102,	'',	'PT COSMIC PETROLEUM NUSANTARA',	'',	'358/NU-BBM-IU/BPH MIGAS/2018',	'2018-07-30',	'2028-12-10',	'Jl Riau No18 E - F  Kampung Baru - Senapelan Pekanbaru 28154',	'',	'',	'Niaga Umum',	'Lim Choon Kiat Calvin (Dirut)',	'',	'',	'',	'',	'',	'RIAU',	'',	'',	'DWI Handayani (08117705989), erlina (08127042682); SRI OKTI(081372857788; 08117769887) Donny 085765057834',	'MASIH BERLAKU',	'',	'donny@cosmicoil.co.id; erlina@cosmicoil.co.id; nurfianti@cosmicoil.co.id; dwi-handayani@cosmicoil.co.id;okti@cosmicoil.co.id',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2018-12-11',	'2028-12-10',	'MASIH BERLAKU'),
+(103,	'',	'PT PUMA ENERGY INDONESIA',	'',	'047/NU-BBM-IU/BPH MIGAS/2008',	'2018-03-12',	'2027-08-27',	'Equity Tower lt 49 SCBD jl. Jenderal Sudirman Kav. 52 Jakarta',	'',	'',	'Niaga Umum',	'Agus Sandy Widyanto',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'',	'MASIH BERLAKU',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2017-08-28',	'2027-08-27',	'MASIH BERLAKU'),
+(104,	'',	'PT MANGGALA SURYA ENERGI',	'',	'356/NU-BBM-IU/BPH Migas/2018',	'2018-04-18',	'2023-04-03',	'GRAHA DIRGANTARA GROUND FLOOR UNIT C JL. PROTOKOL HALIM PERDANA KUSUMA NO 8 JAKARTA TIMUR',	'',	'',	'Niaga Umum',	'Fajar Nurmansyah',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Sinta- 081291269165 021-29838040 021-29838041',	'MASIH BERLAKU',	'',	'sintaindahpertiwi@gmail.com; finance@manggalasurya.energy',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2018-04-04',	'2023-04-03',	'MASIH BERLAKU'),
+(105,	'',	'PT MINA MARRET ENERGI INDONESIA',	'',	'375/NU-BBM-IU/BPH MIGAS/2019',	'2019-01-16',	'2022-12-21',	'Indonesia Exchange Tower 2, Lantai 17, Jl. Jenderal Sudirman, Kav. 52-53 Jakarta Selatan',	'',	'',	'Niaga Umum',	'Andy Gunawan Wirjono',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Gerry 081323235858  Eka Pratiwi Ramadhani 081803156469',	'MASIH BERLAKU',	'',	'info@minamarretenergi.com;henrikusgb@minamarretenergi.com;eka@minamarretenergi.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2017-12-22',	'2022-12-21',	'MASIH BERLAKU'),
+(106,	'',	'PT LABAN RAYA SAMODRA',	'',	'359/NU-BBM-IU/BPH MIGAS/2018',	'2018-07-30',	'2028-05-13',	'Jln Kapasan Raya No 49 Surabaya',	'',	'',	'Niaga Umum',	'Amien Gondosabdono',	'',	'',	'',	'',	'',	'JAWA TIMUR',	'',	'',	'DORATUN (081278459520)  Eny D Irawati 081553713177',	'MASIH BERLAKU',	'',	'doratun@gmail.com; \"Eny Laban Raya\" <eny@labanraya.com>; ',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2018-05-14',	'2028-05-13',	'MASIH BERLAKU'),
+(107,	'',	'PT CIPTA SARANA SINERGI',	'',	'',	'',	'',	'Perum Borneo Paradiso Cluster Rich Wood No. M3, Kel. Sepinggan Kec. Balikpapan Selatan Kaltim 76155',	'',	'',	'Niaga Umum',	'Feri Riyadi',	'',	'',	'',	'',	'',	'KALIMANTAN TIMUR',	'',	'',	'',	'BELUM ADA NRU',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2017-12-22',	'2022-12-22',	'MASIH BERLAKU'),
+(108,	'',	'PT ANDIFA PERKASA ENERGI',	'',	'360/NU-BBM-IU/BPH MIGAS 2018',	'2018-08-16',	'2023-07-10',	'Perum Jhonlin Indah C No. 10 RT. 013/003 Gunung Antasari Kecamatan Simpang Empat Batulicin Kabupaten Tanah Bumbu',	'',	'',	'Niaga Umum ',	'Iswandi',	'',	'',	'',	'',	'',	'KALIMANTAN SELATAN',	'',	'',	'Dadit Widarko(082213950326)  Deny Ekananda (081251277320)  Yery (0818112633)  Muliana (082353270416)\r\n',	'MASIH BERLAKU',	'',	'denny.ekananda@andifagroup.co.id; yery.silitonga@andifagroup.co.id; muliana@andifagroup.co.id',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2018-07-11',	'2023-07-10',	'MASIH BERLAKU'),
+(109,	'',	'PT PAHALA GLOBALINDO ENERGI',	'',	'361/NU-BBM-IU/BPH MIGAS/2018',	'2018-09-14',	'2028-07-30',	'Jln By Pass KM 53 Bolong Mojo Puri, Mojokerto',	'',	'',	'Niaga Umum',	'Pouhan Sugiharto',	'',	'',	'',	'',	'',	'Jawa Timur',	'',	'',	'HARI (081 2839 92639)',	'MASIH BERLAKU',	'',	'\"Pahala Globalindo Energi PT\" <ptpge.mjkt@gmail.com>; ',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2018-07-30',	'2028-07-30',	'MASIH BERLAKU'),
+(110,	'',	'PT OIL TANKING MERAK berubah menjadi PT ORBIT TERMINAL MERAK',	'',	'',	'',	'',	'Menara Prima Lantai 16 Jl. Lingkar Mega Kuningan Lot. 6.2 Jakarta 12950',	'',	'',	'Niaga Umum',	'tidak ada sk yg terupdate',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'',	'BELUM ADA NRU',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-08-09',	'2029-08-08',	'MASIH BERLAKU'),
+(111,	'',	'PT TITU PERKASA ENERGI',	'',	'376/NU-BBM-IU/BPH Migas/2019',	'2019-03-05',	'2029-01-28',	'Perum Pelangi Residence Blok G No. 6 RT 55 Sepinggan Baru Balikpapan Selatan Kota Balikpapan Kalimantan Timur',	'',	'',	'Niaga Umum',	'Tumpak Henry Butarbutar',	'',	'',	'',	'',	'',	'KALIMANTAN TIMUR',	'',	'',	'Hendry (081398989378) Richardo Tunduan (081213065007) Mikhael Tio (081212122123)',	'MASIH BERLAKU',	'',	'hendry.tumpak@t2perkasaenergi.co.id   mikhael.thio@t2perkasaenergi.co.id',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-01-28',	'2029-01-27',	'MASIH BERLAKU'),
+(112,	'',	'PT VIVO ENERGY INDONESIA',	'',	'337/NU-BBM-IU/BPH MIGAS/2017',	'2020-06-30',	'2030-06-01',	'Gama Tower Lantai 20 Unit A  Jl. H.R. Rasuna Said Kav. C-22  Karet Kuningan Setiabudi Jakarta Selatan',	'',	'',	'Niaga Umum',	'Fagniez Antoine Dominique Francois',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'',	'MASIH BERLAKU',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-06-02',	'2030-06-01',	'MASIH BERLAKU'),
+(113,	'',	'PT MITRA PATRA BORNEO',	'',	'380/NU-BBM-IU/BPH MIGAS/2019',	'2019-04-09',	'2023-08-30',	'Jl. S Parman Komp. Villa Palma No E-8 RT 001 RW 033 Kel. Benua Melayu Darat Kec. Pontianak Selatan, Pontianak, Kalimantan Barat',	'',	'',	'Niaga Umum',	'Abdul Raut (Dirut)',	'',	'',	'',	'',	'',	'KALIMANTAN BARAT',	'',	'',	'Kurniaty (085245592060) Sherrly (082133660077) ',	'MASIH BERLAKU',	'',	'mpb.niaga8@gmail.com   irene.sudargo@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2018-08-31',	'2023-08-30',	'MASIH BERLAKU'),
+(114,	'',	'PT Sumber Makmur Pertama',	'',	'388/NU-BBM-IU/BPH MIGAS/2019',	'2019-08-07',	'2024-02-06',	'Sinar Mas Land Plaza, Menara 2 Lt 3, Jalan MH Thamrin No. 51 Jak-Pus',	'',	'',	'Niaga Umum',	'Matthieu Olivier Lavoine',	'',	'',	'',	'',	'',	'DKI Jakarta',	'',	'',	'Nizar Rachmadian - Deputy General Manager (08111712626)',	'MASIH BERLAKU',	'',	'marketing@sl-maritime.com   nizar.rachmadian@sl-maritime.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-02-07',	'2024-02-06',	'MASIH BERLAKU'),
+(115,	'',	'PT TARUNA BINA SARANA',	'',	'379/NU-BBM-IU/BPH MIGAS/2019',	'2019-04-01',	'2029-03-01',	'The Bellezza Gapuraprima Office Tower Lantai 2, Jl. Letjen Soepeno No. 34 Arteri Permata Hijau Kebayoran Baru',	'',	'',	'Niaga Umum',	'Leo Boon Han',	'',	'',	'',	'',	'',	'DKI Jakarta',	'',	'',	'Reny Rochaeny(+62 816-1699-528)',	'MASIH BERLAKU',	'',	'reny.rochaeni@linc-terminal.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-03-01',	'2029-02-28',	'MASIH BERLAKU'),
+(116,	'',	'PT GLOBAL INTERINTI INDUSTRY',	'',	'386/NU-BBM-IU/BPH MIGAS/2019',	'2019-05-27',	'2029-05-22',	'Jl. Tanjung Tembaga No. 8 Perak Barat Krembangan Surabaya',	'',	'',	'Niaga Umum',	'Hadi Purnomo',	'',	'',	'',	'',	'',	'JAWA TIMUR',	'',	'',	'',	'MASIH BERLAKU',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-05-22',	'2029-05-22',	'MASIH BERLAKU'),
+(117,	'',	'PT PETRO NIAGA RAYA',	'',	'387/NU-BBM-IU/BPH MIGAS/2019',	'2019-07-09',	'2029-06-14',	'Scientia Businis Park Tower 2 Lantai 2, Jl. Boulevard Gading Serpong, Curug Sangereng, Kelapa Dua Tangerang',	'',	'',	'Niaga Umum',	'Haryanto Halim po',	'',	'',	'',	'',	'',	'BANTEN',	'',	'',	'',	'MASIH BERLAKU',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-06-14',	'2029-06-14',	'MASIH BERLAKU'),
+(118,	'',	'PT WIRA ARIANDI',	'',	'389/NU-BBM-IU/BPH MIGAS/2019',	'2019-08-14',	'2024-08-01',	'Jl. Sumatera RT 15 Nomor 143 Kelurahan Pamusian, Tarakan Tengah, Kalimantan Utara',	'',	'',	'Niaga Umum',	'Danu Saputra (Dirut)',	'',	'',	'',	'',	'',	'KALIMANTAN UTARA',	'',	'',	'pt.wa2018@gmail.com',	'MASIH BERLAKU',	'',	'Arie Priangga Putra (08113532832)',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-08-01',	'2024-08-01',	'MASIH BERLAKU'),
+(119,	'',	'PT SULAWESI BUNKER TERMINAL',	'',	'391/NU-BBM-IU/BPH MIGAS/2019',	'2019-09-02',	'2024-08-20',	'Pondok Indah Office Tower3 Lt. 17, Jln Sultan Iskandar Muda Kav. 5, Pondok Indah, Kebayoran Lama Jakarta Selatan, DKI Jakarta',	'',	'',	'Niaga Umum',	'Ira Yunita Kasim Gokal',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Sandi Irawan (081347971044, 081513150803) Kantor (02129538806) Fax (02129538998)',	'MASIH BERLAKU',	'',	'sulawesibunker@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-08-10',	'2024-08-20',	'MASIH BERLAKU'),
+(120,	'',	'PT MERAH PUTIH PETROLEUM',	'',	'392/NU-BBM-IU/BPH MIGAS/2019',	'2019-10-23',	'2022-08-22',	'Komplek Inti Batam Blok L No. 7-8, Sei Panas, Batam Kota',	'',	'',	'Niaga  Umum',	'Wiko',	'',	'',	'',	'',	'',	'KEPULAUAN RIAU',	'',	'',	'Harry Wicaksono 085899990987',	'MASIH BERLAKU',	'',	'Email: mpp.migas@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-08-22',	'2022-08-22',	'MASIH BERLAKU'),
+(121,	'',	'PT SYIFA BERKAH MAKMUR',	'',	'393/NU-BBM-IU/BPH MIGAS/2019',	'2019-10-23',	'2029-08-16',	'Jl. Pangeran Jayakarta Blok D3 No. 72-74 Rt/Rw 013/010 Kel. Mangga Dua Selatan Kec. Sawah Besar',	'',	'',	'niaga Umum',	'Oktorita, S.Kom (Dirut)',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Sugeng Luhur Budiman (082295423377) General Manager',	'MASIH BERLAKU',	'',	'octa@syifajayaenergy.co.id eka.kemhan@gmail.com ',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-08-16',	'2029-08-16',	'MASIH BERLAKU'),
+(122,	'',	'PT DIRGANTARA PETROINDO RAYA',	'',	'394/NU-BBM-IU/BPH MIGAS/2019',	'2019-10-23',	'2029-06-25',	'Wisma AKR Jl. Panjang No. 5 Kelurahan Kebon Jeruk Jakarta Barat ',	'',	'',	'niaga Umum',	'Virita Harlistyanti (Dirut)',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Tony Hardy (08128165657) Donny (081318637979)',	'MASIH BERLAKU',	'',	' <tony.hardy@airbpakr.com> ',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-06-25',	'2029-06-25',	'MASIH BERLAKU'),
+(123,	'',	'PT PRO TANK TERMINAL',	'',	'396/NU-BBM-IU/BPH MIGAS/2019',	'2019-12-05',	'2027-08-27',	'Graha Irama Building 6F Blok X-1 Kav 1-2 Jl. HR. Rasuna Said RT.006 RW.004 Kel. Kuningan Timur Kec. Setiabudi, Kota Jakarta Selatan ',	'',	'',	'Niaga Umum',	'Adhi Wardhana Hardjanto',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'fachrur telpon 081218576260; 08562102010; 02129531400 ext 34769',	'MASIH BERLAKU',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-09-16',	'2027-08-27',	'MASIH BERLAKU'),
+(124,	'',	'PT LIMA SEMBILAN SEMBILAN SEMBILAN',	'',	'398/NU-BBM-IU/BPH MIGAS/2019',	'2019-12-05',	'2024-11-13',	'Jl. Pelabuhan Speed Boat RT 05/ RW 02, Kec. Simpang Empat, Kab. Tanah Bumbu, Kalimantan Selatan',	'',	'',	'niaga Umum',	'Rusnaeni (Dirut)',	'',	'',	'',	'',	'',	'KALIMANTAN SELATAN',	'',	'',	'Kris Ardianto (081380610942)',	'MASIH BERLAKU',	'',	'ardianto.kris@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-11-13',	'2024-11-13',	'MASIH BERLAKU'),
+(125,	'',	'PT SEPERTIGA MALAM SINERGI',	'',	'401/NU-BBM-IU/BPH MIGAS/2019',	'2019-12-09',	'2029-11-07',	'Gedung Masindo Lantai 3 Jl. Mampang Prapatan Raya No. 73A Kelurahan Tegal Parang Kec. Mampang Prapatan Jakarta Selatan',	'',	'',	'niaga Umum',	'Yuda Firdaus Sugama',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Budhi (081210465153)  Bintang Rifat Nugroho (087823361001)',	'MASIH BERLAKU',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-11-08',	'2029-11-08',	'MASIH BERLAKU'),
+(126,	'',	'PT KALTIM PUMITRAS SEJATI',	'',	'404/NU-BBM-IU/BPH MIGAS/2019',	'2019-12-18',	'2023-11-15',	'Jl. Untung Surapati Perum Griya Tepian Lestari Blok TT No. 13 Samarinda Kalimantan Timur',	'',	'',	'niaga Umum',	'Janri Manro Samosir (Dirut)',	'',	'',	'',	'',	'',	'KALIMANTAN TIMUR',	'',	'',	'',	'MASIH BERLAKU',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2018-11-16',	'2023-11-15',	'MASIH BERLAKU'),
+(127,	'',	'PT ENERGI COAL PRIMA',	'',	'382/NU-BBM-IU/BPH MIGAS/2019',	'2019-05-27',	'2023-11-23',	'Sahid Sudirman Center Lantai 9 Unit 9B The Sahid City Complex Jl. Jend. Sudirman No. 86 Jakarta',	'',	'',	'Niaga Umum',	'Brigitta Rahayu (Dirut)',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'kokosi(08118174178)',	'MASIH BERLAKU',	'',	'komangevayana@pinangcool.com; komangevayana@pinangcool.com; kokopriyanto@ecp-pinang.com; kokopriyanto@pinangcoal.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-03-20',	'2023-11-23',	'MASIH BERLAKU'),
+(128,	'',	'PT ENERGI HIJAU SAMOEDERA BERSAUDARA',	'',	'405/NU-BBM-IU/BPH MIGAS/2020',	'2020-02-05',	'2030-01-05',	'Rukan Multiguna No. 6P, Jl. Rajawali Selatan Raya Blok C5/2, Kota Baru Bandar Kemayoran, Jakarta Utara14410',	'',	'',	'Niaga Umum',	'Hartono (Dirut)',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Paulus Joseph Karu, S.H. Legal Manager (08118055409)',	'MASIH BERLAKU',	'',	'paulus@samoedera.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-01-06',	'2030-01-05',	'MASIH BERLAKU'),
+(129,	'',	'PT ANIGOS JAYA PERKASA',	'',	'406/NU-BBM-IU/BPH MIGAS/2020',	'2020-02-17',	'2025-01-27',	'Jl. Lingkar Utara, RT/RW 007/006, Kelurahan Perwira, Kecamatan Bekasi Utara, Bekasi',	'',	'',	'Niaga Umum',	'Boy Usten Ambarita (Dirut)',	'',	'',	'',	'',	'',	'JAWA BARAT',	'',	'',	'Anto (081222298833)  Bintang Sianturi (081280003682)',	'MASIH BERLAKU',	'',	'ptcahayapetroenergi@gmail.com  pttabaramultienergi@gmail.com  ptanigosjayaperkasa@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-01-28',	'2025-01-27',	'MASIH BERLAKU'),
+(130,	'',	'PT PETER WIRASAKTI JAYA MANDIRI',	'',	'407/NU-BBM-IU/BPH MIGAS/2020',	'2020-02-24',	'2025-01-29',	'Jl. Mayor Syafrie Rahman No. 60 Kunto Panji Kec. Belinyu, Kab. Bangka Belitung',	'',	'',	'Niaga Umum',	'Peter Pantja',	'',	'',	'',	'',	'',	'KEPULAUAN BANGKA BELITUNG',	'',	'',	'081289881181 (Albert Pantja)',	'MASIH BERLAKU',	'',	'pt.pwjm@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-01-30',	'2025-01-29',	'MASIH BERLAKU'),
+(131,	'',	'PT WIRATAMA NIAGA',	'',	'409/NU-BBM-IU/BPH MIGAS/2020',	'2020-03-16',	'2025-02-19',	'Jl. PM. Noor Perum Bumi Sempaja Blok GE-01 Samarinda',	'',	'',	'Niaga Umum',	'Yansen Wicaksana (Dirut)',	'',	'',	'',	'',	'',	'KALIMANTAN TIMUR',	'',	'',	'Yansen_Wiratama Niaga (+62 813-5096-1777)',	'MASIH BERLAKU',	'',	'wiratamaniagapt@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-02-20',	'2025-02-19',	'MASIH BERLAKU'),
+(132,	'',	'PT SAUNG BERDIKARI SENTOSA',	'',	'410/NU-BBM-IU/BPH MIGAS/2020',	'2020-03-23',	'2030-03-03',	'De Ploeit Centrale Office Lt. 3 No. 307, Jl. Pluit Selatan Raya Q No. 1 Pluit Penjaringan, Jakarta Utara',	'',	'',	'Niaga Umum',	'Djin Ru Sung (Dirut)',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'081219093233 (Nico)',	'MASIH BERLAKU',	'',	'saungberdikari.info@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-04-20',	'2030-04-19',	'MASIH BERLAKU'),
+(133,	'',	'PT FAJAR PETRO INDO',	'',	'411/NU-BBM-IU/BPH MIGAS/2020',	'2020-06-30',	'2030-02-24',	'Gedung Talavera Office Suite Lantai 18, Jl. TB. Simatupang Kav. 22-26 Kelurahan Cilandak Barat, Kecamatan Cilandak, Jakata Selatan',	'',	'',	'Niaga Umum',	'Agustinur Rimba Halim',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Sanjeev (081270050599)',	'MASIH BERLAKU',	'',	'admin@fajarpetroindo.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-02-25',	'2030-02-24',	'MASIH BERLAKU'),
+(134,	'',	'PT PEC TECH SERVICES INDONESIA',	'',	'413/NU-BBM-IU/BPH MIGAS/2020',	'2020-06-30',	'2030-01-22',	'Jalan Raya Lintas Timur Kelurahan Pangkalan Kerinci Kecamata Pangkalan Kerinci Kabupaten Pelalawan Provinsi Riau',	'',	'',	'Niaga Umum',	'Arlin Simatupang',	'',	'',	'',	'',	'',	'RIAU',	'',	'',	' ptsi_license@aprilasia.com',	'MASIH BERLAKU',	'',	'Arlin S Pect TECH RAPP (+62 811-1337-941)',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-01-23',	'2030-01-22',	'MASIH BERLAKU'),
+(135,	'',	'PT JAYANTI MUDRA ENERGY',	'',	'',	'',	'',	'Gedung Wisma Bhakti Mulya Lantai 3 Suite 305 Kelurahan Kenari Kecamatan Senen Jakarta Pusat',	'',	'',	'Niaga Umum',	'Jeffrey Arbie ',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'pt.jayantimudraenergy@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-03-04',	'2025-03-03',	'MASIH BERLAKU'),
+(136,	'',	'PT CEMERLANG MAKMUR ABADI',	'',	'417/NU-BBM-IU/BPH MIGAS/2020',	'2020-08-25',	'2030-06-21',	'Rukan Avenue Jakarta Garden City No. 8-078 Jakarta Garden City Rt/Rw. 001/014. Kel. Cakung Timur, Kec. Cakung Kota Adm. Jakarta Timur, Provinsi DKI Jakarta ',	'',	'',	'Niaga Umum',	'Unru Baso (Dirut)',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Helmy Maizura (08111091799)',	'MASIH BERLAKU',	'',	'cemerlangmakmurabadi@gmail.com   helmymaizura@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-06-22',	'2030-06-21',	'MASIH BERLAKU'),
+(137,	'',	'PT NIAGA NUSANTARA RAYA',	'',	'414/NU-BBM-IU/BPH MIGAS/2020',	'2020-07-27',	'2030-05-19',	'Gedung Epicentrum Walk Office Lantai 6 Unit B-611 Jl. HR Rasuna Said Karet Kuningan Setia Budi Jakarta Selatan',	'',	'',	'Niaga Umum',	'Natalia (Dirut)',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Sumiaty (dirut) 08111903943  Muljati (Finance Admin Manager) 0818135058',	'MASIH  BERLAKU',	'',	'business@niaganusantararaya.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-05-20',	'2030-05-19',	'MASIH BERLAKU'),
+(138,	'',	'PT ARINDA ANANDA ARSINDO',	'',	'416/NU-BBM-IU/BPH MIGAS/2020',	'2020-08-25',	'2030-06-19',	'Jl. Jend. Sudirman No. 20 RT. 023 Kelurahan Damai Kecamatan Balikpapan Kota',	'',	'',	'Niaga Umum',	'Agus Setiawan Tjoa (Dirut)',	'',	'',	'',	'',	'',	'KALIMANTAN TIMUR',	'',	'',	'Agus Setiawan Tjoa (08115441008)',	'MASIH BERLAKU',	'',	' pt.aaa.bpn@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-06-20',	'2030-06-19',	'MASIH BERLAKU'),
+(139,	'',	'PT ELISABETH BERKAT ENERGI',	'',	'418/NU-BBM-IU/BPH MIGAS/2020',	'2020-09-09',	'2025-09-01',	'Jl. H.B.R. ltlotik Kp. Minle.io No.02{3 RT.31 RW.09 Kel. Karya Baru Kec. Alanq-Alang Lebar Palembang',	'',	'',	'Niaga Umum',	'Benny Widjaja',	'',	'',	'',	'',	'',	'SUMATERA SELATAN',	'',	'',	'Heryanto Abidin (0816505186); BENNY WIDJAJA (BENNY WIDJAJA)',	'MASIH BERLAKU',	'',	'elisabethberkatenergi@gmail.com; Heriyantoabidin22@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-09-02',	'2025-09-01',	'MASIH BERLAKU'),
+(140,	'',	'PT GENCO ENERGI NUSANTARA',	'',	'422/NU-BBM-IU/BPH MIGAS/2021',	'2021-02-18',	'2024-01-12',	'Equity Tower Lt. 22 Unit BC SCBD, Jl. Jend. Sudirman, Kav. 52-53 Kel. Senayan, Kec. Kebayoran Baru, Jakarta Selatan',	'',	'',	'Niaga Umum',	'Adwitiya Narendra Wityasmoro',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'',	'MASIH BERLAKU',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2021-01-11',	'2024-01-12',	'MASIH BERLAKU'),
+(141,	'',	'PT ANUGRAH PERKASA BAHARI',	'',	'',	'',	'',	'Graha Ridia Akusa Utama Jl. Rawa Buntu Sektor 14 Blok H1 No.1 Kel. Rawabuntu Kec. Serpong, Tangerang Selatan Banten',	'',	'',	'Niaga Umum',	'David Gunawan',	'',	'',	'',	'',	'',	'BANTEN',	'',	'',	'',	'BELUM ADA NRU',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-10-26',	'2025-10-25',	'MASIH BERLAKU'),
+(142,	'',	'PT ASCENDENT INDO ENERGI',	'',	'',	'',	'',	'The Manhattan Square Mid Tower Lt. 12 Unit C-F, Jl. TB Simatupang Kav 1-S Kel. Cilandak Timur Kec. Pasar Minggu Jakarta Selatan ',	'',	'',	'Niaga Umum',	'Sulaeha Nur',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'',	'BELUM ADA NRU',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-11-17',	'2023-11-16',	'MASIH BERLAKU'),
+(143,	'',	'PT GLOBAL OCEAN ENERGI',	'',	'424/NU-BBM-IU/BPH MIGAS/2021',	'2021-03-08',	'2025-11-26',	'Jl. Pepaya No. 3 RT.16, Kel. Rimba Sekampung, Kec. Dumai Kota, Kota Dumai, Riau',	'',	'',	'Niaga Umum',	'Rahmad Harahap (Dirut)',	'',	'',	'',	'',	'',	'RIAU',	'',	'',	'',	'MASIH BERLAKU',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-11-27',	'2025-11-26',	'MASIH BERLAKU'),
+(144,	'',	'PT CAHAYA PETRO ENERGI',	'',	'423/NU-BBM-IU/BPH MIGAS/2021',	'2021-03-08',	'2024-02-01',	'Komplek Bukit Permata Indah Blok B 23 Jl. HBR Motik RT.16 /RW005 Kel. Karya Baru , Kec. Alang Alang Lebar, Kota Palembang Provinsi Sumatera Selatan',	'',	'',	'Niaga Umum',	'Abdul Jalil (Dirut)',	'',	'',	'',	'',	'',	'SUMATERA SELATAN',	'',	'',	'',	'MASIH BERLAKU',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2021-02-05',	'2024-02-01',	'MASIH BERLAKU'),
+(145,	'',	'PT JUSTIN BINTANG SAMUDERA MANDIRI',	'',	'425/NU-BBM-IU/BPH MIGAS/2021',	'2021-05-19',	'2023-02-25',	'Jl. H. Marhusin No. 07 RT. 18, Kel. Sungai Kapih, Kec. Sambutan, Kota Samarinda Provinsi Kalimantan Timur',	'',	'',	'Niaga Umum',	'Jumransyah Fiani (Dirut)',	'',	'',	'',	'',	'',	'KALIMANTAN TIMUR',	'',	'',	'',	'MASIH BERLAKU',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2021-02-25',	'2031-02-25',	'MASIH BERLAKU'),
+(146,	'',	'PT JASATAMA PETROINDO',	'',	'',	'',	'',	'Arkadia Green Park Tower G Lantai 2 Jl.Letjend TB.SIMATUPANG Kav. 88, Kel. Kebagusan, Kec. Pasar Minggu, Kota Adm. Jakarta Selatan, Prov. DKI Jakarta 12520',	'',	'',	'NIAGA TERBATAS',	'',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Rudiyanto Soetedjo (02178548052); Renita Janurika (02178548096); Rizky Amelia (087878317145)',	'',	'',	'rudiyanto.soetedjo@se1.bp.com; renita.janurika@bp.com; rizky.amelia@se1.bp.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-12-23',	'2021-12-31',	'MASIH BERLAKU'),
+(147,	'',	'PT SAMUDRA ETAM ENERGI',	'',	'',	'',	'',	'Jl Slamet Riyadi Rt43 No 8C Kelurahan Loktuan, Kec Bontang Utara Bontang, Kalimantan timur 75123, Jalan Ikan Mungsing IX No18 Perak Barat Surabaya ? Jawa Timur alamat baru : Jl. Menjangan Blok Q3 No.34 BTN 3, Bontang, Kalimantan Timur',	'',	'',	'Niaga Umum',	'',	'',	'',	'',	'',	'',	'KALIMANTAN TIMUR',	'',	'',	'Febriyanto Indra Jaya (081256605977) Nirmala Dewi (0811202131/0818832131)  Dr. Hanggono T Nugroho -Direksi- (0811840324)  Teguh Winaya - Direktur- (08115909333)   Khairun Nisa (08129570547) Diana (085772219703)',	'',	'',	'info@newseeoil.com; teguh@newseeoil.com; teguhwinaya2014@gmail.com  seeoil.18@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-04-15',	'2020-10-07',	'EXPIRED'),
+(148,	'',	'PT PRIMERGY SOLUTION',	'',	'',	'',	'',	'Jalan Kawasan Industri Gresik Kavling G-7 Gresik',	'',	'',	'Pengolahan Hasil Olahan',	'',	'',	'',	'',	'',	'',	'JAWA TIMUR',	'',	'',	'',	'',	'',	'primergysolution58@gmailcom',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2016-10-17',	'2021-10-16',	'MASIH BERLAKU'),
+(149,	'',	'PT PATRA ANDALAS SUKSES',	'',	'',	'',	'',	'jl  Ir H Juanda lrg Hasanah I rt 040 kelurahan simpang III sipin kecamatan kota baru jambi',	'',	'',	'Niaga Umum',	'',	'',	'',	'',	'',	'',	'JAMBI',	'',	'',	'Trisnadi S (081273799889)',	'',	'',	'patrajambi@gmail.com; trisnadi18@gmail.com;',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2016-02-29',	'2021-02-28',	'EXPIRED'),
+(150,	'',	'PT BERDIKARI JAYA BERSAMA',	'',	'',	'',	'',	'Jalan Raya Lumajang KM 5 No.618 Kel. Kedungasem Kec. Wonoasih Kota Probolinggo',	'',	'',	'Pengolahan Hasil Olahan',	'',	'',	'',	'',	'',	'',	'JAWA TIMUR',	'',	'',	'Yuwie (081353909909), Darwin (082363557777)',	'',	'',	'pt.berdikarijayabersama@yahoo.com; darwinlay@ymail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-09-15',	'2025-09-14',	'MASIH BERLAKU'),
+(151,	'',	'PT METRO ABADI RAYA',	'',	'',	'',	'',	'Jl Raya Banyuwangi KM 13 Desa Banyuwangi Kec Manyar Kab Gresik - Jawa Timur atau Kawasan Pergudangan dan Industri Manyar WIN PT Jatim Watkoraya',	'',	'',	'Pengolahan Hasil Olahan',	'',	'',	'',	'',	'',	'',	'JAWA TIMUR',	'',	'',	'Budi (08155013000)',	'',	'',	'ptmetroabadiraya@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-03-05',	'2025-03-04',	'MASIH BERLAKU'),
+(152,	'',	'PT CING KHAI LIE',	'',	'',	'',	'',	'Kawasan Industri Mekar Jaya Jl. Hayam Wuruk No. 35 Kel. Sukasari Kec. Rajeg Kab. Tangerang Banten',	'',	'',	'Pengolahan Hasil Olahan',	'',	'',	'',	'',	'',	'',	'BANTEN',	'',	'',	'',	'',	'',	'cingkailie@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-12-16',	'2029-12-15',	'MASIH BERLAKU'),
+(153,	'',	'PT SUMBER ANUGERAH UTAMA',	'',	'',	'',	'',	'Jalan Raya Bumi Indah No. 21 Kel. Lontar, Kec. Sambikerep, Surabaya, Jawa Timur',	'',	'',	'Pengolahan Hasil Olahan',	'',	'',	'',	'',	'',	'',	'JAWA TIMUR',	'',	'',	'Chilwin (082139006800)',	'',	'',	'ptsau.indonesia@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-05-24',	'2024-05-23',	'MASIH BERLAKU'),
+(154,	'',	'PT BUMA NIAGA PERKASA',	'',	'',	'',	'',	'Jl Mulawarman rt 46 Ruko Mulawarman Blok A - 8, Karang Anyar, Tarakan Barat,Tarakan, Kalimantan Utara',	'',	'',	'Niaga Umum',	'',	'',	'',	'',	'',	'',	'KALIMANTAN UTARA',	'',	'',	'Venny Christine Titing (082251718925); Simon (085247171625)',	'',	'',	'christine.titing@gmail.com; simonpatino@yahoo.co.id\r\n',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2010-06-08',	'2020-06-07',	'EXPIRED'),
+(155,	'',	'PT DINAR PUTRA MANDIRI',	'',	'',	'',	'',	'Ruko Cibubur Indah, Jl Lapangan Tembak No14A ',	'',	'',	'Niaga Umum',	'',	'',	'',	'',	'',	'',	'JAKARTA TIMUR',	'',	'',	'Anid PT. Dinar Putra Mandiri 081311043743',	'',	'',	'azuar_dpm@yahoo.com; anggawiratama@dinarenergy.com; teguhpx@dinarenergy.com; admin@dinarenergy.com;\r\nanidkidwa@dinarenergy.com;  Surya@dinarenergy.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2016-04-22',	'2021-04-21',	'EXPIRED'),
+(156,	'',	'PT TAWU INTI BATI',	'',	'',	'',	'',	'Ruko Time Square Blok B4 Nomor 12 Kelurahan Jatikarya, Kec Jatisampurna, kota Bekasi',	'',	'',	'Pengolahan Hasil Olahan',	'',	'',	'',	'',	'',	'',	'JAWA BARAT',	'',	'',	'Dawis (087781711888); Andre Yahya (081388667767 )',	'',	'',	'andretawu03@gmail.com; dawisshen@yahoo.com\r\n',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2019-05-27',	'2023-08-15',	'MASIH BERLAKU'),
+(157,	'',	'PT ISANO LOPO INDUSTRI',	'',	'',	'',	'',	'Jln Raya PLP Curug KM3, Desa Kadu Kec Curug, Kab Tangerang Banten',	'',	'',	'Pengolahan Hasil Olahan',	'',	'',	'',	'',	'',	'',	'BANTEN',	'',	'',	' Office (0213901591)',	'',	'',	'isanolopo@yahoo.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2020-03-13',	'2024-03-12',	'MASIH BERLAKU'),
+(158,	'',	'PT SINAR SURYA MAJU SENTOSA',	'',	'',	'',	'',	'Jalan Industri Raya III Facto Blok E No 12-12A Kec Cikupa Kab Tangerang Banten',	'',	'',	'Pengolahan Hasil Olahan',	'',	'',	'',	'',	'',	'',	'BANTEN',	'',	'',	'',	'',	'',	'sinar.surya.ms@gmail.com',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2017-04-21',	'2022-04-20',	'MASIH BERLAKU'),
+(159,	'',	'PT BUMI ASRI PRIMA PRATAMA',	'',	'',	'',	'',	'Gedung Hanurata Graha Lt 7 Jl. Kebon Sirih Raya Kav. 67-69 Kebon Sirih Menteng Jakarta Pusat',	'',	'',	'Niaga Umum',	'',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'Office (02129410743); Tisnawati (082110981965); Wahyu Nugraha (082113167000)',	'',	'',	'bapp_official@bappoilservices.com; tisnawati@bappoilservices.com ; wahyu.nugraha.ipb@gmail.com\r\n',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2017-04-27',	'2020-04-26',	'EXPIRED'),
+(160,	'',	'PT ENERGI LOGISTIK UTAMA',	'',	'',	'',	'',	'Eightyeight@Kasablanka Office Tower A Lantai 7 Unit E Jl. Casablanca Raya Kav. 88 Kel. Menteng Dalam Kec. Tebet Jakarta Selatan',	'',	'',	'Niaga Umum',	'',	'',	'',	'',	'',	'',	'DKI JAKARTA',	'',	'',	'DIAH ANDINA (0811188114); Imam (085287045339)',	'',	'',	'cs@energilogistikutamacom; andin_andiena@yahoo.co.id ; achmadimamh212@yahoo.com\r\n',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'2018-02-05',	'2020-03-01',	'EXPIRED'),
+(161,	'$wilayah',	'$bu',	'$npwp',	'',	'',	'',	'',	'',	'',	'$noiz',	'',	'',	'',	'',	'',	'',	'',	'0',	'0',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'$jnsush',	'',	'',	'');
+
+DROP TABLE IF EXISTS `charian`;
+CREATE TABLE `charian` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `idf` int(11) NOT NULL,
+  `tgl` varchar(20) NOT NULL,
+  `jnsbbm` varchar(50) NOT NULL,
+  `salur` varchar(50) NOT NULL,
+  `cdtl` varchar(20) NOT NULL,
+  `cdh` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+TRUNCATE `charian`;
+INSERT INTO `charian` (`id`, `idk`, `idf`, `tgl`, `jnsbbm`, `salur`, `cdtl`, `cdh`) VALUES
+(1,	1,	0,	'07/01/2021',	'Solar CN 48',	'1000',	'260',	''),
+(2,	1,	0,	'07/02/2021',	'Solar CN 48',	'1500',	'260',	''),
+(3,	1,	0,	'07/01/2021',	'Bensin 90',	'1000',	'190',	''),
+(4,	1,	0,	'07/02/2021',	'Bensin 90',	'3000',	'190',	''),
+(5,	6,	0,	'2021-07-01',	'Bensin RON 88',	'35010',	'35',	''),
+(6,	6,	0,	'2021-07-02',	'Bensin RON 88',	'35010',	'35',	''),
+(7,	6,	0,	'2021-07-03',	'Bensin RON 88',	'55010',	'35',	''),
+(15,	6,	0,	'2021-07-02',	'Avgas',	'3500',	'100',	'35'),
+(9,	6,	0,	'2021-07-01',	'Solar CN 48',	'26000',	'260',	'100'),
+(10,	6,	0,	'2021-07-02',	'Solar CN 48',	'26000',	'260',	'100'),
+(11,	6,	0,	'2021-07-03',	'Solar CN 48',	'260',	'260',	'1'),
+(12,	6,	0,	'2021-07-04',	'Solar CN 48',	'35010',	'260',	'134.65384615385'),
+(14,	6,	0,	'2021-07-01',	'Avgas',	'2500',	'100',	'25');
+
+DROP TABLE IF EXISTS `cp`;
+CREATE TABLE `cp` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `namacp` varchar(100) NOT NULL,
+  `jabatancp` varchar(100) NOT NULL,
+  `notelpcp` varchar(100) NOT NULL,
+  `emailcp` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+TRUNCATE `cp`;
+
+DROP TABLE IF EXISTS `depo`;
+CREATE TABLE `depo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `lokasi` varchar(100) NOT NULL,
+  `kap` varchar(20) NOT NULL,
+  `alamatc` varchar(500) NOT NULL,
+  `kab` varchar(100) NOT NULL,
+  `prov` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+TRUNCATE `depo`;
+INSERT INTO `depo` (`id`, `idk`, `lokasi`, `kap`, `alamatc`, `kab`, `prov`) VALUES
+(1,	6,	'$lokasi',	'$kap',	'$alamatc',	'$kab',	'$prov'),
+(2,	6,	'Aceh besar',	'2050',	'Jl.Achec ksakdj',	'aceh',	'aceh'),
+(3,	6,	'Sumatera',	'1202',	'Sumut ',	'sumatera',	'sumut');
+
+DROP TABLE IF EXISTS `download`;
+CREATE TABLE `download` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tanggal_upload` date NOT NULL,
+  `nama_file` varchar(100) NOT NULL,
+  `tipe_file` varchar(10) NOT NULL,
+  `ukuran_file` varchar(20) NOT NULL,
+  `file` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+TRUNCATE `download`;
+
+DROP TABLE IF EXISTS `dtjual1`;
+CREATE TABLE `dtjual1` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `jenis` varchar(20) NOT NULL,
+  `tahun` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+TRUNCATE `dtjual1`;
+INSERT INTO `dtjual1` (`id`, `idk`, `jenis`, `tahun`) VALUES
+(1,	6,	'Solar CN 48',	'2020'),
+(2,	6,	'Solar CN 51',	'2020'),
+(3,	6,	'Solar CN 53',	'2020'),
+(4,	6,	'Bensin RON 88',	'2020'),
+(5,	6,	'Bensin RON 88',	'2021');
+
+DROP TABLE IF EXISTS `dtjual2`;
+CREATE TABLE `dtjual2` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idbu` int(11) NOT NULL,
+  `idjns` int(11) NOT NULL,
+  `bulan` varchar(20) NOT NULL,
+  `vol` varchar(20) NOT NULL,
+  `ket` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+TRUNCATE `dtjual2`;
+INSERT INTO `dtjual2` (`id`, `idbu`, `idjns`, `bulan`, `vol`, `ket`) VALUES
+(1,	6,	1,	'Januari',	'5480',	'Solar CN 48 Januar 2020'),
+(2,	6,	2,	'Januari',	'1001',	'CN51 Januar 2020'),
+(3,	6,	2,	'Pebruari',	'202',	'cn 51 pebruari'),
+(4,	6,	1,	'Maret',	'1002',	'vol jual maret'),
+(5,	6,	1,	'April',	'1002',	'vol jual maret');
+
+DROP TABLE IF EXISTS `fasilitas`;
+CREATE TABLE `fasilitas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `namafas` varchar(50) NOT NULL,
+  `almtfas` varchar(100) NOT NULL,
+  `jnsbbmfas` varchar(50) NOT NULL,
+  `latfas` varchar(20) NOT NULL,
+  `longfas` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+TRUNCATE `fasilitas`;
+
+DROP TABLE IF EXISTS `jbbm`;
+CREATE TABLE `jbbm` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jnsbbm` varchar(20) NOT NULL,
+  `ket` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+TRUNCATE `jbbm`;
+INSERT INTO `jbbm` (`id`, `jnsbbm`, `ket`) VALUES
+(1,	'Avtur',	''),
+(2,	'Avgas',	'');
+
+DROP TABLE IF EXISTS `lap3bln`;
+CREATE TABLE `lap3bln` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `tahun` varchar(20) NOT NULL,
+  `tw` varchar(5) NOT NULL,
+  `jnsbbm` varchar(20) NOT NULL,
+  `chari` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+TRUNCATE `lap3bln`;
+INSERT INTO `lap3bln` (`id`, `idk`, `tahun`, `tw`, `jnsbbm`, `chari`) VALUES
+(1,	1,	'2020',	'',	'Solar CN 48',	'260'),
+(2,	1,	'2020',	'',	'Bensin 90',	'190'),
+(6,	6,	'2020',	'',	'Solar CN 48',	'260'),
+(5,	1,	'2021',	'',	'Avtur',	'201'),
+(7,	6,	'2020',	'',	'Solar CN 53',	'190'),
+(8,	6,	'2020',	'',	'Avgas',	'100'),
+(9,	6,	'2020',	'4',	'Solar CN 48',	'190'),
+(10,	6,	'2021',	'2',	'Bensin RON 88',	'150'),
+(11,	6,	'2021',	'2',	'Solar CN 48',	'101');
+
+DROP TABLE IF EXISTS `laporan`;
+CREATE TABLE `laporan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `thn` varchar(10) NOT NULL,
+  `priod` varchar(10) NOT NULL,
+  `jnsbbm` varchar(30) NOT NULL,
+  `fasilitas` varchar(50) NOT NULL,
+  `dtstok` varchar(50) NOT NULL,
+  `dtsalur` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+TRUNCATE `laporan`;
+INSERT INTO `laporan` (`id`, `idk`, `thn`, `priod`, `jnsbbm`, `fasilitas`, `dtstok`, `dtsalur`) VALUES
+(1,	1,	'2021',	'TW1',	'Bensin',	'storage1',	'7320',	'800'),
+(2,	1,	'2021',	'TW1',	'Solar',	'storage2',	'10320',	'5642'),
+(3,	1,	'2021',	'TW I',	'Avgas',	'avgas tank',	'5059',	'205');
+
+DROP TABLE IF EXISTS `masukan`;
+CREATE TABLE `masukan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `tahun` varchar(10) NOT NULL,
+  `tw` varchar(5) NOT NULL,
+  `masukan` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+TRUNCATE `masukan`;
+
+DROP TABLE IF EXISTS `moda`;
+CREATE TABLE `moda` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `jnsmoda` varchar(20) NOT NULL,
+  `kapmoda` varchar(50) NOT NULL,
+  `jumunit` varchar(50) NOT NULL,
+  `transportir` varchar(100) NOT NULL,
+  `keterangan` varchar(500) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+TRUNCATE `moda`;
+INSERT INTO `moda` (`id`, `idk`, `jnsmoda`, `kapmoda`, `jumunit`, `transportir`, `keterangan`) VALUES
+(1,	6,	'$jnsmoda',	'$kapmoda',	'$jumunit',	'$transportir',	'Third party (Kerjasama Pengangkutan)'),
+(2,	6,	'Truk',	'3420',	'2',	'pt sejuk',	'Third party (Kerjasama Pengangkutan)'),
+(3,	6,	'Truk tangki',	'25',	'2',	'PT Sejuuuk',	'Third party (Kerjasama Pengangkutan)');
+
+DROP TABLE IF EXISTS `nosk`;
+CREATE TABLE `nosk` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `nos` varchar(1000) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+TRUNCATE `nosk`;
+INSERT INTO `nosk` (`id`, `idk`, `nos`) VALUES
+(1,	1,	'17/1/IU/ESDM/PMDN/2017 tanggal 7 Februari 2017'),
+(2,	1,	' 99/1/IU/ESDM/PMDN/2020 tanggal 27 Februari 2020'),
+(3,	2,	'1516K/24/DJMO/2006 ttg Izin Usaha Niaga Umum BBM tgl 03 Februari 2006'),
+(4,	2,	'5402K/10/DJMO/2011 ttg Perubahan Keputusan Dirjen Migas Nomor 1516K/24/DJMO/2006 tggl 03 Februari 2006 sebagaimana telah diubah 5 kali terakhir dengan Keputusan Menteri ESDM Nomor 22666K/10/DJMO/2010 tgl 02 September 2010'),
+(5,	2,	'Kepmen ESDM Nomor:934K/1001/DJMO/IU/2015 ttg Izin Usaha NU PT AKR Corp Tbk tanggal tanggal terbit SK 17 November 2015, tanggal berlaku SK 3 Februari 2016'),
+(6,	2,	'Penyesuaian:116/1/IU-PB/ESDM/PMDN/2018 tanggal 10 September 2018'),
+(7,	4,	'146/1/IU/ESDM/PMDN/2017 tanggal 24 Juli 2017'),
+(8,	4,	'7/1/ESDM/PMDN/2019 tanggal 04 Januari 2019'),
+(9,	4,	'67/1/IU-PB/ESDM/PMDN/2019 tanggal 6 Maret 2019');
+
+DROP TABLE IF EXISTS `pasokan`;
+CREATE TABLE `pasokan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `bulanp` varchar(20) NOT NULL,
+  `tahunp` varchar(20) NOT NULL,
+  `pemasok` varchar(100) NOT NULL,
+  `jenis1` varchar(20) NOT NULL,
+  `jenis2` varchar(20) NOT NULL,
+  `volp` varchar(50) NOT NULL,
+  `modap` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+TRUNCATE `pasokan`;
+INSERT INTO `pasokan` (`id`, `idk`, `bulanp`, `tahunp`, `pemasok`, `jenis1`, `jenis2`, `volp`, `modap`) VALUES
+(1,	6,	'$bulan',	'',	'$pemasok',	'$jenis1',	'$jenis2',	'$vol',	'$moda'),
+(2,	6,	'April',	'2021',	'Rindu Alam ',	'Dalam Negeri',	'Solar CN 48',	'12260',	'Truk'),
+(3,	6,	'Mei',	'2021',	'Rindu Kamu',	'Dalam Negeri',	'Solar CN 51',	'17260',	'Truk'),
+(4,	6,	'Juni',	'2021',	'Rindu Kampung',	'Dalam Negeri',	'Solar CN 48',	'20260',	'Truk'),
+(5,	1,	'Mei',	'2021',	'Rindu Kampung',	'Dalam Negeri',	'Bensin RON 88',	'12260',	'Truk');
+
+DROP TABLE IF EXISTS `penyaluran`;
+CREATE TABLE `penyaluran` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `lokasi` varchar(50) NOT NULL,
+  `jnsbbm` varchar(50) NOT NULL,
+  `thn` varchar(10) NOT NULL,
+  `volJanuari` varchar(20) NOT NULL,
+  `volPebruari` varchar(20) NOT NULL,
+  `volMaret` varchar(20) NOT NULL,
+  `volApril` varchar(20) NOT NULL,
+  `volMei` varchar(20) NOT NULL,
+  `volJuni` varchar(20) NOT NULL,
+  `volJuli` varchar(20) NOT NULL,
+  `volAgustus` varchar(20) NOT NULL,
+  `volSeptember` varchar(20) NOT NULL,
+  `volOktober` varchar(20) NOT NULL,
+  `volNopember` varchar(20) NOT NULL,
+  `volDesember` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+TRUNCATE `penyaluran`;
+INSERT INTO `penyaluran` (`id`, `idk`, `lokasi`, `jnsbbm`, `thn`, `volJanuari`, `volPebruari`, `volMaret`, `volApril`, `volMei`, `volJuni`, `volJuli`, `volAgustus`, `volSeptember`, `volOktober`, `volNopember`, `volDesember`) VALUES
+(1,	6,	'$lokasi',	'$jnsbbm',	'$thn',	'$voljanuari',	'$volpebruari',	'$volmaret',	'$volapril',	'$volmei',	'$voljuni',	'$voljuli',	'$volagustus',	'$volseptember',	'$voloktober',	'$volnopember',	'$voldesember'),
+(2,	6,	'Medan  ',	'Solar CN 48  ',	'2021',	'2100560',	'2100560',	'2100560',	'2100560',	'2100560',	'2100560',	'2100560',	'2100560',	'2100560',	'2100',	'560',	'210000');
+
+DROP TABLE IF EXISTS `penyaluran1`;
+CREATE TABLE `penyaluran1` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `idp` int(11) NOT NULL,
+  `bln` varchar(20) NOT NULL,
+  `vol` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+TRUNCATE `penyaluran1`;
+
+DROP TABLE IF EXISTS `tanki`;
+CREATE TABLE `tanki` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `namat` varchar(50) NOT NULL,
+  `jenist` varchar(50) NOT NULL,
+  `kapt` varchar(50) NOT NULL,
+  `kapp` varchar(50) NOT NULL,
+  `kalibt` varchar(50) NOT NULL,
+  `cdpump` varchar(50) NOT NULL,
+  `bentukt` varchar(50) NOT NULL,
+  `jnstank` varchar(50) NOT NULL,
+  `altukut` varchar(50) NOT NULL,
+  `kalibu` varchar(50) NOT NULL,
+  `jamstok` varchar(50) NOT NULL,
+  `oku` varchar(50) NOT NULL,
+  `stat` varchar(50) NOT NULL,
+  `smbpas` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+TRUNCATE `tanki`;
+INSERT INTO `tanki` (`id`, `idk`, `namat`, `jenist`, `kapt`, `kapp`, `kalibt`, `cdpump`, `bentukt`, `jnstank`, `altukut`, `kalibu`, `jamstok`, `oku`, `stat`, `smbpas`) VALUES
+(4,	1,	'tank1',	'minyak solar',	'2000',	'',	'07/07/2017',	'',	'silender',	'',	'Gauging',	'07/07/2019',	'06.00',	'75',	'Sendiri',	'lokal'),
+(5,	1,	'tank2',	'Bensin 88',	'3200',	'',	'07/07/2017',	'',	'kotak',	'',	'Flowmeter',	'07/07/2015',	'09.00',	'62',	'Sendiri',	'Impor'),
+(6,	1,	'tank1',	'solar 48',	'2000',	'',	'01/07/2019',	'',	'silender',	'',	'Flowmeter',	'07/09/2019',	'09.00',	'90',	'Sendiri',	'Impor'),
+(7,	1,	'tank1',	'solar 48',	'2000',	'',	'01/07/2019',	'',	'silender',	'',	'Flowmeter',	'07/09/2019',	'09.00',	'90',	'Sendiri',	'Impor'),
+(9,	1,	'Tanki200',	'jenist',	'5000',	'',	'2021-07-19',	'',	'bentukt',	'',	'altukut',	'kalibu',	'15:06',	'80',	'Sendiri',	'Import'),
+(10,	1,	'tanki33',	'jenist',	'5000',	'',	'2021-07-22',	'',	'bentukt',	'',	'altukut',	'kalibu',	'12:52',	'80',	'Sendiri',	'Import'),
+(11,	1,	'$namat',	'$jenist',	'$kapt',	'$kapp',	'$kalibt',	'$cdpump',	'$bentukt',	'$jnstank	',	'$altukut',	'$kalibu',	'$jamstok',	'$oku',	'$stat',	'$smbpas'),
+(12,	6,	'T006',	'Solar CN 48',	'7000',	'6000',	'2020-09-02',	'800',	'Silender',	'Darat	',	'Gauging',	'2020-11-04',	'01:00',	'80',	'Sendiri',	'anna2.jpg'),
+(13,	6,	'T006',	'Solar CN 48',	'6000',	'5000',	'2020-09-02',	'700',	'Silender',	'Darat	',	'Gauging',	'2020-11-04',	'01:00',	'80',	'Sendiri',	'Book1.pdf'),
+(14,	6,	'T006',	'Solar CN 51',	'5000',	'6000',	'2021-07-07',	'800',	'Silender',	'Darat	',	'Gauging',	'2021-07-08',	'04:53',	'80',	'Sewa',	'Zombatar_8.jpg');
+
+DROP TABLE IF EXISTS `tims`;
+CREATE TABLE `tims` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `stugas` varchar(100) NOT NULL,
+  `tglstugas` varchar(100) NOT NULL,
+  `hari` varchar(20) NOT NULL,
+  `tanggal` varchar(20) NOT NULL,
+  `tglter` varchar(50) NOT NULL,
+  `bulan` varchar(20) NOT NULL,
+  `tahun` varchar(20) NOT NULL,
+  `tw` varchar(20) NOT NULL,
+  `nama1` varchar(50) NOT NULL,
+  `jabatan1` varchar(100) NOT NULL,
+  `nama2` varchar(50) NOT NULL,
+  `jabatan2` varchar(100) NOT NULL,
+  `nama3` varchar(50) NOT NULL,
+  `jabatan3` varchar(100) NOT NULL,
+  `nama4` varchar(50) NOT NULL,
+  `jabatan4` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+TRUNCATE `tims`;
+INSERT INTO `tims` (`id`, `idk`, `stugas`, `tglstugas`, `hari`, `tanggal`, `tglter`, `bulan`, `tahun`, `tw`, `nama1`, `jabatan1`, `nama2`, `jabatan2`, `nama3`, `jabatan3`, `nama4`, `jabatan4`) VALUES
+(3,	6,	'123/ST/DBM/BPH Migas/2021 ',	'2021/06/07',	'Senin',	'2',	'',	'Agustus',	'2021',	'TW III',	'Wage',	'',	'Indra',	'',	'Tono',	'',	'Muh K',	''),
+(7,	6,	'xxxx',	'2021-07-07',	'Rabu',	'25',	'',	'Mei',	'2021',	'TW II',	'Arif',	'',	'Gusnul',	'',	'Priyadi',	'',	'Muh K',	''),
+(9,	1,	'wkwkwk',	'2021-08-02',	'Jumat',	'06',	'enam',	'Agustus',	'2021',	'TW III',	'Wage',	'',	'Gusnul',	'',	'Tono',	'',	'Muh K',	'');
+
+DROP TABLE IF EXISTS `tindaklanjut`;
+CREATE TABLE `tindaklanjut` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idk` int(11) NOT NULL,
+  `thn` varchar(10) NOT NULL,
+  `tw` varchar(5) NOT NULL,
+  `tindaklanjut` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+TRUNCATE `tindaklanjut`;
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(50) NOT NULL,
+  `pwd` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+TRUNCATE `user`;
+INSERT INTO `user` (`id`, `nama`, `pwd`) VALUES
+(1,	'monev',	'admin');
+
+-- 2021-08-04 23:41:23

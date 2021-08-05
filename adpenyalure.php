@@ -42,18 +42,18 @@ $sql ="	UPDATE `penyaluran` SET
 `lokasi` = '$lokasi ',
 `jnsbbm` = '$jnsbbm ',
 `thn` = '$thn',
-`voljanuari` = '$voljanuari',
-`volpebruari` = '$volpebruari',
-`volmaret` = '$volmaret',
-`volapril` = '$volapril',
-`volmei` = '$volmei',
-`voljuni` = '$voljuni',
-`voljuli` = '$voljuli',
-`volagustus` = '$volagustus',
-`volseptember` = '$volseptember',
-`voloktober` = '$voloktober',
-`volnopember` = '$volnopember',
-`voldesember` = '$voldesember'
+`volJanuari` = '$voljanuari',
+`volPebruari` = '$volpebruari',
+`volMaret` = '$volmaret',
+`volApril` = '$volapril',
+`volMei` = '$volmei',
+`volJuni` = '$voljuni',
+`volJuli` = '$voljuli',
+`volAgustus` = '$volagustus',
+`volSeptember` = '$volseptember',
+`volOktober` = '$voloktober',
+`volNopember` = '$volnopember',
+`volDesember` = '$voldesember'
 
 WHERE `id` = '$id' ";
 
@@ -135,8 +135,6 @@ background: url(backpic2.png) no-repeat fixed;
    -o-background-size: 100% 100%;
    background-size: 100% 100%;
 }
-
-
 
 .form-style-3{
 	max-width: 550px;
@@ -239,9 +237,10 @@ background: url(backpic2.png) no-repeat fixed;
 
 	<form action="" method="post">
 		<fieldset><legend>Tambah Data Penyaluran</legend>
-		<ul>			
-			<input type="text" class="input-field" name="id" id="id" value="<?=$id?>" readonly hidden> 
-			<input type="text" class="input-field" name="idk" id="idk" value="<?=$queryk["idk"];  ?>" readonly hidden> 
+		<center>			
+		<input type="text" class="input-field" name="id" id="id" value="<?=$id?>" readonly hidden> 
+		
+		<input type="text" class="input-field" name="idk" id="idk" value="<?=$queryk["idk"];  ?>" readonly hidden> 
 
 		<label for = "lokasi" >Lokasi Konsumen : <?= $queryk["lokasi"];  ?></label>
 		<input type="text" class="input-field" name="lokasi" id="lokasi" value="<?=$queryk["lokasi"];  ?>" hidden> 
@@ -290,40 +289,46 @@ background: url(backpic2.png) no-repeat fixed;
             <option value="Nopember">Nopember</option>
             <option value="Desember">Desember</option>
         </select> -->
-
-       	<label for = "jnsbbm" > Volume Penyaluran (KL) :</label>
+        </center>
+       	<label for = "jnsbbm" > Volume Penyaluran (L) :</label>
+<table> <ul>
+	<td>
 <label>Bulan Januari : </label>
-<input type="text" class="input-field" name="voljanuari" id="voljanuari" value="<?=$queryk["voljanuari"];  ?>" >
+<input type="text" class="input-field" name="voljanuari" id="voljanuari" value="<?=$queryk["volJanuari"];  ?>" >
 <label>Bulan Pebruari : </label>
-<input type="text" class="input-field" name="volpebruari" id="volpebruari" value="<?=$queryk["volpebruari"];  ?>" >
+<input type="text" class="input-field" name="volpebruari" id="volpebruari" value="<?=$queryk["volPebruari"];  ?>" >
 <label>Bulan Maret : </label>
-<input type="text" class="input-field" name="volmaret" id="volmaret" value="<?=$queryk["volmaret"];  ?>"  >
+<input type="text" class="input-field" name="volmaret" id="volmaret" value="<?=$queryk["volMaret"];  ?>"  >
 <label>Bulan April : </label>
-<input type="text" class="input-field" name="volapril" id="volapril" value="<?=$queryk["volapril"];  ?>" >
+<input type="text" class="input-field" name="volapril" id="volapril" value="<?=$queryk["volApril"];  ?>" >
 <label>Bulan Mei : </label>
-<input type="text" class="input-field" name="volmei" id="volmei" value="<?=$queryk["volmei"];  ?>" >
+<input type="text" class="input-field" name="volmei" id="volmei" value="<?=$queryk["volMei"];  ?>" >
 <label>Bulan Juni : </label>
-<input type="text" class="input-field" name="voljuni" id="voljuni" value="<?=$queryk["voljuni"];  ?>" >
+<input type="text" class="input-field" name="voljuni" id="voljuni" value="<?=$queryk["volJuni"];  ?>" > </td>
+<td>
 <label>Bulan Juli : </label>
-<input type="text" class="input-field" name="voljuli" id="voljuli" value="<?=$queryk["voljuli"];  ?>" >
+<input type="text" class="input-field" name="voljuli" id="voljuli" value="<?=$queryk["volJuli"];  ?>" >
 <label>Bulan Agustus : </label>
-<input type="text" class="input-field" name="volagustus" id="volagustus" value="<?=$queryk["volagustus"];  ?>"  >
+<input type="text" class="input-field" name="volagustus" id="volagustus" value="<?=$queryk["volAgustus"];  ?>"  >
 <label>Bulan September : </label>
-<input type="text" class="input-field" name="volseptember" id="volseptember" value="<?=$queryk["volseptember"];  ?>"  >
+<input type="text" class="input-field" name="volseptember" id="volseptember" value="<?=$queryk["volSeptember"];  ?>"  >
 <label>Bulan Oktober : </label>
-<input type="text" class="input-field" name="voloktober" id="voloktober" value="<?=$queryk["voloktober"];  ?>" >
+<input type="text" class="input-field" name="voloktober" id="voloktober" value="<?=$queryk["volOktober"];  ?>" >
 <label>Bulan Nopember : </label>
-<input type="text" class="input-field" name="volnopember" id="volnopember" value="<?=$queryk["volnopember"];  ?>"  >
+<input type="text" class="input-field" name="volnopember" id="volnopember" value="<?=$queryk["volNopember"];  ?>"  >
 <label>Bulan Desember : </label>
-<input type="text" class="input-field" name="voldesember" id="voldesember" value="<?=$queryk["voldesember"];  ?>"  >
-
+<input type="text" class="input-field" name="voldesember" id="voldesember" value="<?=$queryk["volDesember"];  ?>"  >
+</ul>
+</td>
+	</table>
+	<table>
 		<br><br>
 		<button type ="submit" name="submitk">Simpan</button>
 		<button type ="submitb" name="submitb">Kembali</button> 
 				<!-- <button type ="button" onclick="javascript : history.back()">Kembali</button>  -->
 
-		</ul>
-
+		
+</table>
 </body>
 
 </html>

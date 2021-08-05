@@ -10,9 +10,8 @@ date_default_timezone_set('Asia/Jakarta');
 
 require 'functions.php';
 
-$lat  = $_GET["param1"];
-$long = $_GET["param2"];
-
+$id = $_GET["id"];
+$user = query("SELECT * FROM badanusaha WHERE id = $id ")[0];
 
 if (isset($_POST["submitk"]))
 {
@@ -23,17 +22,14 @@ $npwp     =htmlspecialchars($_POST["npwp"]);
 $noizin   =htmlspecialchars($_POST["noizin"]);
 $tglterbit=htmlspecialchars($_POST["tglterbit"]);
 $masaizin =htmlspecialchars($_POST["masaizin"]);
-
 $alamat   =htmlspecialchars($_POST["alamat"]);
 $telp     =htmlspecialchars($_POST["telp"]);
 $fax      =htmlspecialchars($_POST["fax"]);
 
-$jnsush     =htmlspecialchars($_POST["jnsush"]);
+$nosk     =htmlspecialchars($_POST["nosk"]);
 $namap    =htmlspecialchars($_POST["namap"]);
-
 $jabatan    =htmlspecialchars($_POST["jabatan"]);
 $nohpjab    =htmlspecialchars($_POST["nohpjab"]);
-
 $alamatf  =htmlspecialchars($_POST["alamatf"]);
 $kec      =htmlspecialchars($_POST["kec"]);
 $kab      =htmlspecialchars($_POST["kab"]);
@@ -53,15 +49,46 @@ $itsdm1   =htmlspecialchars($_POST["itsdm1"]);
 $itsdm2   =htmlspecialchars($_POST["itsdm2"]);
 $server1  =htmlspecialchars($_POST["server1"]);
 $server2   =htmlspecialchars($_POST["server2"]);
+$ket1      =htmlspecialchars($_POST["ket1"]);
+$ket2      =htmlspecialchars($_POST["ket2"]);
 
-$noiz      =htmlspecialchars($_POST["noiz"]);
-$tgliu      =htmlspecialchars($_POST["tgliu"]);
-$msiu      =htmlspecialchars($_POST["msiu"]);
-$stiu      =htmlspecialchars($_POST["stiu"]);
-
-$sql = "INSERT INTO `badanusaha` (`wilayah`, `bu`,`npwp`, `noizin`, `tglterbit`, `masaizin`, `alamat`, `telp`,`fax`, `jnsush`, `namap`,`jabatan`,`nohpjab`, `alamatf`, `kec`, `kab`, `prov`, `long`, `lat`, `namac`, `status`, `telpc`, `emailc`, `sumtanki`, `tankiplant`, `visitstok`, `bhsapk`, `dbapk`, `itsdm1`, `itsdm2`, `server1`, `server2`,`noiz`, `tgliu`, `msiu`,`stiu`)
-
-VALUES ('$wilayah', '$bu','$npwp', '$noizin', '$tglterbit', '$masaizin', '$alamat', '$telp','$fax', '$jnsush', '$namap', '$jabatan', '$nohpjab', '$alamatf', '$kec', '$kab', '$prov', '$long', '$lat', '$namac', '$status', '$telpc', '$emailc', '$sumtanki', '$tankiplant', '$visitstok', '$bhsapk', '$dbapk', '$itsdm1', '$itsdm2', '$server1', '$server2', '$noiz','$tgliu', '$msiu','$stiu')";
+$sql = "UPDATE `badanusaha` SET
+-- `id` = '$id',
+`wilayah` = 'wilayah',
+`bu` = '$bu',
+`npwp` = '$npwp',
+`noizin` = '$noizin',
+`tglterbit` = '$tglterbit',
+`masaizin` = '$masaizin',
+`alamat` = '$alamat',
+`telp` = '$telp',
+`fax` = '$fax',
+`nosk` = '$nosk',
+`namap` = '$namap',
+`jabatan` = '$jabatan',
+`nohpjab` = '$nohpjab',
+`alamatf` = '$alamatf',
+`kec` = '$kec',
+`kab` = '$kab',
+`prov` = '$prov',
+`long` = '$long',
+`lat` = '$lat',
+`namac` = '$namac',
+`status` = '$jabc',
+`telpc` = '$telpc',
+`emailc` = '$emailc',
+`sumtanki` = '$sumtanki',
+`tankiplant` = '$tankiplant',
+`visitstok` = '$visitstok',
+`bhsapk` = '$bhsapk',
+`dbapk` = '$dbapk',
+`itsdm1` = '$itsdm1',
+`itsdm2` = '$itsdm2',
+`server1` = '$server1',
+`server2` = '$server2',
+`ket1` = '$ket1',
+`ket2` = '$ket2'
+WHERE `id` = '$id'";
 
 mysqli_query($konek,$sql);
 
@@ -70,7 +97,7 @@ if (mysqli_affected_rows($konek) > 0) {
   // if ( tambah($_POST) > 0 ) {
       echo "<script>
           alert('success upload your data');
-          document.location.href = 'indexm.php';        
+          document.location.href = 'getposisiv.php?id=$id';        
         </script>";
 
     } 
@@ -85,7 +112,7 @@ if (mysqli_affected_rows($konek) > 0) {
 
   if (isset($_POST["balik"]))
   { echo "<script> 
-  document.location.href = 'indexm.php';
+  document.location.href = 'getposisiv.php?id=$id';
   </script>"; }
 ?>
 
@@ -145,7 +172,7 @@ padding-top:5px;
 padding-bottom:5px;
 padding-left:3px;
 padding-right:3px;
-width: 300px;
+width: 200px;
 }
 select{
   color: blue;
@@ -165,7 +192,7 @@ select{
 
 <div id="section">
 <center> 
-<h4>TAMBAH DATA BADAN USAHA<br>
+<h4>EDIT DATA BADAN USAHA<br>
 KEGIATAN MONITORING DAN VERIFIKASI LAPORAN PENYEDIAAN CADANGAN OPERASIONAL BBM
 </h4>
 <hr />
@@ -173,121 +200,70 @@ KEGIATAN MONITORING DAN VERIFIKASI LAPORAN PENYEDIAAN CADANGAN OPERASIONAL BBM
 <form action="" method="post" style="width: 100%">
 
 <table border="1" width="95%">
-	<td width="40%">
+	<td width="45%">
 	<table>
-<!--   <input type="text" name="tglterbit" hidden> 
-  <input type="text" name="jnsush" hidden>-->
+  <input type="text" name="tglterbit" hidden>
+  <input type="text" name="nosk" hidden>
   <input type="text" name="kec" hidden>
  <!--  <input type="text" name="status" hidden> -->
   <input type="text" name="kab" hidden>
   <input type="text" name="prov" hidden>
-<!-- 
-  <input type="text" name="tgliu" hidden>
-  <input type="text" name="msiu" hidden>
-  <input type="text" name="stiu" hidden> -->
 
   <tr>
     <td><label>Wilayah</label></td>
     <td>:</td>
-    <td><input type="text" name="wilayah" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" autofocus placeholder="Wilayah" ></td>
+    <td><input type="text" name="wilayah" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["wilayah"];?> " ></td>
   </tr>
   <tr>
     <td><label>Nama Badan Usaha</label></td>
     <td>:</td>
-    <td><input type="text" name="bu" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="Badan Usaha" ></td>
+    <td><input type="text" name="bu" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["bu"];?> " ></td>
   </tr>
-  <tr>
+    <tr>
     <td><label>NPWP</label></td>
     <td>:</td>
-    <td><input type="text" name="npwp" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="NPWP" ></td>
+    <td><input type="text" name="npwp" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["npwp"];?> " ></td>
   </tr>
-
-  <tr>
-    <td><label>Jenis Izin Usaha</label></td>
-    <td>:</td>
-    <td><input type="text" name="jnsush" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="Niaga Terbatas/Niaga Umum/Pengolahan Hasil Olahan/dll" ></td>
-  </tr>
-
   <tr>
     <td><label>No. Izin Usaha Niaga Migas</label></td>
     <td>:</td>
-    <td><input type="text" name="noiz" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="isi disini" ></td>
+    <td><input type="text" name="noizin" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["noizin"];?> " ></td>
   </tr>
-
   <tr>
-    <td><label>Tgl. Izin Usaha Niaga Migas</label></td>
+    <td><label>Masa Berlaku</label></td>
     <td>:</td>
-    <td><input type="date" name="tgliu" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="isi disini" ></td>
-  </tr>
-
-  <tr>
-    <td><label>Masa Berlaku Izin Usaha</label></td>
-    <td>:</td>
-    <td><input type="date" name="msiu" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="Berlaku sampai dengan" ></td>
+    <td><input type="text" name="masaizin" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["masaizin"];?> " ></td>
   </tr>
 
     <tr>
-    <td><label>Status Izin Usaha</label></td>
+    <td><label>Status</label></td>
     <td>:</td>
-    <td><input type="text" name="stiu" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="Masih Berlaku/EXPIRED/Belum ada..." ></td>
-  </tr>
-
-  <tr>
-    <td><label>No. Sertifikat NRU</label></td>
-    <td>:</td>
-    <td><input type="text" name="noizin" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="isi disini" ></td>
-  </tr>
-  
-  <tr>
-    <td><label>Tgl. Terbit NRU</label></td>
-    <td>:</td>
-    <td><input type="date" name="tglterbit" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;"  ></td>
-  </tr>
-
-  <tr>
-    <td><label>Masa Berlaku NRU</label></td>
-    <td>:</td>
-    <td><input type="date" name="masaizin" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;"  ></td>
-  </tr>
-
-    <tr>
-    <td><label>Status NRU</label></td>
-    <td>:</td>
-    <td><input type="text" name="status" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="Masih Berlaku/EXPIRED/Belum ada..." ></td>
+    <td><input type="text" name="status" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["status"];?> " ></td>
   </tr>
 
   <tr>
     <td><label>Alamat Badan Usaha</label></td>
     <td>:</td>
-    <td><input type="text" name="alamat" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="Alamat Badan Usaha" ></td>
+    <td><input type="text" name="alamat" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" value="<?= $user["alamat"];?> " ></td>
   </tr>
 
   <tr>
     <td><label>No. Telp</label></td>
     <td>:</td>
-    <td><input type="text" name="telp" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="No. Telp" ></td>
+    <td><input type="text" name="telp" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;"  value="<?= $user["telp"];?> " ></td>
   </tr>
 
   <tr>
     <td><label>No. Fax</label></td>
     <td>:</td>
-    <td><input type="text" name="fax" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="No. Fax" ></td>
+    <td><input type="text" name="fax" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;"  value="<?= $user["fax"];?> " ></td>
   </tr>
 
   <tr>
-    <td><label>Nama Penanggung Jawab</label></td>
+    <td><label>Nama Pimpinan</label></td>
     <td>:</td>
     <td><input type="text" name="namap" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="Nama" ></td>
   </tr>
-
-
-
-  </table>	
-
-</td>
-<!-- --------------sisi sebelahnya--------------------- -->
-
-<td width="45%"> <table>
 
   <tr>
     <td><label>Jabatan</label></td>
@@ -301,8 +277,6 @@ KEGIATAN MONITORING DAN VERIFIKASI LAPORAN PENYEDIAAN CADANGAN OPERASIONAL BBM
     <td><input type="text" name="nohpjab" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="No.telp" ></td>
   </tr>
 
-
-
   <tr>
     <td><label>Alamat Fasilitas Penyimpanan</label></td>
     <td>:</td>
@@ -310,7 +284,7 @@ KEGIATAN MONITORING DAN VERIFIKASI LAPORAN PENYEDIAAN CADANGAN OPERASIONAL BBM
   </tr>
 
   <tr>
-    <td><label>Titik Koordinat <br>Fas. Penyimpanan (long/lat)</label></td>
+    <td><label>Titik Koordinat Fas. Penyimpanan</label></td>
     <td>:</td>
     <td><input type="text" name="long" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="longitude" value="<?=$long?>"></td>
   </tr><tr><td></td><td>:</td>
@@ -318,15 +292,10 @@ KEGIATAN MONITORING DAN VERIFIKASI LAPORAN PENYEDIAAN CADANGAN OPERASIONAL BBM
   </tr>
 
   <tr>
-    <td><label>Nama Contact Person</a></label></td>
+    <td><label>Nama Contact Person</label></td>
     <td>:</td>
     <td><input type="text" name="namac" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="Nama cp" ></td>
   </tr>
-
-
-
-
-
 
   <tr>
     <td><label>No. HP Contact Person</label></td>
@@ -339,6 +308,12 @@ KEGIATAN MONITORING DAN VERIFIKASI LAPORAN PENYEDIAAN CADANGAN OPERASIONAL BBM
     <td>:</td>
     <td><input type="text" name="emailc" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="email cp" ></td>
   </tr>
+
+  </table>	
+
+</td>
+
+<td width="45%"> <table>
 	
   <tr>
     <td><label>Total Jumlah Tanki Penyimpanan </label></td>
@@ -416,20 +391,30 @@ KEGIATAN MONITORING DAN VERIFIKASI LAPORAN PENYEDIAAN CADANGAN OPERASIONAL BBM
     <td><input type="text" name="server2" style="height: 25;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="Jenis server"></td>
   </tr>
 
+  <tr>
+    <td><label>Keterangan Lainnya</label></td>
+    <td>:</td>
+    <td><input type="text" name="ket1" style="height: 70px;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="Keterangan Lainnya" ></td>
+  </tr>
+
+  <tr>
+    <td><label>Tindak Lanjut Monitoring & Evaluasi</label></td>
+    <td>:</td>
+    <td><input type="text" name="ket2" style="height: 70px;margin-left: 1px;font-size: 14px;cursor: pointer;" placeholder="Tindak Lanjut Monitoring & Evaluasi" ></td>
+  </tr>
+
 </td>
 
-
 </table>
-
 
 </table>
 
 <br>
 <!-- <hr /> -->
 <center>
-        <button type ="submitk" name="submitk" style="width: 130px;height: 35px;font-size: 12px;cursor: pointer;">U p l o a d</button> 
+        <button type ="submitk" name="submitk" style="width: 130px;height: 35px;font-size: 12px;cursor: pointer;">Simpan Edit</button> 
 
-        <button type ="submit" name="balik" style="width: 130px;height: 35px;font-size: 12px;cursor: pointer;">Kembali</button>
+        <button type ="submit" name="balik" style="width: 130px;height: 35px;font-size: 12px;cursor: pointer;">Batal</button>
 </center>
 
 </div>
@@ -441,7 +426,9 @@ KEGIATAN MONITORING DAN VERIFIKASI LAPORAN PENYEDIAAN CADANGAN OPERASIONAL BBM
 </div>
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script type="text/javascript">
     $('#inputAngka').on('keyup',function(){
       var angka = $(this).val();
