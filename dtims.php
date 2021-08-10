@@ -70,6 +70,26 @@ text-decoration:none;
 border: none;
 }
 
+.button {
+  background-color: #e7e7e7; color: black; /* Green */
+  border: 1px solid black;
+  color: white;
+  padding: 1px 1px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 1px 1px;
+  cursor: pointer;
+  padding-top: 9px;
+  padding-bottom: 0px;
+}
+
+.button4 {
+  background-color: #e7e7e7; color: black;
+  border-radius: 4px;
+} /* Gray */ 
+
 #custom {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -130,6 +150,7 @@ border: none;
     <th>Hari & Tanggal<br>survey</th>  
     <th>Nama Tim Survey</th>
     <th>Nama Dari<br>Badan Usaha</th>
+    <th>Aksi</th>
 </tr>
 
 <?php $i = 1 ?>
@@ -143,6 +164,7 @@ border: none;
     <?= $row["tanggal"]; ?> <?= $row["bulan"]; ?> <?= $row["tahun"]; ?>  </td>
     <td> <?= $row["nama1"]; ?><br><?= $row["nama3"]; ?> </td>
     <td> <?= $row["nama2"]; ?><br><?= $row["nama4"]; ?></td>
+   <td> <button type ="submitk" onClick="sendEdit(<?= $id; ?>,<?= $row["id"]; ?>); return false;" name="edit" style="width: 130px;height: 35px;font-size: 12px;cursor: pointer; " >Edit</button>  </td>
 
 </tr>
     <?php $i++ ; ?>
@@ -171,5 +193,11 @@ border: none;
 </div>
 
 </body>
+
+<script>
+function sendEdit(id,idn){
+  document.location.href = 'edittims.php?id='+id+'&idn='+idn;
+}
+</script>
 
 </html>
